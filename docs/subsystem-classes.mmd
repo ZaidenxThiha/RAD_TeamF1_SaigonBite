@@ -1,0 +1,97 @@
+classDiagram
+    class User {
+        +int id
+        +string username
+        +string role
+        +int hubId
+    }
+    class Hub {
+        +int id
+        +int capacity
+        +decimal maxDistanceKm
+    }
+    class HubMenuItem {
+        +int priceVnd
+        +bool available
+    }
+    class Brand {
+        +int id
+        +string name
+    }
+    class MenuItem {
+        +int id
+        +string name
+    }
+    class DeliveryArea {
+        +int id
+        +string name
+    }
+    class HubDeliveryDistance {
+        +decimal distanceKm
+    }
+    class Voucher {
+        +string code
+        +string discountType
+        +int discountValue
+        +date startsOn
+        +date endsOn
+        +datetime archivedAt
+    }
+    class VoucherAudit {
+        +string action
+        +datetime occurredAt
+    }
+    class Order {
+        +int id
+        +string status
+        +int subtotalVnd
+        +int deliveryFeeVnd
+        +int quietIncentiveVnd
+        +int voucherDiscountVnd
+        +int totalVnd
+    }
+    class Payment {
+        +string checkoutRef
+        +string method
+        +string status
+        +int amountVnd
+    }
+    class OrderItem {
+        +string itemName
+        +int quantity
+        +int unitPriceVnd
+    }
+    class OrderDecision {
+        +string decision
+        +string rejectionReason
+        +datetime decidedAt
+    }
+    class CustomerNotification {
+        +string status
+        +datetime attemptedAt
+    }
+    class Delivery {
+        +string outcome
+        +datetime occurredAt
+    }
+    Hub "0..1" -- "0..*" User : staff assignment
+    Hub "1" -- "0..*" HubMenuItem : availability
+    MenuItem "1" -- "0..*" HubMenuItem : offered at
+    Brand "1" -- "0..*" MenuItem : lists
+    Hub "1" -- "0..*" HubDeliveryDistance : measures
+    DeliveryArea "1" -- "0..*" HubDeliveryDistance : distance to
+    User "1" -- "0..*" Order : places
+    User "1" -- "0..*" Payment : pays
+    Hub "1" -- "0..*" Order : receives
+    Brand "1" -- "0..*" Order : selected brand
+    DeliveryArea "1" -- "0..*" Order : destination
+    Payment "1" -- "0..1" Order : checkout
+    Voucher "0..1" -- "0..*" Order : discount
+    Voucher "1" -- "0..*" VoucherAudit : history
+    User "1" -- "0..*" VoucherAudit : changes
+    Order "1" *-- "1..*" OrderItem : contains
+    MenuItem "1" -- "0..*" OrderItem : snapshot of
+    Order "1" -- "0..1" OrderDecision : outcome
+    User "1" -- "0..*" OrderDecision : decides
+    OrderDecision "1" -- "0..1" CustomerNotification : triggers
+    Order "1" -- "0..1" Delivery : fulfilled by
