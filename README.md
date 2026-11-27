@@ -1,7 +1,7 @@
 # RAD_TeamF1_SaigonBite
 RAD Final Project (SaigonBite Platform)
 
-This starter contains the shared SQLite schema, reproducible sample data, and a local server health check for the four Part 3 use cases. The ordering, kitchen, voucher, and reporting screens and APIs are the next four issues.
+SaigonBite has a shared SQLite foundation and a working customer checkout preview. The kitchen, voucher administration, and reporting workflows build on the same database.
 
 ## Run locally
 
@@ -13,7 +13,7 @@ npm test
 npm start
 ```
 
-Open http://127.0.0.1:4173/health and expect `{"status":"ok"}`. Stop the server with Ctrl+C. The default database lives in `runtime/saigonbite.sqlite`. Set `SAIGONBITE_DB` to a new path to start with fresh sample data. Reopening the existing file preserves records.
+Open http://127.0.0.1:4173/ to try [UC1 checkout](docs/uc1-checkout.md). At http://127.0.0.1:4173/health expect `{"status":"ok"}`. Stop the server with Ctrl+C. The default database lives in `runtime/saigonbite.sqlite`. Set `SAIGONBITE_DB` to a new path to start with fresh sample data. Reopening the existing file preserves records.
 
 ## Sample records for the next issues
 

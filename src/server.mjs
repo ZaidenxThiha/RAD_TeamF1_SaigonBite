@@ -1,24 +1,47 @@
 import { createServer } from 'node:http';
+import { readFileSync } from 'node:fs';
 import { openDatabase } from './database.mjs';
+import { handleCheckout } from './checkout-http.mjs';
 
 const db = openDatabase();
+const assets = new Map([
+  ['/', ['checkout.html', 'text/html; charset=utf-8']],
+  ['/checkout.css', ['checkout.css', 'text/css; charset=utf-8']],
+  ['/checkout.js', ['checkout.js', 'text/javascript; charset=utf-8']],
+]);
 const server = createServer((request, response) => {
-  if (request.method !== 'GET' || request.url !== '/health') {
-    response.writeHead(404).end();
+  if (request.method === 'GET' && request.url === '/health') {
+    try {
+      db.prepare('SELECT 1 FROM hubs LIMIT 1').get();
+      response.writeHead(200, { 'Content-Type': 'application/json' }).end('{"status":"ok"}');
+    } catch {
+      response.writeHead(503, { 'Content-Type': 'application/json' }).end('{"status":"unavailable"}');
+    }
     return;
   }
 
-  try {
-    db.prepare('SELECT 1 FROM hubs LIMIT 1').get();
-    response.writeHead(200, { 'Content-Type': 'application/json' }).end('{"status":"ok"}');
-  } catch {
-    response.writeHead(503, { 'Content-Type': 'application/json' }).end('{"status":"unavailable"}');
+  const asset = request.method === 'GET' && assets.get(request.url);
+  if (asset) {
+    const [name, contentType] = asset;
+    response.writeHead(200, {
+      'Content-Type': contentType,
+      'Cache-Control': 'no-store',
+      'X-Content-Type-Options': 'nosniff',
+      'Content-Security-Policy': "default-src 'self'; frame-ancestors 'none'; form-action 'self'",
+    }).end(readFileSync(new URL(`../public/${name}`, import.meta.url)));
+    return;
   }
+
+  if (request.url.startsWith('/api/checkout/')) {
+    void handleCheckout(db, request, response);
+    return;
+  }
+  response.writeHead(404).end();
 });
 
 const port = Number(process.env.PORT ?? 4173);
 server.listen(port, '127.0.0.1', () => {
-  console.log(`SaigonBite health check at http://127.0.0.1:${server.address().port}/health`);
+  console.log(`SaigonBite checkout at http://127.0.0.1:${server.address().port}/`);
 });
 server.on('close', () => db.close());
 process.once('SIGINT', () => server.close());
