@@ -1,0 +1,23 @@
+flowchart LR
+    subgraph Browser["Browser UI · planned"]
+        Checkout["UC1 Checkout"]
+        Kitchen["UC2 Kitchen queue"]
+        Vouchers["UC3 Voucher admin"]
+        Reports["UC4 Reports"]
+    end
+    subgraph Server["Node.js server"]
+        HTTP["HTTP routing · health route available"]
+        UseCases["Use case services · planned"]
+    end
+    subgraph Data["Data access"]
+        DB["SQLite connection and initialization"]
+        Schema["Database schema and sample data"]
+    end
+    Checkout --> HTTP
+    Kitchen --> HTTP
+    Vouchers --> HTTP
+    Reports --> HTTP
+    HTTP --> UseCases
+    UseCases --> DB
+    HTTP -->|health check| DB
+    DB --> Schema
