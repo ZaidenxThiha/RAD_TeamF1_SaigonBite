@@ -21,8 +21,8 @@ npm start
 ### Demo screens
 
 - **UC1 · Customer checkout.** Choose a hub, build an order, review the total, and submit it. [Open checkout](http://127.0.0.1:4173/) · [UC1 guide](docs/design/UC1.md)
-- **UC2 · Kitchen decisions.** Use **Local demo account** to switch between the Bến Thành and Riverside staff. Submitted orders appear in the assigned hub’s queue. Staff can confirm or reject them, and the server checks the staff role and hub before saving. Notifications use a local simulator. [Open the kitchen queue](http://127.0.0.1:4173/kitchen) · [UC2 guide](docs/uc2/README.md)
-- **UC3 · Voucher management.** Select the administrator demo account to create and manage vouchers. Active vouchers can be edited or archived, expired vouchers can be edited, and archived vouchers are view-only. Changes appear in the audit history, and checkout validates voucher eligibility. [Open voucher management](http://127.0.0.1:4173/vouchers) · [UC3 guide](docs/uc3/README.md)
+- **UC2 · Kitchen decisions.** Use **Local demo account** to switch between the Bến Thành and Riverside staff. Submitted orders appear in the assigned hub’s queue. Staff can confirm or reject them, and the server checks the staff role and hub before saving. Notifications use a local simulator. [Open the kitchen queue](http://127.0.0.1:4173/kitchen) · [UC2 guide](docs/design/UC2.md)
+- **UC3 · Voucher management.** Select the administrator demo account to create and manage vouchers. Active vouchers can be edited or archived, expired vouchers can be edited, and archived vouchers are view-only. Changes appear in the audit history, and checkout validates voucher eligibility. [Open voucher management](http://127.0.0.1:4173/vouchers) · [UC3 guide](docs/design/UC3.md)
 - **UC4 · Management reports.** Follow the [manager sign-in setup](#manager-sign-in-for-uc4), then view sales, hub workload, and delivery performance. [Open reports](http://127.0.0.1:4173/reports) · [UC4 guide](docs/design/UC4.md)
 
 UC2 and UC3 were implemented by Thin Lei Sandi (523K0075). Their account pickers simulate sign-in for the local demo.
@@ -76,6 +76,6 @@ The test starts and stops its own local server. It verifies that the order refer
 - [Prototype screenshots](docs/design/prototypes), organized by use case
 - [Editable diagrams and exports](docs/diagrams), organized by use case with shared diagrams in [overall](docs/diagrams/overall)
 
-Thiha Aung (523K0073) maintains the [UC1 guide](docs/design/UC1.md) and [UC4 guide](docs/design/UC4.md). Thin Lei Sandi (523K0075) maintains the [UC2 guide](docs/uc2/README.md) and [UC3 guide](docs/uc3/README.md). The UC2 and UC3 design assets are linked from their guides during the move to the shared layout.
+Thiha Aung (523K0073) maintains the [UC1 guide](docs/design/UC1.md) and [UC4 guide](docs/design/UC4.md). Thin Lei Sandi (523K0075) maintains the [UC2 guide](docs/design/UC2.md) and [UC3 guide](docs/design/UC3.md). The UC2 and UC3 design assets are linked from their guides during the move to the shared layout.
 
 The [class-to-table mapping](docs/database-mapping.md) describes the shared SQLite schema.

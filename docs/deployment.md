@@ -148,7 +148,7 @@ test prerequisite, not a release attachment.
 - Service/HTTP tests: `test/`; browser check: `scripts/check-order-reference.mjs`.
 - Editable models: overall `.drawio` / `.drawio.xml` files in `docs/diagrams/overall/`,
   Mermaid subsystem models and per-use-case sequence sources under `docs/`.
-- [UC1](design/UC1.md), [UC2](uc2/README.md), [UC3](uc3/README.md), [UC4](design/UC4.md)
+- [UC1](design/UC1.md), [UC2](design/UC2.md), [UC3](design/UC3.md), [UC4](design/UC4.md)
   guides include design/prototype evidence.
 - [Team report and submission folder](https://drive.google.com/drive/folders/1XL-ni65WWc1v_II3sUq4APwcZI_YU_7_?usp=sharing).
 - [UC1/UC4 Figma](https://www.figma.com/design/iD7ki5jjLIyrZrvBg7Fbe0/SaigonBite-%E2%80%94-UC1---UC4),

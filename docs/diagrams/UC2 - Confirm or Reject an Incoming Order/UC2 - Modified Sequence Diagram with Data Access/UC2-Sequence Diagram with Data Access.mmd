@@ -12,14 +12,17 @@ sequenceDiagram
     Staff->>UI: Open incoming orders
     UI->>HTTP: GET /api/kitchen/orders
     HTTP->>Service: Resolve staff and retrieve assigned-hub queue
-    Service->>Repo: Read staff role, hub and Submitted orders
-    Repo->>DB: SELECT users, hubs, orders and item quantities
-    Repo-->>Service: Staff and queue records
+    Service->>Repo: Read staff role and assigned hub
+    Repo->>DB: SELECT user and assigned hub
+    Repo-->>Service: Staff record
     Service->>Service: Enforce kitchen role and assigned hub
     alt Unauthorized
         Service-->>HTTP: Access denied
         HTTP-->>UI: 403 without queue data
     else Authorized
+        Service->>Repo: Read Submitted orders for assigned hub
+        Repo->>DB: SELECT assigned-hub Submitted orders and item quantities
+        Repo-->>Service: Assigned-hub queue
         Service-->>HTTP: Assigned-hub queue
         HTTP-->>UI: 200 queue or empty list
         UI-->>Staff: Display orders or no incoming orders
