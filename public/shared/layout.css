@@ -1,0 +1,18 @@
+/* Shared SaigonBite workspace shell. Author: 523K0075. */
+.workspace>.header{position:sticky;top:0;z-index:20;flex-shrink:0}
+.sidebar[hidden]{display:none}
+.header-start{display:flex;align-items:center;gap:16px;min-width:0}.header-start>div{min-width:0;overflow-wrap:anywhere}
+.header .sidebar-toggle{display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;min-height:40px;padding:9px;border:1px solid #d9c9c2;border-radius:7px;background:white;color:#6b5b55;cursor:pointer}.header .sidebar-toggle:hover{background:#fbede8}.header .sidebar-toggle:focus-visible{outline:3px solid #a34a28;outline-offset:3px}.sidebar-toggle svg{width:20px;height:20px}
+.sidebar{width:240px;flex-shrink:0;background:#2b1b17;color:#fff;min-height:100vh;padding:30px 24px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-size:20px;font-weight:700;padding-bottom:30px;border-bottom:1px solid #72594f}
+.logo{display:grid;place-items:center;background:#b8321c;border-radius:50%;width:36px;height:36px;flex-shrink:0}.logo svg{width:24px;height:24px}
+.brand small{font-size:9px;color:#ebd5cb;letter-spacing:.6px}
+.sidebar small,.header small{display:block;font-size:11px;font-weight:400;line-height:1.7}
+.nav-label{font-size:10px;color:#ebd5cb;margin:30px 0 18px}
+.sidebar nav{display:grid;gap:10px}.sidebar nav a{display:flex;align-items:center;gap:12px;text-decoration:none;color:white;border-radius:7px;padding:14px;font-size:14px}.sidebar nav a[aria-current=page]{background:#b8321c}.sidebar nav a:hover{background:#59382c}.sidebar nav a[aria-current=page]:hover{background:#a52a18}.sidebar nav svg{width:18px;height:18px;flex-shrink:0}
+.profile{display:flex;align-items:center;gap:12px;margin-top:auto;border-top:1px solid #72594f;padding-top:24px;font-size:13px}.profile small{color:#ebd5cb;overflow-wrap:anywhere}
+.avatar{display:grid;place-items:center;width:34px;height:34px;flex-shrink:0;border-radius:50%;background:#fbe8e1;color:#7d2618;font-size:11px;font-weight:700}
+.workspace{flex:1;min-width:0;display:flex;flex-direction:column}
+.header{min-height:72px;background:#fff;border-bottom:1px solid var(--line,#d9c9c2);padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:13px}.header small{color:var(--muted,#6b5b55)}.identity{display:flex;align-items:center;gap:12px}
+@media(max-width:1050px){.sidebar{width:200px;padding:24px 18px}.brand{font-size:17px}.header{padding-left:24px;padding-right:24px}}
+@media(max-width:680px){.sidebar{position:static;width:100%;height:auto;min-height:0;padding:16px 20px}.brand{border:0;padding:0}.nav-label,.profile{display:none}.sidebar nav{margin-top:14px}.sidebar nav a{padding:10px 14px}.header{padding:14px 20px}.identity{display:none}}

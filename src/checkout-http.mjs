@@ -1,9 +1,10 @@
-import { cancelCheckout, CheckoutError, checkoutCatalog, demoCustomer, quoteOrder, submitCheckout } from './checkout.mjs';
+import { cancelCheckout, CheckoutError, checkoutCatalog, customerOrderStatus, demoCustomer, quoteOrder, submitCheckout } from './checkout.mjs';
 
 const actions = {
   '/api/checkout/quote': (db, customer, input) => quoteOrder(db, input),
   '/api/checkout/submit': submitCheckout,
   '/api/checkout/cancel': cancelCheckout,
+  '/api/checkout/status': customerOrderStatus,
 };
 
 function sendJson(response, status, data) {

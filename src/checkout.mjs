@@ -182,6 +182,18 @@ function receipt(db, orderId) {
   `).get(orderId);
 }
 
+// UC2 customer-status integration. Author: Thin Lei Sandi (523K0075).
+export function customerOrderStatus(db, customer, input) {
+  const orderId = id(input.orderId, 'order');
+  const reference = checkoutReference(input.checkoutRef);
+  const owned = db.prepare(`SELECT o.id FROM orders o JOIN payments p ON p.id = o.payment_id
+    WHERE o.id = ? AND o.customer_id = ? AND p.checkout_ref = ?`).get(orderId, customer.id, reference);
+  // Unknown IDs and other customers' orders produce the same response.
+  if (!owned) throw new CheckoutError('Order not found for this checkout.', 404);
+  const decision = db.prepare('SELECT rejection_reason FROM order_decisions WHERE order_id = ?').get(orderId);
+  return { ...receipt(db, orderId), rejectionReason: decision?.rejection_reason ?? null };
+}
+
 export function submitCheckout(db, customer, input) {
   const reference = checkoutReference(input.checkoutRef);
 

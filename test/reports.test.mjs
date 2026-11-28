@@ -9,24 +9,34 @@ import { openDatabase } from '../src/database.mjs';
 
 test('management reports enforce manager access and use Vietnam date boundaries', async t => {
   const directory = mkdtempSync(join(tmpdir(), 'saigonbite-reports-'));
-  t.after(() => rmSync(directory, { recursive: true, force: true }));
+  let processHandle;
+  let exited;
+  t.after(async () => {
+    try {
+      if (processHandle) {
+        processHandle.kill();
+        await exited;
+      }
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
   const filename = join(directory, 'test.sqlite');
   const db = openDatabase(filename);
-  db.exec(`
-    UPDATE orders SET created_at = '2026-11-27 17:00:00' WHERE id IN (1, 2);
-    UPDATE orders SET created_at = '2026-11-28 17:00:00' WHERE id = 3;
-    UPDATE deliveries SET occurred_at = '2026-11-28 16:59:59' WHERE order_id IN (2, 3);
-  `);
-  db.close();
-  const processHandle = spawn(process.execPath, ['src/server.mjs'], {
+  try {
+    db.exec(`
+      UPDATE orders SET created_at = '2026-11-27 17:00:00' WHERE id IN (1, 2);
+      UPDATE orders SET created_at = '2026-11-28 17:00:00' WHERE id = 3;
+      UPDATE deliveries SET occurred_at = '2026-11-28 16:59:59' WHERE order_id IN (2, 3);
+    `);
+  } finally {
+    db.close();
+  }
+  processHandle = spawn(process.execPath, ['src/server.mjs'], {
     env: { ...process.env, PORT: '0', SAIGONBITE_DB: filename, SAIGONBITE_MANAGER_PASSWORD: 'report-test' },
     stdio: ['ignore', 'pipe', 'inherit'],
   });
-  const exited = once(processHandle, 'exit');
-  t.after(async () => {
-    processHandle.kill();
-    await exited;
-  });
+  exited = once(processHandle, 'exit');
   const [ready] = await Promise.race([
     once(processHandle.stdout, 'data'),
     exited.then(() => { throw new Error('Report server stopped before listening.'); }),

@@ -3,14 +3,24 @@ import { readFileSync } from 'node:fs';
 import { openDatabase } from './database.mjs';
 import { handleCheckout } from './checkout-http.mjs';
 import { handleReports } from './reports-page.mjs';
+import { createKitchenHandler } from './uc2/http.mjs';
 
 const db = openDatabase();
 const managerPassword = process.env.SAIGONBITE_MANAGER_PASSWORD;
+const handleKitchen = createKitchenHandler(db, {
+  notify: () => process.env.SAIGONBITE_NOTIFICATION_FAIL === '1' ? 'failed' : 'sent',
+});
 const assets = new Map([
   ['/reports.css', ['reports.css', 'text/css; charset=utf-8']],
   ['/', ['checkout.html', 'text/html; charset=utf-8']],
   ['/checkout.css', ['checkout.css', 'text/css; charset=utf-8']],
   ['/checkout.js', ['checkout.js', 'text/javascript; charset=utf-8']],
+  ['/kitchen', ['uc2/kitchen.html', 'text/html; charset=utf-8']],
+  ['/kitchen/', ['uc2/kitchen.html', 'text/html; charset=utf-8']],
+  ['/uc2/kitchen.css', ['uc2/kitchen.css', 'text/css; charset=utf-8']],
+  ['/uc2/kitchen.js', ['uc2/kitchen.js', 'text/javascript; charset=utf-8']],
+  ['/shared/layout.js', ['shared/layout.js', 'text/javascript; charset=utf-8']],
+  ['/shared/layout.css', ['shared/layout.css', 'text/css; charset=utf-8']],
 ]);
 const server = createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/health') {
@@ -39,6 +49,10 @@ const server = createServer((request, response) => {
     return;
   }
 
+  if (request.url.startsWith('/api/kitchen/')) {
+    void handleKitchen(request, response);
+    return;
+  }
   if (request.url.startsWith('/api/checkout/')) {
     void handleCheckout(db, request, response);
     return;
