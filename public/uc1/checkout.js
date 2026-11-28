@@ -163,7 +163,8 @@ function payment() {
     selection('Cash on Delivery', 'Pay when your order arrives', 'Choose option', 'method', 'cod', draft.method === 'cod', 'selected-payment') +
     selection('Online payment', 'Simulated payment provider', 'Choose option', 'method', 'online', draft.method === 'online', 'selected-payment') +
     '</div></div><div class="stack">' + card('<strong>Cash on Delivery</strong><p class="micro">Submit your order immediately.</p><strong>Online payment</strong><p class="micro">Continue to simulated processing.</p>') + '</div>',
-    footer('Continue →', 'continue-payment', caption(paymentAttempted ? 'Your original customer and payment reference are retained.' : ''))];
+    footer('Continue →', 'continue-payment', (quote ? summary('Amount due', quote.total) : '') +
+      (paymentAttempted ? caption('Your original customer and payment reference are retained.') : ''))];
 }
 
 function processing() {
@@ -366,7 +367,19 @@ const actions = {
   },
   'test-voucher'(value) { draft.voucherCode = value; return run(refreshQuote); },
   'remove-voucher'() { draft.voucherCode = ''; return run(refreshQuote); },
-  payment() { return run(async () => { await refreshQuote(); go(4); }); },
+  payment() {
+    return run(async () => {
+      const reviewedTotal = quote?.total;
+      await refreshQuote();
+      if (reviewedTotal !== quote.total) {
+        error = reviewedTotal === undefined
+          ? 'Review the latest total, then confirm checkout.'
+          : 'Your total changed. Review the updated amount, then confirm checkout again.';
+        return;
+      }
+      go(4);
+    });
+  },
   'payment-back'() { go(4); },
   customer(value) { if (!paymentAttempted) { draft.username = value; render(); } },
   method(value) { draft.method = value; render(); },
