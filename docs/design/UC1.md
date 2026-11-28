@@ -13,31 +13,33 @@ The current browser prototype is available at the root URL printed by npm start.
 
 The customer picker represents local sample accounts. It is a demo input on the loopback server. Address coverage uses the selected sample area and its stored hub distance. Local and tourist demo accounts can select COD or the simulator. Online payment and customer sign-in are simulated in the local app.
 
+- [Sketch](sketches/UC1_sketch.png) · [Wireframe](wireframes/UC1_wireframe.png)
+
 ## Figma prototype screenshots
 
 [Open the UC1 mobile prototype in Figma](https://www.figma.com/design/iD7ki5jjLIyrZrvBg7Fbe0/SaigonBite-%E2%80%94-UC1---UC4?node-id=116-2). These screenshots come from the Figma frames and show the prototype’s sample data.
 
 ### Checkout screens
 
-- [Select Hub & Brand](prototype/01-select-hub-and-brand.png)
-- [Browse Menu & Cart](prototype/02-menu-and-cart.png)
-- [Delivery Address & Eligibility](prototype/03-delivery-eligibility.png)
-- [Voucher & Order Review](prototype/04-voucher-and-review.png)
-- [Payment Method](prototype/05-payment-method.png)
-- [Online Payment Processing](prototype/06-online-payment.png)
-- [Order Confirmation](prototype/07-order-confirmation.png)
-- [Payment Failed](prototype/08-payment-failed.png)
+- [Select Hub & Brand](prototypes/UC1/01-select-hub-and-brand.png)
+- [Browse Menu & Cart](prototypes/UC1/02-menu-and-cart.png)
+- [Delivery Address & Eligibility](prototypes/UC1/03-delivery-eligibility.png)
+- [Voucher & Order Review](prototypes/UC1/04-voucher-and-review.png)
+- [Payment Method](prototypes/UC1/05-payment-method.png)
+- [Online Payment Processing](prototypes/UC1/06-online-payment.png)
+- [Order Confirmation](prototypes/UC1/07-order-confirmation.png)
+- [Payment Failed](prototypes/UC1/08-payment-failed.png)
 
 ### Feedback overlays
 
-- [Added to Cart](prototype/overlays/overlay-added-to-cart.png)
-- [Eligibility Passed](prototype/overlays/overlay-eligibility-passed.png)
-- [Alternative Hub Suggested](prototype/overlays/overlay-alternative-hub.png)
-- [Voucher Feedback](prototype/overlays/overlay-voucher-feedback.png)
+- [Added to Cart](prototypes/UC1/overlays/overlay-added-to-cart.png)
+- [Eligibility Passed](prototypes/UC1/overlays/overlay-eligibility-passed.png)
+- [Alternative Hub Suggested](prototypes/UC1/overlays/overlay-alternative-hub.png)
+- [Voucher Feedback](prototypes/UC1/overlays/overlay-voucher-feedback.png)
 
 ## Report evidence
 
-- Section 4.3.2 uses the [editable checkout sequence](diagrams/sequence.mmd).
+- Section 4.3.2 uses the [editable checkout sequence](../diagrams/UC1%20-%20Place%20an%20Order/UC1_Modified_Sequence_Diagram/UC1_Modified_Sequence_Diagram.drawio).
 - Section 4.3.3 uses the Figma prototype screens and overlays linked above.
 - Section 4.3.5 references quoteOrder, submitCheckout and cancelCheckout in [service.mjs](../../src/uc1/service.mjs).
 - Section 5.1 can use [checkout.test.mjs](../../test/checkout.test.mjs) to reproduce the checks for a one-payment receipt, hub alternatives, invalid inputs, declined authorization, retry and cancellation.

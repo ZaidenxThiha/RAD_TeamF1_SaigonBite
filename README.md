@@ -20,10 +20,10 @@ npm start
 
 ### Demo screens
 
-- **UC1 · Customer checkout.** Choose a hub, build an order, review the total, and submit it. [Open checkout](http://127.0.0.1:4173/) · [UC1 guide](docs/uc1/README.md)
+- **UC1 · Customer checkout.** Choose a hub, build an order, review the total, and submit it. [Open checkout](http://127.0.0.1:4173/) · [UC1 guide](docs/design/UC1.md)
 - **UC2 · Kitchen decisions.** Use **Local demo account** to switch between the Bến Thành and Riverside staff. Submitted orders appear in the assigned hub’s queue. Staff can confirm or reject them, and the server checks the staff role and hub before saving. Notifications use a local simulator. [Open the kitchen queue](http://127.0.0.1:4173/kitchen) · [UC2 guide](docs/uc2/README.md)
 - **UC3 · Voucher management.** Select the administrator demo account to create and manage vouchers. Active vouchers can be edited or archived, expired vouchers can be edited, and archived vouchers are view-only. Changes appear in the audit history, and checkout validates voucher eligibility. [Open voucher management](http://127.0.0.1:4173/vouchers) · [UC3 guide](docs/uc3/README.md)
-- **UC4 · Management reports.** Follow the [manager sign-in setup](#manager-sign-in-for-uc4), then view sales, hub workload, and delivery performance. [Open reports](http://127.0.0.1:4173/reports) · [UC4 guide](docs/uc4/README.md)
+- **UC4 · Management reports.** Follow the [manager sign-in setup](#manager-sign-in-for-uc4), then view sales, hub workload, and delivery performance. [Open reports](http://127.0.0.1:4173/reports) · [UC4 guide](docs/design/UC4.md)
 
 UC2 and UC3 were implemented by Thin Lei Sandi (523K0075). Their account pickers simulate sign-in for the local demo.
 
@@ -69,4 +69,13 @@ The test starts and stops its own local server. It verifies that the order refer
 - Central Saigon is 2 km from Bến Thành. Two bowls at 50,000 VND each, a 15,000 VND delivery fee, and a 10,000 VND discount using the seeded `DEMO10` code produce **105,000 VND**. Use `SPRINT10` when testing live voucher creation as part of the integrated demo.
 - `EXPIRED10` provides the failure case. Two older confirmed orders have completed and failed delivery records for reports.
 
-The [class-to-table mapping](docs/database-mapping.md) explains the shared data contract. The editable Mermaid sources are [subsystem classes](docs/subsystem-classes.mmd) and [packages](docs/subsystem-packages.mmd). They show the shared structure and planned use case components. Add your student IDs and update the diagrams against the implementation before exporting them for the report.
+## Design evidence
+
+- [Sketches](docs/design/sketches)
+- [Wireframes](docs/design/wireframes)
+- [Prototype screenshots](docs/design/prototypes), organized by use case
+- [Editable diagrams and exports](docs/diagrams), organized by use case with shared diagrams in [overall](docs/diagrams/overall)
+
+Thiha Aung (523K0073) maintains the [UC1 guide](docs/design/UC1.md) and [UC4 guide](docs/design/UC4.md). Thin Lei Sandi (523K0075) maintains the [UC2 guide](docs/uc2/README.md) and [UC3 guide](docs/uc3/README.md). The UC2 and UC3 design assets are linked from their guides during the move to the shared layout.
+
+The [class-to-table mapping](docs/database-mapping.md) describes the shared SQLite schema.

@@ -18,17 +18,17 @@ With fresh sample data and the default range, expect two confirmed Bến Thành 
 
 ## Design and prototype evidence
 
-- [Original sketch and wireframe](wireframes/sketch-wireframe.png)
+- [Sketch](sketches/UC4_Sketch.png) · [Wireframe](wireframes/UC4_wireframe.png)
 - [Open the UC4 desktop prototype in Figma](https://www.figma.com/design/iD7ki5jjLIyrZrvBg7Fbe0/SaigonBite-%E2%80%94-UC1---UC4?node-id=47-56)
-- [Reporting query sequence](diagrams/sequence.mmd)
+- [Reporting query sequence](../diagrams/UC4%20-%20Produce%20Management%20Reports/UC4_Modified_Sequence_Diagram/UC4_Modified_Sequence_Diagram.drawio)
 
 ### Figma prototype screenshots
 
 These screenshots come from the Figma frames and show the prototype’s sample report figures.
 
-- [Reports Dashboard](prototype/01-reports-dashboard.png)
-- [Report Criteria](prototype/02-report-criteria.png)
-- [Sales Report Preview](prototype/03-sales-report-preview.png)
-- [Invalid Criteria](prototype/04-invalid-criteria.png)
-- [No Matching Records](prototype/05-no-matching-records.png)
-- [Report Generation Error](prototype/06-report-generation-error.png)
+- [Reports Dashboard](prototypes/UC4/01-reports-dashboard.png)
+- [Report Criteria](prototypes/UC4/02-report-criteria.png)
+- [Sales Report Preview](prototypes/UC4/03-sales-report-preview.png)
+- [Invalid Criteria](prototypes/UC4/04-invalid-criteria.png)
+- [No Matching Records](prototypes/UC4/05-no-matching-records.png)
+- [Report Generation Error](prototypes/UC4/06-report-generation-error.png)
