@@ -2,10 +2,16 @@
   "name": "saigonbite",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22.13.0" },
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
     "init": "node src/init.mjs",
     "start": "node src/server.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "test:browser": "node --test scripts/check-order-reference.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
   }
 }

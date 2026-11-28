@@ -1,6 +1,6 @@
 # UC4 management reports
 
-Run `npm start` with `SAIGONBITE_MANAGER_PASSWORD` set to a local demo password. Open `http://127.0.0.1:4173/reports` and sign in as the seeded user `manager` with that password. The reports route checks the authenticated username's database role. This uses HTTP Basic authentication on the loopback prototype.
+Follow the [manager sign-in setup](../../README.md#manager-sign-in-for-uc4) to set a local demo password before starting the server. Open `http://127.0.0.1:4173/reports` and sign in as the seeded user `manager` with that password. The reports route checks the authenticated username's database role. This uses HTTP Basic authentication on the loopback prototype.
 
 Select a report from the dashboard to open its criteria. The initial range is the last seven calendar days, including today. Filters include kitchen hub and virtual brand. The optional comparison uses the immediately preceding range of the same length. Recent reports reflect previews generated during the current server session. Both dates are inclusive in Vietnam time (`Asia/Ho_Chi_Minh`, UTC+07:00). The server translates the range to a UTC lower bound and exclusive upper bound before querying SQLite.
 
