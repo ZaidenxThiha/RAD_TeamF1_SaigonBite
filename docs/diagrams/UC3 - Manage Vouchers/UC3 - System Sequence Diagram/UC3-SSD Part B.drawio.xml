@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ktGXeuqKauPxWOYe3788">
+    <mxGraphModel dx="1876" dy="3522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2339" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=12;fontStyle=1;" value=":Administrator" vertex="1">
+          <mxGeometry height="60" width="30" x="185" as="geometry" />
+        </mxCell>
+        <mxCell id="3" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;strokeColor=#666666;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="85" as="sourcePoint" />
+            <mxPoint x="200" y="1309" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value=":OFDH System" vertex="1">
+          <mxGeometry height="42" width="144" x="558" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="5" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;strokeColor=#666666;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="57" as="sourcePoint" />
+            <mxPoint x="630" y="1309" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;" value="UC3 – Manage Vouchers – System Sequence Diagram, Part B: Update and Archive&#xa;Actor: Administrator | Author: 523K0075 (Thin Lei Sandi)" vertex="1">
+          <mxGeometry height="50" width="1100" x="60" y="-70" as="geometry" />
+        </mxCell>
+        <mxCell id="7" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="125" as="sourcePoint" />
+            <mxPoint x="630" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="4. selectUpdateVoucher(voucherId)" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[voucher not found]" vertex="1">
+          <mxGeometry height="20" width="520" x="192" y="149" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="191" as="sourcePoint" />
+            <mxPoint x="200" y="191" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="voucherNotFound()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="12" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;dashPattern=8 4;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="221" as="sourcePoint" />
+            <mxPoint x="710" y="221" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[voucher is Archived]" vertex="1">
+          <mxGeometry height="20" width="520" x="148" y="223" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="265" as="sourcePoint" />
+            <mxPoint x="200" y="265" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="voucherArchivedNotEditable()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;dashPattern=8 4;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="295" as="sourcePoint" />
+            <mxPoint x="710" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[voucher is editable]" vertex="1">
+          <mxGeometry height="20" width="520" x="148" y="297" as="geometry" />
+        </mxCell>
+        <mxCell id="18" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="339" as="sourcePoint" />
+            <mxPoint x="200" y="339" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="voucherForm(currentDetails)" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="316" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;width=45;height=22;fontSize=11;fontStyle=1;fillColor=none;" value="alt" vertex="1">
+          <mxGeometry height="220" width="570" x="140" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;fontStyle=2;fontColor=#555555;" value="Only the &#39;editable&#39; branch continues." vertex="1">
+          <mxGeometry height="22" width="570" x="140" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="415" as="sourcePoint" />
+            <mxPoint x="630" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="submitVoucherUpdate(voucherId, voucherData)" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="392" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[updated data invalid]" vertex="1">
+          <mxGeometry height="20" width="520" x="192" y="439" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="481" as="sourcePoint" />
+            <mxPoint x="200" y="481" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="validationErrors(errorList)  – administrator corrects and resubmits" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="458" as="geometry" />
+        </mxCell>
+        <mxCell id="27" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;dashPattern=8 4;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="511" as="sourcePoint" />
+            <mxPoint x="710" y="511" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="28" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[data valid and saved]" vertex="1">
+          <mxGeometry height="20" width="520" x="148" y="513" as="geometry" />
+        </mxCell>
+        <mxCell id="29" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="555" as="sourcePoint" />
+            <mxPoint x="200" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="voucherUpdated(voucherDetails)" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="532" as="geometry" />
+        </mxCell>
+        <mxCell id="31" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;dashPattern=8 4;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="585" as="sourcePoint" />
+            <mxPoint x="710" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="32" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[data valid but save fails]" vertex="1">
+          <mxGeometry height="20" width="520" x="148" y="587" as="geometry" />
+        </mxCell>
+        <mxCell id="33" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="629" as="sourcePoint" />
+            <mxPoint x="200" y="629" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="34" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="saveError()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="606" as="geometry" />
+        </mxCell>
+        <mxCell id="35" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;width=45;height=22;fontSize=11;fontStyle=1;fillColor=none;" value="alt" vertex="1">
+          <mxGeometry height="220" width="570" x="140" y="437" as="geometry" />
+        </mxCell>
+        <mxCell id="36" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="671" as="sourcePoint" />
+            <mxPoint x="630" y="671" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="5. selectArchiveVoucher(voucherId)" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="648" as="geometry" />
+        </mxCell>
+        <mxCell id="38" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[voucher not found]" vertex="1">
+          <mxGeometry height="20" width="520" x="192" y="695" as="geometry" />
+        </mxCell>
+        <mxCell id="39" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="737" as="sourcePoint" />
+            <mxPoint x="200" y="737" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="40" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="voucherNotFound()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="714" as="geometry" />
+        </mxCell>
+        <mxCell id="41" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;dashPattern=8 4;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="767" as="sourcePoint" />
+            <mxPoint x="710" y="767" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="42" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[voucher is already Archived]" vertex="1">
+          <mxGeometry height="20" width="520" x="148" y="769" as="geometry" />
+        </mxCell>
+        <mxCell id="43" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="811" as="sourcePoint" />
+            <mxPoint x="200" y="811" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="44" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="alreadyArchived()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="788" as="geometry" />
+        </mxCell>
+        <mxCell id="45" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;dashPattern=8 4;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="841" as="sourcePoint" />
+            <mxPoint x="710" y="841" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[voucher can be archived]" vertex="1">
+          <mxGeometry height="20" width="520" x="148" y="843" as="geometry" />
+        </mxCell>
+        <mxCell id="47" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="885" as="sourcePoint" />
+            <mxPoint x="200" y="885" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="voucherDetails and archiveConfirmationPrompt()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="862" as="geometry" />
+        </mxCell>
+        <mxCell id="49" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;width=45;height=22;fontSize=11;fontStyle=1;fillColor=none;" value="alt" vertex="1">
+          <mxGeometry height="220" width="570" x="140" y="693" as="geometry" />
+        </mxCell>
+        <mxCell id="50" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;fontStyle=2;fontColor=#555555;" value="Only the &#39;can be archived&#39; branch continues." vertex="1">
+          <mxGeometry height="22" width="570" x="140" y="921" as="geometry" />
+        </mxCell>
+        <mxCell id="51" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[administrator confirms and the change is saved]" vertex="1">
+          <mxGeometry height="20" width="520" x="192" y="949" as="geometry" />
+        </mxCell>
+        <mxCell id="52" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="991" as="sourcePoint" />
+            <mxPoint x="630" y="991" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="53" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="confirmArchive(voucherId)" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="968" as="geometry" />
+        </mxCell>
+        <mxCell id="54" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="1027" as="sourcePoint" />
+            <mxPoint x="200" y="1027" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="55" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="voucherArchived(status = Archived)" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="1004" as="geometry" />
+        </mxCell>
+        <mxCell id="56" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;dashPattern=8 4;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1057" as="sourcePoint" />
+            <mxPoint x="710" y="1057" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="57" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[administrator confirms but save fails]" vertex="1">
+          <mxGeometry height="20" width="520" x="148" y="1059" as="geometry" />
+        </mxCell>
+        <mxCell id="58" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="1101" as="sourcePoint" />
+            <mxPoint x="630" y="1101" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="59" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="confirmArchive(voucherId)" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="1078" as="geometry" />
+        </mxCell>
+        <mxCell id="60" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="1137" as="sourcePoint" />
+            <mxPoint x="200" y="1137" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="61" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="saveError()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="1114" as="geometry" />
+        </mxCell>
+        <mxCell id="62" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;dashPattern=8 4;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1167" as="sourcePoint" />
+            <mxPoint x="710" y="1167" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="63" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=left;fontStyle=2;" value="[administrator cancels]" vertex="1">
+          <mxGeometry height="20" width="520" x="148" y="1169" as="geometry" />
+        </mxCell>
+        <mxCell id="64" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="1211" as="sourcePoint" />
+            <mxPoint x="630" y="1211" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="cancelArchive()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="1188" as="geometry" />
+        </mxCell>
+        <mxCell id="66" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="1247" as="sourcePoint" />
+            <mxPoint x="200" y="1247" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67" parent="1" style="text;html=1;verticalAlign=middle;fontSize=11;align=center;verticalAlign=bottom;whiteSpace=wrap;" value="archiveCancelled()" vertex="1">
+          <mxGeometry height="22" width="420" x="205" y="1224" as="geometry" />
+        </mxCell>
+        <mxCell id="68" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;width=45;height=22;fontSize=11;fontStyle=1;fillColor=none;" value="alt" vertex="1">
+          <mxGeometry height="328" width="570" x="140" y="947" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
