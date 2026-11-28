@@ -5,9 +5,14 @@ SaigonBite uses a shared SQLite database for customer checkout, kitchen order de
 
 ## Run locally
 
+For reproducible Part 3 setup, sample data, the integrated demonstration and release
+instructions, see the [deployment guide](docs/deployment.md) and
+[release verification status](docs/release-verification.md).
+
 Install Node.js 22.13 or newer. Run these commands from this directory.
 
 ```sh
+npm ci
 npm run init
 npm test
 npm start
