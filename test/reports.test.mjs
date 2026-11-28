@@ -51,11 +51,21 @@ test('management reports enforce manager access and use Vietnam date boundaries'
   assert.equal((await fetch(url, { headers: auth('customer') })).status, 403);
   const headers = auth('manager');
 
-  const sales = await fetch(url, { headers });
+  const home = base + '/reports';
+  const dashboard = await fetch(home, { headers });
+  assert.equal(dashboard.status, 200);
+  assert.match(await dashboard.text(), /Reports &amp; analytics/);
+  const criteria = await fetch(home + '?view=criteria', { headers });
+  assert.equal(criteria.status, 200);
+  assert.match(await criteria.text(), /Compare with previous period/);
+
+  const sales = await fetch(url + '&brand=1&compare=1', { headers });
   assert.equal(sales.status, 200);
   const salesPage = await sales.text();
   assert.match(salesPage, /Total sales<\/dt><dd>65\.000/);
   assert.match(salesPage, /Confirmed orders<\/dt><dd>1/);
+  assert.match(salesPage, /Sales trend/);
+  assert.match(salesPage, /Previous:/);
   assert.match(salesPage, />#2<\/th>/);
   assert.doesNotMatch(salesPage, />#[13]<\/th>/);
 
@@ -67,7 +77,12 @@ test('management reports enforce manager access and use Vietnam date boundaries'
   const empty = await (await fetch(url + '&hub=2', { headers })).text();
   assert.match(empty, /No records match/);
 
-  for (const query of ['from=2026-11-29&to=2026-11-28', 'from=2026-02-30', 'hub=99', 'type=invalid']) {
+  assert.match(await (await fetch(home, { headers })).text(), /View report/);
+  const example = await fetch(url + '&example=error', { headers });
+  assert.equal(example.status, 200);
+  assert.match(await example.text(), /couldn't generate this report/);
+
+  for (const query of ['from=2026-11-29&to=2026-11-28', 'from=2026-02-30', 'hub=99', 'type=invalid', 'brand=99']) {
     const invalid = await fetch(base + '/reports?' + query, { headers });
     assert.equal(invalid.status, 400);
     assert.match(await invalid.text(), /role="alert"/);

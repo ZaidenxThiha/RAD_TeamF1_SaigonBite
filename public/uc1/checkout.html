@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaigonBite | Checkout</title>
+  <link rel="stylesheet" href="/checkout.css">
+  <script type="module" src="/checkout.js"></script>
+</head>
+<body>
+  <main class="checkout" aria-label="SaigonBite checkout">
+    <header class="checkout-header">
+      <div class="wordmark">
+        <img src="/prototype/mark.svg" alt="" width="36" height="36">
+        <div><strong>SaigonBite</strong><small>Fresh Vietnamese favourites</small></div>
+      </div>
+      <span class="role">Customer</span>
+      <details class="menu">
+        <summary><img src="/prototype/menu.svg" alt="">Menu</summary>
+        <nav aria-label="Checkout actions">
+          <button type="button" data-action="back">Previous step</button>
+          <button type="button" data-action="cancel">Cancel checkout</button>
+        </nav>
+      </details>
+    </header>
+    <div id="checkout-view" aria-busy="true"><p role="status">Loading menu…</p></div>
+    <dialog id="checkout-feedback" aria-labelledby="feedback-title"></dialog>
+    <noscript>Enable JavaScript to use the checkout.</noscript>
+  </main>
+</body>
+</html>

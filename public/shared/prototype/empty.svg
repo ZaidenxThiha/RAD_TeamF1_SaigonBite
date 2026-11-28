@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Empty State Illustration">
+<path id="Vector" d="M59 7H29C16.8497 7 7 16.8497 7 29V59C7 71.1503 16.8497 81 29 81H59C71.1503 81 81 71.1503 81 59V29C81 16.8497 71.1503 7 59 7Z" fill="#FDE9E3"/>
+<path id="Vector_2" d="M31 24H57C60.3137 24 63 26.6863 63 30V60C63 63.3137 60.3137 66 57 66H31C27.6863 66 25 63.3137 25 60V30C25 26.6863 27.6863 24 31 24Z" stroke-width="2" stroke="#5C4B46"/>
+<path id="Vector_3" d="M32 36H56M32 44H47M32 53H41" stroke-width="2.5" stroke-linecap="round" stroke="#B2321E"/>
+<path id="Vector_4" d="M59 69C64.5228 69 69 64.5228 69 59C69 53.4772 64.5228 49 59 49C53.4772 49 49 53.4772 49 59C49 64.5228 53.4772 69 59 69Z" fill="white" stroke-width="2" stroke="#B2321E"/>
+<path id="Vector_5" d="M59 54V60M59 64H59.01" stroke-width="2" stroke="#B2321E"/>
+</g>
+</svg>
