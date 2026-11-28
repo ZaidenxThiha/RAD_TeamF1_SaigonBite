@@ -13,6 +13,16 @@ With fresh sample data and the default range, expect two confirmed Bến Thành 
 ## Design and prototype evidence
 
 - [Original sketch and wireframe](sketch-wireframe.png)
-- [Sales screen mockup captured from the implemented layout](sales-mockup.png)
-- [Running prototype with the Bến Thành delivery filter applied](prototype.png)
+- [Open the UC4 desktop prototype in Figma](https://www.figma.com/design/iD7ki5jjLIyrZrvBg7Fbe0/SaigonBite-%E2%80%94-UC1---UC4?node-id=47-56)
 - [Reporting query sequence](report-sequence.mmd)
+
+### Figma prototype screenshots
+
+These screenshots come from the Figma frames and show the prototype’s sample report figures.
+
+- [Reports Dashboard](prototype.png)
+- [Report Criteria](prototype/02-report-criteria.png)
+- [Sales Report Preview](sales-mockup.png)
+- [Invalid Criteria](prototype/04-invalid-criteria.png)
+- [No Matching Records](prototype/05-no-matching-records.png)
+- [Report Generation Error](prototype/06-report-generation-error.png)
