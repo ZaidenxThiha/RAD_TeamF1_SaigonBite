@@ -3,12 +3,19 @@ import { readFileSync } from 'node:fs';
 import { openDatabase } from './database.mjs';
 import { handleCheckout } from './checkout-http.mjs';
 import { createKitchenHandler } from './uc2/http.mjs';
+import { createVoucherHandler } from './uc3/http.mjs';
 
 const db = openDatabase();
+const handleVouchers = createVoucherHandler(db);
 const handleKitchen = createKitchenHandler(db, {
   notify: () => process.env.SAIGONBITE_NOTIFICATION_FAIL === '1' ? 'failed' : 'sent',
 });
 const assets = new Map([
+  ['/vouchers', ['uc3/vouchers.html', 'text/html; charset=utf-8']],
+  ['/vouchers/', ['uc3/vouchers.html', 'text/html; charset=utf-8']],
+  ['/uc3/vouchers.css', ['uc3/vouchers.css', 'text/css; charset=utf-8']],
+  ['/uc3/vouchers.js', ['uc3/vouchers.js', 'text/javascript; charset=utf-8']],
+  ['/uc3/number-input.js', ['uc3/number-input.js', 'text/javascript; charset=utf-8']],
   ['/', ['checkout.html', 'text/html; charset=utf-8']],
   ['/checkout.css', ['checkout.css', 'text/css; charset=utf-8']],
   ['/checkout.js', ['checkout.js', 'text/javascript; charset=utf-8']],
@@ -42,6 +49,10 @@ const server = createServer((request, response) => {
     return;
   }
 
+  if (request.url === '/api/vouchers' || request.url.startsWith('/api/vouchers/') || request.url.startsWith('/api/vouchers?')) {
+    void handleVouchers(request, response);
+    return;
+  }
   if (request.url.startsWith('/api/kitchen/')) {
     void handleKitchen(request, response);
     return;

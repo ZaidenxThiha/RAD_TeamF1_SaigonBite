@@ -1,6 +1,9 @@
 /* Shared SaigonBite workspace shell. Author: 523K0075. */
 .workspace>.header{position:sticky;top:0;z-index:20;flex-shrink:0}
 .sidebar[hidden]{display:none}
+.header .sidebar-toggle{margin-inline-start:-24px;margin-inline-end:12px}
+@media(max-width:1050px){.header .sidebar-toggle{margin-inline-start:-12px;margin-inline-end:0}}
+@media(max-width:680px){.header .sidebar-toggle{margin-inline-start:-8px;margin-inline-end:0}}
 .header-start{display:flex;align-items:center;gap:16px;min-width:0}.header-start>div{min-width:0;overflow-wrap:anywhere}
 .header .sidebar-toggle{display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;min-height:40px;padding:9px;border:1px solid #d9c9c2;border-radius:7px;background:white;color:#6b5b55;cursor:pointer}.header .sidebar-toggle:hover{background:#fbede8}.header .sidebar-toggle:focus-visible{outline:3px solid #a34a28;outline-offset:3px}.sidebar-toggle svg{width:20px;height:20px}
 .sidebar{width:240px;flex-shrink:0;background:#2b1b17;color:#fff;min-height:100vh;padding:30px 24px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}

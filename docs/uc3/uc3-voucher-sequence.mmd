@@ -1,0 +1,56 @@
+%% UC3 data-access sequence. Author: Thin Lei Sandi (523K0075).
+sequenceDiagram
+    actor Admin as Administrator
+    participant View as Voucher Workspace
+    participant HTTP as Voucher HTTP Controller
+    participant Service as Voucher Service
+    participant Repo as Voucher Repository
+    participant DB as SQLite
+    Admin->>View: Open voucher management or select voucher
+    View->>HTTP: GET vouchers or voucher details with actor context
+    HTTP->>Service: list or details with username
+    Service->>Repo: Resolve administrator permission
+    Repo->>DB: SELECT user with admin role
+    alt Access denied
+        Service-->>HTTP: Access denied
+        HTTP-->>View: 403 without voucher data
+    else Administrator authorized
+        Service->>Repo: Read vouchers and optional change history
+        Repo->>DB: SELECT vouchers and voucher audit
+        Service-->>HTTP: Fields and current allowed actions
+        HTTP-->>View: List or details
+    end
+    Admin->>View: Save create or edit, or confirm archive
+    View->>HTTP: POST create, PUT edit, or POST confirmed archive
+    HTTP->>Service: save or archive with actor and input
+    Service->>Repo: BEGIN IMMEDIATE
+    Repo->>DB: Begin write transaction
+    Service->>Repo: Recheck administrator and current voucher
+    Repo->>DB: SELECT current role and voucher state
+    Service->>Repo: Check code uniqueness and eligible hub
+    Repo->>DB: SELECT matching code and hubs
+    alt Permission, input or lifecycle check fails
+        Service->>Repo: ROLLBACK
+        Repo->>DB: Roll back transaction
+        Service-->>HTTP: Error and applicable field messages
+        HTTP-->>View: 403, 404, 409 or 422 without changes
+    else Valid change
+        Service->>Repo: Insert voucher, update fields or set archived timestamp
+        Repo->>DB: INSERT or UPDATE vouchers
+        Service->>Repo: Audit administrator, action and timestamp
+        Repo->>DB: INSERT voucher audit
+        alt Storage or audit write fails
+            Service->>Repo: ROLLBACK
+            Repo->>DB: Restore voucher and audit together
+            HTTP-->>View: 500 with retry message
+        else Writes succeed
+            Service->>Repo: COMMIT
+            Repo->>DB: Commit voucher and audit
+            HTTP-->>View: Saved details and current status
+            View-->>Admin: Display result
+        end
+    end
+    participant Checkout as UC1 Checkout
+    Checkout->>DB: Read current voucher for quote and submission
+    DB-->>Checkout: Discount, dates, minimum, hub and archive flag
+    Checkout->>Checkout: Enforce current eligibility and calculate discount
