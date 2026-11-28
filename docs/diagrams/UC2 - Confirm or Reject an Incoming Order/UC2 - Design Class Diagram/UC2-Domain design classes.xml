@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="nBMMYNHrALfDjoLyzrJ6">
+    <mxGraphModel dx="1231" dy="1946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;" value="UC2 Confirm or Reject an Incoming Order – Design Class Diagram (initial) (i) Domain design classes&#xa;Author: 523K0075 (Thin Lei Sandi)" vertex="1">
+          <mxGeometry height="50" width="1200" x="50" y="-50" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=28;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;collapsible=0;" value="KitchenStaff" vertex="1">
+          <mxGeometry height="142" width="260" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="- staffId&lt;br&gt;- staffName&lt;br&gt;- assignedHubId" vertex="1">
+          <mxGeometry height="62" width="260" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="3" style="line;strokeWidth=1;fillColor=none;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="+ reviewOrder()&lt;br&gt;+ makeDecision()" vertex="1">
+          <mxGeometry height="44" width="260" y="98" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=28;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;collapsible=0;" value="Order" vertex="1">
+          <mxGeometry height="142" width="260" x="390" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="7" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="- orderId&lt;br&gt;- status&lt;br&gt;- submittedAt" vertex="1">
+          <mxGeometry height="62" width="260" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="7" style="line;strokeWidth=1;fillColor=none;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="7" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="+ confirm()&lt;br&gt;+ reject()" vertex="1">
+          <mxGeometry height="44" width="260" y="98" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=28;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;collapsible=0;" value="OrderDecision" vertex="1">
+          <mxGeometry height="160" width="260" x="740" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="11" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="- decisionId&lt;br&gt;- decisionType&lt;br&gt;- rejectionReason&lt;br&gt;- decisionTime" vertex="1">
+          <mxGeometry height="80" width="260" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="11" style="line;strokeWidth=1;fillColor=none;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="11" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="+ recordDecision()&lt;br&gt;+ validateReason()" vertex="1">
+          <mxGeometry height="44" width="260" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="11" value="has">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" connectable="0" parent="15" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" connectable="0" parent="15" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;labelBackgroundColor=none;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.88" as="geometry">
+            <mxPoint x="-4" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" edge="1" parent="1" source="3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="11" value="makes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="232" />
+              <mxPoint x="870" y="232" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" connectable="0" parent="18" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" connectable="0" parent="18" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;labelBackgroundColor=none;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.88" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
