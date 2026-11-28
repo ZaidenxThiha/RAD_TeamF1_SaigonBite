@@ -1,5 +1,12 @@
 /* UC2 layout, based on the team Figma shell. Author: 523K0075. */
 .success-message,.subtitle.success-message{color:#216b49;font-weight:600}
+.result dl{align-items:baseline;grid-template-columns:max-content minmax(0,1fr)}
+.result dl dt,.result dl dd{margin:0;line-height:1.6;font-size:14px}
+.result dl dt{color:var(--muted);font-weight:500}
+.result dl dd{color:#2b1b17;font-weight:600}
+.rejection-summary{margin:24px 0;padding:20px 24px;border:1px solid #edc6bb;border-left:4px solid #b8321c;border-radius:8px;background:#fff3ee}
+.rejection-summary h3{margin:0 0 10px;color:#a32c20;font-size:14px;font-weight:700}
+.rejection-summary .reason{margin:0;color:#2b1b17;font-size:18px;font-weight:600;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}
 .card.queue-card{padding:8px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .queue-scroll{max-height:clamp(260px,60dvh,600px);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:#c8b2a8 #fff8f5;border-radius:7px}
 .queue-scroll table{border-collapse:separate;border-spacing:0;min-width:700px}

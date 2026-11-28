@@ -231,11 +231,13 @@ function renderResult(result) {
   const details = el('dl');
   detail(details, 'Staff ID', String(result.staffId));
   detail(details, 'Decision time', timestamp(result.decidedAt));
-  if (result.reason) {
-    detail(details, 'Reason', result.reason);
-    details.lastChild.classList.add('reason');
+  const reason = result.reason ? el('section', undefined, 'rejection-summary') : null;
+  if (reason) {
+    reason.setAttribute('aria-label', 'Rejection reason');
+    reason.append(el('h3', 'Rejection reason'), el('p', result.reason, 'reason'));
   }
   const content = card(el('h2', `${orderName(result.orderId)} · ${result.status}`, rejected ? 'rejected-text' : 'confirmed-text'), details,
+    ...(reason ? [reason] : []),
     el('p', result.notificationStatus === 'sent' ? 'Customer notified.' : 'Customer notification failed. Your decision is saved.', result.notificationStatus === 'sent' ? 'success-message' : 'notice'),
     button('Back to incoming orders', loadQueue, 'primary'));
   content.classList.add('result');
