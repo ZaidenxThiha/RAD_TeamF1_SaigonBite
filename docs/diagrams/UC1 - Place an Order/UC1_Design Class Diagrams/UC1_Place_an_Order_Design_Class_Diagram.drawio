@@ -1,0 +1,998 @@
+<mxfile host="app.diagrams.net" agent="Claude" pages="5">
+  <diagram id="v1" name="View 1 - Domain Design Classes">
+    <mxGraphModel dx="1649" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v1_title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#17324d;" value="UC1 – Place an Order: Domain Design Classes" vertex="1">
+          <mxGeometry height="34" width="1100" x="40" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontColor=#17324d;" value="Entity classes with attributes, methods and multiplicities (View 1 of 5)" vertex="1">
+          <mxGeometry height="22" width="1100" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Hub" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Hub&lt;/b&gt;" vertex="1">
+          <mxGeometry height="173" width="230" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Hub_a" parent="v1_Hub" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-hubId: String&lt;br&gt;-hubName: String&lt;br&gt;-address: String&lt;br&gt;-capacity: int&lt;br&gt;-currentWorkload: int" vertex="1">
+          <mxGeometry height="83" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Hub_s" parent="v1_Hub" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="127" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Hub_m" parent="v1_Hub" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+checkCapacity(): boolean&lt;br&gt;+checkAvailability(): boolean" vertex="1">
+          <mxGeometry height="38" width="230" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_VirtualBrand" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;VirtualBrand&lt;/b&gt;" vertex="1">
+          <mxGeometry height="128" width="230" x="410" y="122.5" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_VirtualBrand_a" parent="v1_VirtualBrand" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-brandId: String&lt;br&gt;-brandName: String&lt;br&gt;-description: String" vertex="1">
+          <mxGeometry height="53" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_VirtualBrand_s" parent="v1_VirtualBrand" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="97" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_VirtualBrand_m" parent="v1_VirtualBrand" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+getMenuItems(): List&amp;lt;MenuItem&amp;gt;" vertex="1">
+          <mxGeometry height="23" width="230" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_MenuItem" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;MenuItem&lt;/b&gt;" vertex="1">
+          <mxGeometry height="143" width="230" x="780" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_MenuItem_a" parent="v1_MenuItem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-itemId: String&lt;br&gt;-itemName: String&lt;br&gt;-price: Decimal&lt;br&gt;-availabilityStatus: boolean" vertex="1">
+          <mxGeometry height="68" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_MenuItem_s" parent="v1_MenuItem" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_MenuItem_m" parent="v1_MenuItem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+checkAvailability(): boolean" vertex="1">
+          <mxGeometry height="23" width="230" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Customer" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Customer&lt;/b&gt;" vertex="1">
+          <mxGeometry height="143" width="230" x="40" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Customer_a" parent="v1_Customer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-customerId: String&lt;br&gt;-name: String&lt;br&gt;-email: String&lt;br&gt;-customerType: String" vertex="1">
+          <mxGeometry height="68" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Customer_s" parent="v1_Customer" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Customer_m" parent="v1_Customer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+updateProfile(): void" vertex="1">
+          <mxGeometry height="23" width="230" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Order" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Order&lt;/b&gt;" vertex="1">
+          <mxGeometry height="233" width="264" x="400" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Order_a" parent="v1_Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-orderId: String&lt;br&gt;-orderDate: DateTime&lt;br&gt;-status: OrderStatus&lt;br&gt;-subtotal: Decimal&lt;br&gt;-deliveryFee: Decimal&lt;br&gt;-discount: Decimal&lt;br&gt;-totalAmount: Decimal&lt;br&gt;-paymentMethod: PaymentMethod" vertex="1">
+          <mxGeometry height="128" width="264" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Order_s" parent="v1_Order" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="264" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Order_m" parent="v1_Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+calculateTotal(): Decimal&lt;br&gt;+submit(): void&lt;br&gt;+updateStatus(status: OrderStatus): void" vertex="1">
+          <mxGeometry height="53" width="264" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_OrderItem" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OrderItem&lt;/b&gt;" vertex="1">
+          <mxGeometry height="143" width="230" x="781" y="351" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_OrderItem_a" parent="v1_OrderItem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-orderItemId: String&lt;br&gt;-quantity: int&lt;br&gt;-unitPrice: Decimal&lt;br&gt;-subtotal: Decimal" vertex="1">
+          <mxGeometry height="68" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_OrderItem_s" parent="v1_OrderItem" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_OrderItem_m" parent="v1_OrderItem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+calculateSubtotal(): Decimal" vertex="1">
+          <mxGeometry height="23" width="230" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Voucher" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Voucher&lt;/b&gt;" vertex="1">
+          <mxGeometry height="203" width="230" x="120" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Voucher_a" parent="v1_Voucher" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-voucherId: String&lt;br&gt;-voucherCode: String&lt;br&gt;-discountType: String&lt;br&gt;-discountValue: Decimal&lt;br&gt;-validFrom: DateTime&lt;br&gt;-validUntil: DateTime&lt;br&gt;-status: String" vertex="1">
+          <mxGeometry height="113" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Voucher_s" parent="v1_Voucher" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="157" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Voucher_m" parent="v1_Voucher" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+validate(): boolean&lt;br&gt;+calculateDiscount(): Decimal" vertex="1">
+          <mxGeometry height="38" width="230" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Payment" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Payment&lt;/b&gt;" vertex="1">
+          <mxGeometry height="143" width="318" x="530" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Payment_a" parent="v1_Payment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-paymentId: String&lt;br&gt;-paymentMethod: PaymentMethod&lt;br&gt;-paymentStatus: PaymentStatus&lt;br&gt;-transactionReference: String" vertex="1">
+          <mxGeometry height="68" width="318" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Payment_s" parent="v1_Payment" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="318" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_Payment_m" parent="v1_Payment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+recordPaymentResult(status: PaymentStatus): void" vertex="1">
+          <mxGeometry height="23" width="318" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_e1" edge="1" parent="1" source="v1_Customer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v1_Order" value="Places">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_m2" connectable="0" parent="v1_e1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m3" connectable="0" parent="v1_e1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_e4" edge="1" parent="1" source="v1_Hub" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v1_Order" value="Receives">
+          <mxGeometry relative="1" x="-0.0337" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="220" />
+              <mxPoint x="380" y="340" />
+              <mxPoint x="552" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m5" connectable="0" parent="v1_e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8517" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m6" connectable="0" parent="v1_e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.8427" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_e7" edge="1" parent="1" source="v1_Hub" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v1_VirtualBrand" value="Hosts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_m8" connectable="0" parent="v1_e7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m9" connectable="0" parent="v1_e7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_e10" edge="1" parent="1" source="v1_VirtualBrand" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v1_MenuItem" value="Offers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_m11" connectable="0" parent="v1_e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m12" connectable="0" parent="v1_e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_e13" edge="1" parent="1" source="v1_Order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=diamondThin;startFill=1;startSize=14;" target="v1_OrderItem" value="Contains">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_m14" connectable="0" parent="v1_e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m15" connectable="0" parent="v1_e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_e16" edge="1" parent="1" source="v1_MenuItem" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v1_OrderItem" value="References">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1_m17" connectable="0" parent="v1_e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m18" connectable="0" parent="v1_e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_e19" edge="1" parent="1" source="v1_Order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v1_Voucher" value="Applies">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="621.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m20" connectable="0" parent="v1_e19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m21" connectable="0" parent="v1_e19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_e22" edge="1" parent="1" source="v1_Order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v1_Payment" value="Has">
+          <mxGeometry relative="1" x="-0.14" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="550" />
+              <mxPoint x="670" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m23" connectable="0" parent="v1_e22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.5374" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v1_m24" connectable="0" parent="v1_e22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.8133" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="v2" name="View 2 - Controller Classes">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v2_title" parent="1" value="UC1 – Place an Order: Controller Classes" style="text;html=1;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#17324d;" vertex="1">
+          <mxGeometry x="40" y="8" width="1100" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_sub" parent="1" value="&amp;lt;&amp;lt;control&amp;gt;&amp;gt; classes coordinating UI, domain and repositories (View 2 of 5)" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontColor=#17324d;" vertex="1">
+          <mxGeometry x="40" y="40" width="1100" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_PlaceOrderController" parent="1" value="&amp;lt;&amp;lt;control&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PlaceOrderController&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="40" y="100" width="264" height="173" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_PlaceOrderController_a" parent="v2_PlaceOrderController" value="-currentOrder: Order&lt;br&gt;-selectedHub: Hub" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="44" width="264" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_PlaceOrderController_s" parent="v2_PlaceOrderController" value="" style="line;strokeColor=#c9a227;strokeWidth=1;fillColor=none;rotatable=0;" vertex="1">
+          <mxGeometry y="82" width="264" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_PlaceOrderController_m" parent="v2_PlaceOrderController" value="+selectHub(hubId: String): void&lt;br&gt;+addItem(itemId: String, qty: int): void&lt;br&gt;+updateCart(): void&lt;br&gt;+validateEligibility(): boolean&lt;br&gt;+submitOrder(): Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="90" width="264" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_VoucherValidationController" parent="1" value="&amp;lt;&amp;lt;control&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;VoucherValidationController&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="364" y="100" width="379" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_VoucherValidationController_a" parent="v2_VoucherValidationController" value="-currentVoucher: Voucher" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="44" width="379" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_VoucherValidationController_s" parent="v2_VoucherValidationController" value="" style="line;strokeColor=#c9a227;strokeWidth=1;fillColor=none;rotatable=0;" vertex="1">
+          <mxGeometry y="67" width="379" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_VoucherValidationController_m" parent="v2_VoucherValidationController" value="+validateVoucher(code: String, order: Order): boolean&lt;br&gt;+calculateDiscount(voucher: Voucher, order: Order): Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="75" width="379" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_PaymentController" parent="1" value="&amp;lt;&amp;lt;control&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PaymentController&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="803" y="100" width="349" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_PaymentController_a" parent="v2_PaymentController" value="-currentPayment: Payment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="44" width="349" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_PaymentController_s" parent="v2_PaymentController" value="" style="line;strokeColor=#c9a227;strokeWidth=1;fillColor=none;rotatable=0;" vertex="1">
+          <mxGeometry y="67" width="349" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v2_PaymentController_m" parent="v2_PaymentController" value="+requestAuthorization(payment: Payment): PaymentStatus&lt;br&gt;+processPaymentResult(result: PaymentStatus): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="75" width="349" height="38" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="v3" name="View 3 - UI (View) Classes">
+    <mxGraphModel dx="534" dy="470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v3_title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#17324d;" value="UC1 – Place an Order: User Interface (View) Classes" vertex="1">
+          <mxGeometry height="34" width="1100" x="40" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontColor=#17324d;" value="&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt; classes for the customer ordering screens (View 3 of 5)" vertex="1">
+          <mxGeometry height="22" width="1100" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_PlaceOrderView" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PlaceOrderView&lt;/b&gt;" vertex="1">
+          <mxGeometry height="203" width="264" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_PlaceOrderView_a" parent="v3_PlaceOrderView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-selectedHubId: String&lt;br&gt;-selectedBrandId: String&lt;br&gt;-deliveryAddress: String&lt;br&gt;-cartItems: List&amp;lt;OrderItem&amp;gt;" vertex="1">
+          <mxGeometry height="68" width="264" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_PlaceOrderView_s" parent="v3_PlaceOrderView" style="line;strokeColor=#6a9f4f;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="264" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_PlaceOrderView_m" parent="v3_PlaceOrderView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+selectHub(hubId: String): void&lt;br&gt;+selectBrand(brandId: String): void&lt;br&gt;+addItem(itemId: String, qty: int): void&lt;br&gt;+enterAddress(address: String): void&lt;br&gt;+displayEligibilityResult(): void" vertex="1">
+          <mxGeometry height="83" width="264" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_OrderReviewView" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OrderReviewView&lt;/b&gt;" vertex="1">
+          <mxGeometry height="203" width="318" x="364" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_OrderReviewView_a" parent="v3_OrderReviewView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-subtotal: Decimal&lt;br&gt;-deliveryFee: Decimal&lt;br&gt;-incentiveDiscount: Decimal&lt;br&gt;-voucherDiscount: Decimal&lt;br&gt;-totalAmount: Decimal" vertex="1">
+          <mxGeometry height="83" width="318" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_OrderReviewView_s" parent="v3_OrderReviewView" style="line;strokeColor=#6a9f4f;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="318" y="127" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_OrderReviewView_m" parent="v3_OrderReviewView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+displayOrderSummary(): void&lt;br&gt;+selectPaymentMethod(method: PaymentMethod): void&lt;br&gt;+confirmCheckout(): void&lt;br&gt;+abandonCheckout(): void" vertex="1">
+          <mxGeometry height="68" width="318" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_PaymentResultView" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PaymentResultView&lt;/b&gt;" vertex="1">
+          <mxGeometry height="128" width="230" x="742" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_PaymentResultView_a" parent="v3_PaymentResultView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-paymentStatus: PaymentStatus&lt;br&gt;-errorMessage: String" vertex="1">
+          <mxGeometry height="38" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_PaymentResultView_s" parent="v3_PaymentResultView" style="line;strokeColor=#6a9f4f;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="v3_PaymentResultView_m" parent="v3_PaymentResultView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+displayPaymentResult(): void&lt;br&gt;+showRetryOptions(): void" vertex="1">
+          <mxGeometry height="38" width="230" y="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="v4" name="View 4 - Data Access Classes">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v4_title" parent="1" value="UC1 – Place an Order: Data Access Classes" style="text;html=1;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#17324d;" vertex="1">
+          <mxGeometry x="40" y="8" width="1100" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_sub" parent="1" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt; classes managing persistent UC1 data (View 4 of 5)" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontColor=#17324d;" vertex="1">
+          <mxGeometry x="40" y="40" width="1100" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_HubRepository" parent="1" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;HubRepository&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="40" y="100" width="294" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_HubRepository_a" parent="v4_HubRepository" value="-dbConnection: DatabaseConnection" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="44" width="294" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_HubRepository_s" parent="v4_HubRepository" value="" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" vertex="1">
+          <mxGeometry y="67" width="294" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_HubRepository_m" parent="v4_HubRepository" value="+findEligibleHubs(address: String): List&amp;lt;Hub&amp;gt;&lt;br&gt;+getHubById(hubId: String): Hub" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="75" width="294" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_MenuRepository" parent="1" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;MenuRepository&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="384" y="100" width="331" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_MenuRepository_a" parent="v4_MenuRepository" value="-dbConnection: DatabaseConnection" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="44" width="331" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_MenuRepository_s" parent="v4_MenuRepository" value="" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" vertex="1">
+          <mxGeometry y="67" width="331" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_MenuRepository_m" parent="v4_MenuRepository" value="+getBrandsByHub(hubId: String): List&amp;lt;VirtualBrand&amp;gt;&lt;br&gt;+getAvailableItems(brandId: String): List&amp;lt;MenuItem&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="75" width="331" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_VoucherRepository" parent="1" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;VoucherRepository&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="765" y="100" width="230" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_VoucherRepository_a" parent="v4_VoucherRepository" value="-dbConnection: DatabaseConnection" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="44" width="230" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_VoucherRepository_s" parent="v4_VoucherRepository" value="" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" vertex="1">
+          <mxGeometry y="67" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_VoucherRepository_m" parent="v4_VoucherRepository" value="+findByCode(code: String): Voucher" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="75" width="230" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_OrderRepository" parent="1" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OrderRepository&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="40" y="330" width="251" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_OrderRepository_a" parent="v4_OrderRepository" value="-dbConnection: DatabaseConnection" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="44" width="251" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_OrderRepository_s" parent="v4_OrderRepository" value="" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" vertex="1">
+          <mxGeometry y="67" width="251" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_OrderRepository_m" parent="v4_OrderRepository" value="+saveOrder(order: Order): void&lt;br&gt;+findOrderById(orderId: String): Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="75" width="251" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_PaymentRepository" parent="1" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PaymentRepository&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="341" y="330" width="434" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_PaymentRepository_a" parent="v4_PaymentRepository" value="-dbConnection: DatabaseConnection" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="44" width="434" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_PaymentRepository_s" parent="v4_PaymentRepository" value="" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" vertex="1">
+          <mxGeometry y="67" width="434" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v4_PaymentRepository_m" parent="v4_PaymentRepository" value="+savePayment(payment: Payment): void&lt;br&gt;+updatePaymentStatus(paymentId: String, status: PaymentStatus): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" vertex="1">
+          <mxGeometry y="75" width="434" height="38" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="v5" name="View 5 - All Design Layers">
+    <mxGraphModel dx="1338" dy="1178" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2300" pageHeight="1900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v5_title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#17324d;" value="UC1 – Place an Order: Design Class Diagram (All Layers)" vertex="1">
+          <mxGeometry height="34" width="1100" x="40" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontColor=#17324d;" value="User Interface, Controller, Domain and Data Access layers with dependencies, associations and multiplicities (View 5 of 5)" vertex="1">
+          <mxGeometry height="22" width="1100" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Lui" parent="1" style="rounded=1;arcSize=2;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=14;fontColor=#17324d;fillColor=#f5f8fa;strokeColor=#9fb4c3;dashed=1;strokeWidth=1.5;" value="User Interface (View) Layer" vertex="1">
+          <mxGeometry height="274" width="1240" x="30" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PlaceOrderView" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PlaceOrderView&lt;/b&gt;" vertex="1">
+          <mxGeometry height="203" width="264" x="60" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PlaceOrderView_a" parent="v5_PlaceOrderView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-selectedHubId: String&lt;br&gt;-selectedBrandId: String&lt;br&gt;-deliveryAddress: String&lt;br&gt;-cartItems: List&amp;lt;OrderItem&amp;gt;" vertex="1">
+          <mxGeometry height="68" width="264" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PlaceOrderView_s" parent="v5_PlaceOrderView" style="line;strokeColor=#6a9f4f;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="264" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PlaceOrderView_m" parent="v5_PlaceOrderView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+selectHub(hubId: String): void&lt;br&gt;+selectBrand(brandId: String): void&lt;br&gt;+addItem(itemId: String, qty: int): void&lt;br&gt;+enterAddress(address: String): void&lt;br&gt;+displayEligibilityResult(): void" vertex="1">
+          <mxGeometry height="83" width="264" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderReviewView" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OrderReviewView&lt;/b&gt;" vertex="1">
+          <mxGeometry height="203" width="318" x="384" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderReviewView_a" parent="v5_OrderReviewView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-subtotal: Decimal&lt;br&gt;-deliveryFee: Decimal&lt;br&gt;-incentiveDiscount: Decimal&lt;br&gt;-voucherDiscount: Decimal&lt;br&gt;-totalAmount: Decimal" vertex="1">
+          <mxGeometry height="83" width="318" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderReviewView_s" parent="v5_OrderReviewView" style="line;strokeColor=#6a9f4f;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="318" y="127" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderReviewView_m" parent="v5_OrderReviewView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+displayOrderSummary(): void&lt;br&gt;+selectPaymentMethod(method: PaymentMethod): void&lt;br&gt;+confirmCheckout(): void&lt;br&gt;+abandonCheckout(): void" vertex="1">
+          <mxGeometry height="68" width="318" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentResultView" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PaymentResultView&lt;/b&gt;" vertex="1">
+          <mxGeometry height="128" width="230" x="762" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentResultView_a" parent="v5_PaymentResultView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-paymentStatus: PaymentStatus&lt;br&gt;-errorMessage: String" vertex="1">
+          <mxGeometry height="38" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentResultView_s" parent="v5_PaymentResultView" style="line;strokeColor=#6a9f4f;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentResultView_m" parent="v5_PaymentResultView" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+displayPaymentResult(): void&lt;br&gt;+showRetryOptions(): void" vertex="1">
+          <mxGeometry height="38" width="230" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Lct" parent="1" style="rounded=1;arcSize=2;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=14;fontColor=#17324d;fillColor=#f5f8fa;strokeColor=#9fb4c3;dashed=1;strokeWidth=1.5;" value="Controller Layer" vertex="1">
+          <mxGeometry height="230" width="1240" x="30" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PlaceOrderController" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;control&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PlaceOrderController&lt;/b&gt;" vertex="1">
+          <mxGeometry height="173" width="264" x="60" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PlaceOrderController_a" parent="v5_PlaceOrderController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-currentOrder: Order&lt;br&gt;-selectedHub: Hub" vertex="1">
+          <mxGeometry height="38" width="264" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PlaceOrderController_s" parent="v5_PlaceOrderController" style="line;strokeColor=#c9a227;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="264" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PlaceOrderController_m" parent="v5_PlaceOrderController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+selectHub(hubId: String): void&lt;br&gt;+addItem(itemId: String, qty: int): void&lt;br&gt;+updateCart(): void&lt;br&gt;+validateEligibility(): boolean&lt;br&gt;+submitOrder(): Order" vertex="1">
+          <mxGeometry height="83" width="264" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VoucherValidationController" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;control&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;VoucherValidationController&lt;/b&gt;" vertex="1">
+          <mxGeometry height="113" width="379" x="384" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VoucherValidationController_a" parent="v5_VoucherValidationController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-currentVoucher: Voucher" vertex="1">
+          <mxGeometry height="23" width="379" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VoucherValidationController_s" parent="v5_VoucherValidationController" style="line;strokeColor=#c9a227;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="379" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VoucherValidationController_m" parent="v5_VoucherValidationController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+validateVoucher(code: String, order: Order): boolean&lt;br&gt;+calculateDiscount(voucher: Voucher, order: Order): Decimal" vertex="1">
+          <mxGeometry height="38" width="379" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentController" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;control&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PaymentController&lt;/b&gt;" vertex="1">
+          <mxGeometry height="113" width="349" x="823" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentController_a" parent="v5_PaymentController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-currentPayment: Payment" vertex="1">
+          <mxGeometry height="23" width="349" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentController_s" parent="v5_PaymentController" style="line;strokeColor=#c9a227;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="349" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentController_m" parent="v5_PaymentController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+requestAuthorization(payment: Payment): PaymentStatus&lt;br&gt;+processPaymentResult(result: PaymentStatus): void" vertex="1">
+          <mxGeometry height="38" width="349" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_extlbl" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#17324d;" value="External service" vertex="1">
+          <mxGeometry height="24" width="300" x="1360" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentGateway" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#eeeeee;strokeColor=#777777;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;external system&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PaymentGateway&lt;/b&gt;" vertex="1">
+          <mxGeometry height="98" width="325" x="1360" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentGateway_a" parent="v5_PaymentGateway" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="23" width="325" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentGateway_s" parent="v5_PaymentGateway" style="line;strokeColor=#777777;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="325" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentGateway_m" parent="v5_PaymentGateway" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+authorizePayment(payment: Payment): PaymentStatus" vertex="1">
+          <mxGeometry height="23" width="325" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Ldm" parent="1" style="rounded=1;arcSize=2;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=14;fontColor=#17324d;fillColor=#f5f8fa;strokeColor=#9fb4c3;dashed=1;strokeWidth=1.5;" value="Domain Layer" vertex="1">
+          <mxGeometry height="590" width="1270" x="30" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Customer" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Customer&lt;/b&gt;" vertex="1">
+          <mxGeometry height="143" width="230" x="60" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Customer_a" parent="v5_Customer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-customerId: String&lt;br&gt;-name: String&lt;br&gt;-email: String&lt;br&gt;-customerType: String" vertex="1">
+          <mxGeometry height="68" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Customer_s" parent="v5_Customer" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Customer_m" parent="v5_Customer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+updateProfile(): void" vertex="1">
+          <mxGeometry height="23" width="230" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Hub" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Hub&lt;/b&gt;" vertex="1">
+          <mxGeometry height="173" width="230" x="380" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Hub_a" parent="v5_Hub" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-hubId: String&lt;br&gt;-hubName: String&lt;br&gt;-address: String&lt;br&gt;-capacity: int&lt;br&gt;-currentWorkload: int" vertex="1">
+          <mxGeometry height="83" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Hub_s" parent="v5_Hub" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="127" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Hub_m" parent="v5_Hub" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+checkCapacity(): boolean&lt;br&gt;+checkAvailability(): boolean" vertex="1">
+          <mxGeometry height="38" width="230" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VirtualBrand" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;VirtualBrand&lt;/b&gt;" vertex="1">
+          <mxGeometry height="128" width="230" x="700" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VirtualBrand_a" parent="v5_VirtualBrand" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-brandId: String&lt;br&gt;-brandName: String&lt;br&gt;-description: String" vertex="1">
+          <mxGeometry height="53" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VirtualBrand_s" parent="v5_VirtualBrand" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="97" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VirtualBrand_m" parent="v5_VirtualBrand" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+getMenuItems(): List&amp;lt;MenuItem&amp;gt;" vertex="1">
+          <mxGeometry height="23" width="230" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_MenuItem" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;MenuItem&lt;/b&gt;" vertex="1">
+          <mxGeometry height="143" width="230" x="1000" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_MenuItem_a" parent="v5_MenuItem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-itemId: String&lt;br&gt;-itemName: String&lt;br&gt;-price: Decimal&lt;br&gt;-availabilityStatus: boolean" vertex="1">
+          <mxGeometry height="68" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_MenuItem_s" parent="v5_MenuItem" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_MenuItem_m" parent="v5_MenuItem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+checkAvailability(): boolean" vertex="1">
+          <mxGeometry height="23" width="230" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Order" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Order&lt;/b&gt;" vertex="1">
+          <mxGeometry height="233" width="264" x="60" y="1033" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Order_a" parent="v5_Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-orderId: String&lt;br&gt;-orderDate: DateTime&lt;br&gt;-status: OrderStatus&lt;br&gt;-subtotal: Decimal&lt;br&gt;-deliveryFee: Decimal&lt;br&gt;-discount: Decimal&lt;br&gt;-totalAmount: Decimal&lt;br&gt;-paymentMethod: PaymentMethod" vertex="1">
+          <mxGeometry height="128" width="264" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Order_s" parent="v5_Order" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="264" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Order_m" parent="v5_Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+calculateTotal(): Decimal&lt;br&gt;+submit(): void&lt;br&gt;+updateStatus(status: OrderStatus): void" vertex="1">
+          <mxGeometry height="53" width="264" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderItem" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OrderItem&lt;/b&gt;" vertex="1">
+          <mxGeometry height="143" width="230" x="420" y="1063" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderItem_a" parent="v5_OrderItem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-orderItemId: String&lt;br&gt;-quantity: int&lt;br&gt;-unitPrice: Decimal&lt;br&gt;-subtotal: Decimal" vertex="1">
+          <mxGeometry height="68" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderItem_s" parent="v5_OrderItem" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderItem_m" parent="v5_OrderItem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+calculateSubtotal(): Decimal" vertex="1">
+          <mxGeometry height="23" width="230" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Voucher" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Voucher&lt;/b&gt;" vertex="1">
+          <mxGeometry height="203" width="230" x="730" y="1022" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Voucher_a" parent="v5_Voucher" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-voucherId: String&lt;br&gt;-voucherCode: String&lt;br&gt;-discountType: String&lt;br&gt;-discountValue: Decimal&lt;br&gt;-validFrom: DateTime&lt;br&gt;-validUntil: DateTime&lt;br&gt;-status: String" vertex="1">
+          <mxGeometry height="113" width="230" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Voucher_s" parent="v5_Voucher" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="157" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Voucher_m" parent="v5_Voucher" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+validate(): boolean&lt;br&gt;+calculateDiscount(): Decimal" vertex="1">
+          <mxGeometry height="38" width="230" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Payment" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Payment&lt;/b&gt;" vertex="1">
+          <mxGeometry height="143" width="318" x="970" y="1063" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Payment_a" parent="v5_Payment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-paymentId: String&lt;br&gt;-paymentMethod: PaymentMethod&lt;br&gt;-paymentStatus: PaymentStatus&lt;br&gt;-transactionReference: String" vertex="1">
+          <mxGeometry height="68" width="318" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Payment_s" parent="v5_Payment" style="line;strokeColor=#5b8eae;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="318" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Payment_m" parent="v5_Payment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+recordPaymentResult(status: PaymentStatus): void" vertex="1">
+          <mxGeometry height="23" width="318" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_Lda" parent="1" style="rounded=1;arcSize=2;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=14;fontColor=#17324d;fillColor=#f5f8fa;strokeColor=#9fb4c3;dashed=1;strokeWidth=1.5;" value="Data Access Layer" vertex="1">
+          <mxGeometry height="1000" width="520" x="1330" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_HubRepository" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;HubRepository&lt;/b&gt;" vertex="1">
+          <mxGeometry height="113" width="460" x="1360" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_HubRepository_a" parent="v5_HubRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-dbConnection: DatabaseConnection" vertex="1">
+          <mxGeometry height="23" width="460" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_HubRepository_s" parent="v5_HubRepository" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="460" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_HubRepository_m" parent="v5_HubRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+findEligibleHubs(address: String): List&amp;lt;Hub&amp;gt;&lt;br&gt;+getHubById(hubId: String): Hub" vertex="1">
+          <mxGeometry height="38" width="460" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_MenuRepository" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;MenuRepository&lt;/b&gt;" vertex="1">
+          <mxGeometry height="113" width="460" x="1360" y="473" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_MenuRepository_a" parent="v5_MenuRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-dbConnection: DatabaseConnection" vertex="1">
+          <mxGeometry height="23" width="460" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_MenuRepository_s" parent="v5_MenuRepository" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="460" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_MenuRepository_m" parent="v5_MenuRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+getBrandsByHub(hubId: String): List&amp;lt;VirtualBrand&amp;gt;&lt;br&gt;+getAvailableItems(brandId: String): List&amp;lt;MenuItem&amp;gt;" vertex="1">
+          <mxGeometry height="38" width="460" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VoucherRepository" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;VoucherRepository&lt;/b&gt;" vertex="1">
+          <mxGeometry height="98" width="460" x="1360" y="636" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VoucherRepository_a" parent="v5_VoucherRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-dbConnection: DatabaseConnection" vertex="1">
+          <mxGeometry height="23" width="460" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VoucherRepository_s" parent="v5_VoucherRepository" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="460" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_VoucherRepository_m" parent="v5_VoucherRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+findByCode(code: String): Voucher" vertex="1">
+          <mxGeometry height="23" width="460" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderRepository" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OrderRepository&lt;/b&gt;" vertex="1">
+          <mxGeometry height="113" width="460" x="1360" y="784" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderRepository_a" parent="v5_OrderRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-dbConnection: DatabaseConnection" vertex="1">
+          <mxGeometry height="23" width="460" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderRepository_s" parent="v5_OrderRepository" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="460" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_OrderRepository_m" parent="v5_OrderRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+saveOrder(order: Order): void&lt;br&gt;+findOrderById(orderId: String): Order" vertex="1">
+          <mxGeometry height="38" width="460" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentRepository" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;fontColor=#17324d;fontSize=12;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PaymentRepository&lt;/b&gt;" vertex="1">
+          <mxGeometry height="113" width="460" x="1360" y="947" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentRepository_a" parent="v5_PaymentRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="-dbConnection: DatabaseConnection" vertex="1">
+          <mxGeometry height="23" width="460" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentRepository_s" parent="v5_PaymentRepository" style="line;strokeColor=#8564b0;strokeWidth=1;fillColor=none;rotatable=0;" value="" vertex="1">
+          <mxGeometry height="8" width="460" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_PaymentRepository_m" parent="v5_PaymentRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=nowrap;html=1;fontSize=11;fontColor=#17324d;rotatable=0;" value="+savePayment(payment: Payment): void&lt;br&gt;+updatePaymentStatus(paymentId: String, status: PaymentStatus): void" vertex="1">
+          <mxGeometry height="38" width="460" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_e1" edge="1" parent="1" source="v5_Customer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v5_Order" value="Places">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_m2" connectable="0" parent="v5_e1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m3" connectable="0" parent="v5_e1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e4" edge="1" parent="1" source="v5_Hub" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v5_Order" value="Receives">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="856.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m5" connectable="0" parent="v5_e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.7809" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m6" connectable="0" parent="v5_e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e7" edge="1" parent="1" source="v5_Hub" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v5_VirtualBrand" value="Hosts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_m8" connectable="0" parent="v5_e7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m9" connectable="0" parent="v5_e7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e10" edge="1" parent="1" source="v5_VirtualBrand" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v5_MenuItem" value="Offers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_m11" connectable="0" parent="v5_e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m12" connectable="0" parent="v5_e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e13" edge="1" parent="1" source="v5_Order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=diamondThin;startFill=1;startSize=14;" target="v5_OrderItem" value="Contains">
+          <mxGeometry relative="1" x="-0.2302" as="geometry">
+            <Array as="points">
+              <mxPoint x="372" y="1120" />
+              <mxPoint x="372" y="1100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m14" connectable="0" parent="v5_e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.89" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m15" connectable="0" parent="v5_e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.819" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e16" edge="1" parent="1" source="v5_MenuItem" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v5_OrderItem" value="References">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1115" y="940" />
+              <mxPoint x="670" y="940" />
+              <mxPoint x="670" y="1134.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m17" connectable="0" parent="v5_e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8414" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m18" connectable="0" parent="v5_e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.8602" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e19" edge="1" parent="1" source="v5_Order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v5_Voucher" value="Applies">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="1149.5" />
+              <mxPoint x="390" y="1250" />
+              <mxPoint x="855" y="1250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m20" connectable="0" parent="v5_e19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.9009" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m21" connectable="0" parent="v5_e19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.8515" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e22" edge="1" parent="1" source="v5_Order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;" target="v5_Payment" value="Has">
+          <mxGeometry relative="1" x="-0.0394" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="1190" />
+              <mxPoint x="350" y="1270" />
+              <mxPoint x="1169" y="1270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m23" connectable="0" parent="v5_e22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8969" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_m24" connectable="0" parent="v5_e22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#17324d;labelBackgroundColor=#ffffff;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.8443" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e25" edge="1" parent="1" source="v5_PlaceOrderView" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_PlaceOrderController" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_e26" edge="1" parent="1" source="v5_OrderReviewView" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_PlaceOrderController" value="">
+          <mxGeometry relative="1" x="0.0406" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="226.5" />
+              <mxPoint x="350" y="370" />
+              <mxPoint x="250" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e27" edge="1" parent="1" source="v5_OrderReviewView" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_VoucherValidationController" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_e28" edge="1" parent="1" source="v5_OrderReviewView" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_PaymentController" value="">
+          <mxGeometry relative="1" x="0.0509" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="210" />
+              <mxPoint x="730" y="380" />
+              <mxPoint x="860" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e29" edge="1" parent="1" source="v5_PaymentResultView" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_PaymentController" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v5_e30" edge="1" parent="1" source="v5_PlaceOrderController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_Customer" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="175" y="640" />
+              <mxPoint x="175" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e31" edge="1" parent="1" source="v5_PlaceOrderController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_Hub" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="495" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e32" edge="1" parent="1" source="v5_PlaceOrderController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_MenuItem" value="">
+          <mxGeometry relative="1" x="0.018" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="630" />
+              <mxPoint x="1060" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e33" edge="1" parent="1" source="v5_PlaceOrderController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_Order" value="">
+          <mxGeometry relative="1" x="0.5045" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="511.5" />
+              <mxPoint x="40" y="990" />
+              <mxPoint x="110" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e34" edge="1" parent="1" source="v5_PlaceOrderController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_OrderItem" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="192" y="650" />
+              <mxPoint x="340" y="650" />
+              <mxPoint x="340" y="970" />
+              <mxPoint x="535" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e35" edge="1" parent="1" source="v5_VoucherValidationController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_Voucher" value="">
+          <mxGeometry relative="1" x="-0.094" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="780" />
+              <mxPoint x="690" y="780" />
+              <mxPoint x="690" y="1123.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e36" edge="1" parent="1" source="v5_PaymentController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#6c8ebf;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#dae8fc;" target="v5_Payment" value="">
+          <mxGeometry relative="1" x="-0.0784" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="1020" />
+              <mxPoint x="1169" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e37" edge="1" parent="1" source="v5_PlaceOrderController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_HubRepository" value="">
+          <mxGeometry relative="1" x="-0.0886" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e38" edge="1" parent="1" source="v5_PlaceOrderController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_MenuRepository" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="550" />
+              <mxPoint x="1060" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e39" edge="1" parent="1" source="v5_PlaceOrderController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;exitX=1;exitY=0.9798;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="v5_OrderRepository" value="">
+          <mxGeometry relative="1" x="0.0031" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="594.5" />
+              <mxPoint x="1340" y="760" />
+              <mxPoint x="1590" y="760" />
+            </Array>
+            <mxPoint x="324" y="594.5" as="sourcePoint" />
+            <mxPoint x="1590" y="788.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e40" edge="1" parent="1" source="v5_VoucherValidationController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_VoucherRepository" value="">
+          <mxGeometry relative="1" x="0.0316" as="geometry">
+            <Array as="points">
+              <mxPoint x="573.5" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e41" edge="1" parent="1" source="v5_PaymentController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_PaymentRepository" value="">
+          <mxGeometry relative="1" x="-0.0348" as="geometry">
+            <Array as="points">
+              <mxPoint x="1310" y="490" />
+              <mxPoint x="1310" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e42" edge="1" parent="1" source="v5_HubRepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_Hub" value="">
+          <mxGeometry relative="1" x="-0.1276" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="366.5" />
+              <mxPoint x="370" y="730" />
+              <mxPoint x="430" y="730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e43" edge="1" parent="1" source="v5_MenuRepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_VirtualBrand" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="815" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e44" edge="1" parent="1" source="v5_MenuRepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_MenuItem" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1115" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e45" edge="1" parent="1" source="v5_VoucherRepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;fillColor=#f8cecc;" target="v5_Voucher" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1290" y="685" />
+              <mxPoint x="1290" y="960" />
+              <mxPoint x="845" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e46" edge="1" parent="1" source="v5_OrderRepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_Order" value="">
+          <mxGeometry relative="1" x="-0.0765" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="880" />
+              <mxPoint x="1340" y="1000" />
+              <mxPoint x="370" y="1000" />
+              <mxPoint x="370" y="1060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e47" edge="1" parent="1" source="v5_OrderRepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_OrderItem" value="">
+          <mxGeometry relative="1" x="-0.1282" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="840.5" />
+              <mxPoint x="1320" y="980" />
+              <mxPoint x="580" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e48" edge="1" parent="1" source="v5_PaymentRepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_Payment" value="">
+          <mxGeometry relative="1" x="0.1933" as="geometry">
+            <Array as="points">
+              <mxPoint x="1600" y="1134.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5_e49" edge="1" parent="1" source="v5_PaymentController" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#45657f;strokeWidth=1.5;fontSize=11;fontColor=#334155;labelBackgroundColor=#ffffff;dashed=1;endArrow=open;endFill=0;startArrow=none;strokeWidth=1.2;" target="v5_PaymentGateway" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="450" />
+              <mxPoint x="1340" y="174" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
