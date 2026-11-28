@@ -17,6 +17,16 @@ The test creates `SPRINT10` for Bến Thành with a 10% discount and a 100,000 V
 
 ### Browser verification
 
+Run the automated checkout and kitchen reference check from the repository root:
+
+```sh
+npm ci
+npx playwright install chromium --only-shell
+npm run test:browser
+```
+
+The check uses the order ID from the checkout response to verify the padded reference on the customer receipt, kitchen queue, review screen, and confirmation screen. The regular `npm test` suite runs independently of Chromium.
+
 Chrome on macOS reproduced the four-use-case flow against a fresh database. The checkout receipt, kitchen decision, and sales report all showed **SB-000004**. Checkout, the kitchen queue, and the sales report showed **105,000 VND**. Archiving the voucher blocked a new quote and preserved the confirmed receipt.
 
 ### Defect retests
