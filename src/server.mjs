@@ -16,6 +16,8 @@ const assets = new Map([
   ['/kitchen/', ['uc2/kitchen.html', 'text/html; charset=utf-8']],
   ['/uc2/kitchen.css', ['uc2/kitchen.css', 'text/css; charset=utf-8']],
   ['/uc2/kitchen.js', ['uc2/kitchen.js', 'text/javascript; charset=utf-8']],
+  ['/shared/layout.js', ['shared/layout.js', 'text/javascript; charset=utf-8']],
+  ['/shared/layout.css', ['shared/layout.css', 'text/css; charset=utf-8']],
 ]);
 const server = createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/health') {

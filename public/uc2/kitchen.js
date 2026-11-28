@@ -1,4 +1,15 @@
 // UC2 browser controller. Author: Thin Lei Sandi (523K0075).
+import { renderWorkspaceLayout } from '/shared/layout.js';
+
+const layout = renderWorkspaceLayout({
+  workspace: 'Kitchen workspace',
+  home: '/kitchen',
+  breadcrumb: 'Kitchen / Incoming orders',
+  description: 'SaigonBite kitchen workspace',
+  role: 'Kitchen staff',
+  initials: 'KS',
+  navigation: [{ label: 'Incoming orders', href: '/kitchen', icon: 'orders', active: true }],
+});
 const view = document.querySelector('#view');
 const account = document.querySelector('#account');
 const announcement = document.querySelector('#announcement');
@@ -82,8 +93,10 @@ function renderQueue(data) {
   screen = 'queue';
   selected = undefined;
   staff = data.staff;
-  document.querySelector('#assigned-hub').textContent = `Assigned hub · ${staff.hubName}`;
-  document.querySelector('#sidebar-account').textContent = `${staff.username} · ID ${staff.id}`;
+  layout.updateIdentity({
+    contextLabel: `Assigned hub · ${staff.hubName}`,
+    accountLabel: `${staff.username} · ID ${staff.id}`,
+  });
   heading('Incoming orders', `Review Submitted orders for ${staff.hubName}.`);
   const count = data.orders.length;
   announcement.textContent = `${count} ${count === 1 ? 'order' : 'orders'} waiting for a decision.`;
@@ -95,16 +108,25 @@ function renderQueue(data) {
     return;
   }
   const { wrap, body } = table(['Order', 'Submitted at', 'Items', 'Total', 'Status', 'Actions']);
+  wrap.classList.add('queue-scroll');
+  wrap.tabIndex = 0;
+  wrap.setAttribute('role', 'region');
+  wrap.setAttribute('aria-label', 'Incoming orders table. Scroll to view more orders.');
   for (const order of data.orders) {
     const tr = body.insertRow();
     tr.insertCell().append(el('span', orderName(order.id), 'order-link'));
     tr.insertCell().textContent = timestamp(order.submittedAt);
-    tr.insertCell().textContent = `${order.itemCount ?? 0} items`;
+    const quantity = order.itemCount ?? 0;
+    tr.insertCell().textContent = `${quantity} ${quantity === 1 ? 'item' : 'items'}`;
     tr.insertCell().textContent = money.format(order.total);
     tr.insertCell().append(badge(order.status));
-    tr.insertCell().append(button(`Review ${orderName(order.id)}`, () => loadDetails(order.id), 'primary'));
+    const review = button('Review', () => loadDetails(order.id), 'primary');
+    review.setAttribute('aria-label', `Review order ${orderName(order.id)}`);
+    tr.insertCell().append(review);
   }
-  view.append(card(el('h2', `${count} ${count === 1 ? 'order' : 'orders'} waiting for a decision`), wrap), refresh);
+  const queueCard = card(wrap);
+  queueCard.classList.add('queue-card');
+  view.append(queueCard, refresh);
 }
 function loadQueue() { return run(async () => renderQueue(await api(''))); }
 function loadDetails(id) { return run(async () => renderDetails(await api('/' + id))); }
@@ -114,6 +136,7 @@ function renderDetails(order) {
   screen = 'details';
   heading(`Order ${orderName(order.id)}`, 'Review the details before confirming or rejecting this order.');
   const { wrap, body } = table(['Item', 'Quantity', 'Unit price']);
+  wrap.querySelector('table').classList.add('items-table');
   for (const item of order.items) {
     const tr = body.insertRow();
     [item.name, String(item.quantity), money.format(item.unitPrice)].forEach(s => { tr.insertCell().textContent = s; });
@@ -204,6 +227,7 @@ function renderResult(result) {
   screen = 'result';
   const rejected = result.status === 'Rejected';
   heading(rejected ? 'Order rejected' : 'Order confirmed', 'Your decision has been saved.');
+  view.querySelector('.subtitle').classList.add('success-message');
   const details = el('dl');
   detail(details, 'Staff ID', String(result.staffId));
   detail(details, 'Decision time', timestamp(result.decidedAt));
@@ -212,8 +236,8 @@ function renderResult(result) {
     details.lastChild.classList.add('reason');
   }
   const content = card(el('h2', `${orderName(result.orderId)} · ${result.status}`, rejected ? 'rejected-text' : 'confirmed-text'), details,
-    el('p', result.notificationStatus === 'sent' ? 'Customer notification recorded by the local simulator.' : 'The decision was saved. Customer notification failed and is flagged for follow-up.', result.notificationStatus === 'sent' ? 'muted' : 'notice'),
-    el('p', 'The order has left the incoming queue. Its history is retained.', 'muted'), button('Back to incoming orders', loadQueue, 'primary'));
+    el('p', result.notificationStatus === 'sent' ? 'Customer notified.' : 'Customer notification failed. Your decision is saved.', result.notificationStatus === 'sent' ? 'success-message' : 'notice'),
+    button('Back to incoming orders', loadQueue, 'primary'));
   content.classList.add('result');
   view.append(content);
 }
