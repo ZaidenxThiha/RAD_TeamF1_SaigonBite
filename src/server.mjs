@@ -2,7 +2,7 @@ import { createServer } from 'node:http';
 import { existsSync, readFileSync } from 'node:fs';
 import { openDatabase } from './database.mjs';
 import { handleCheckout } from './uc1/http.mjs';
-import { handleReports } from './reports-page.mjs';
+import { handleReports } from './uc4/http.mjs';
 import { createKitchenHandler } from './uc2/http.mjs';
 import { createVoucherHandler } from './uc3/http.mjs';
 
@@ -13,8 +13,8 @@ const handleKitchen = createKitchenHandler(db, {
   notify: () => process.env.SAIGONBITE_NOTIFICATION_FAIL === '1' ? 'failed' : 'sent',
 });
 const assets = new Map([
-  ['/reports.js', ['reports.js', 'text/javascript; charset=utf-8']],
-  ['/reports.css', ['reports.css', 'text/css; charset=utf-8']],
+  ['/uc4/reports.js', ['uc4/reports.js', 'text/javascript; charset=utf-8']],
+  ['/uc4/reports.css', ['uc4/reports.css', 'text/css; charset=utf-8']],
   ['/', ['uc1/checkout.html', 'text/html; charset=utf-8']],
   ['/checkout.css', ['uc1/checkout.css', 'text/css; charset=utf-8']],
   ['/checkout.js', ['uc1/checkout.js', 'text/javascript; charset=utf-8']],

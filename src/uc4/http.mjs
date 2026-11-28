@@ -1,4 +1,4 @@
-import { compareReport, managerAccess, reportFilters, reportTypes, runReport } from './reports.mjs';
+import { compareReport, managerAccess, reportFilters, reportTypes, runReport } from './service.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -36,7 +36,7 @@ function layout(content) {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Management reports | SaigonBite</title><link rel="stylesheet" href="/shared/layout.css">
-<link rel="stylesheet" href="/reports.css"><script type="module" src="/reports.js"></script></head>
+<link rel="stylesheet" href="/uc4/reports.css"><script type="module" src="/uc4/reports.js"></script></head>
 <body><aside class="sidebar" data-sidebar></aside><div class="workspace"><header class="header" data-header></header>
 <main class="reports-main" aria-label="Management reports">${content}</main></div></body></html>`;
 }

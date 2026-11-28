@@ -54,7 +54,15 @@ test('management reports enforce manager access and use Vietnam date boundaries'
   const home = base + '/reports';
   const dashboard = await fetch(home, { headers });
   assert.equal(dashboard.status, 200);
-  assert.match(await dashboard.text(), /Reports &amp; analytics/);
+  const dashboardPage = await dashboard.text();
+  assert.match(dashboardPage, /Reports &amp; analytics/);
+  for (const [path, type] of [['/uc4/reports.css', 'text/css'], ['/uc4/reports.js', 'text/javascript']]) {
+    assert.ok(dashboardPage.includes('"' + path + '"'));
+    const asset = await fetch(base + path);
+    assert.equal(asset.status, 200);
+    assert.ok(asset.headers.get('content-type').startsWith(type));
+    assert.ok((await asset.text()).length > 0);
+  }
   const criteria = await fetch(home + '?view=criteria', { headers });
   assert.equal(criteria.status, 200);
   assert.match(await criteria.text(), /Compare with previous period/);
