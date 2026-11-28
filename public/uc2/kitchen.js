@@ -35,7 +35,7 @@ function button(text, action, className = '') {
   b.onclick = action;
   return b;
 }
-function orderName(id) { return `SB-${id}`; }
+function orderName(id) { return `SB-${String(id).padStart(6, '0')}`; }
 function timestamp(value) { return date.format(new Date(value.replace(' ', 'T') + 'Z')); }
 function heading(title, subtitle) {
   const h = el('h1', title);
