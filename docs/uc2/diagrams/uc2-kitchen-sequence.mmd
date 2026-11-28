@@ -1,157 +1,87 @@
-%% UC2 data-access sequence. Author: Thin Lei Sandi (523K0075).
+%% Part 3 modified sequence with data access. Author: Thin Lei Sandi (523K0075).
 sequenceDiagram
+    title UC2 · Confirm or Reject an Incoming Order · Thin Lei Sandi (523K0075)
     actor Staff as Kitchen Staff
-    participant View as Kitchen View
+    participant UI as Kitchen View
     participant HTTP as Kitchen HTTP Controller
-    participant Service as KitchenService
-    participant Repo as KitchenRepository
+    participant Service as Kitchen Service
+    participant Repo as Kitchen Repository
     participant DB as SQLite
-    participant Notify as Local Notification Simulator
-    actor Customer
-    participant Receipt as Customer Receipt
-    participant Checkout as UC1 HTTP and Service
+    participant Notify as Notification Simulator
 
-    Staff->>View: Open incoming orders
-    View->>HTTP: GET /api/kitchen/orders with demo username
-    HTTP->>Service: staff(username)
-    Service->>Repo: staff(username)
-    Repo->>DB: SELECT user role and assigned hub
-    DB-->>Repo: User and hub or no match
-    Repo-->>Service: Staff record
-    Service->>Service: Require kitchen role and assigned hub
-    alt Access denied
-        Service-->>HTTP: KitchenError ACCESS_DENIED
-        HTTP-->>View: 403 without queue data
+    Staff->>UI: Open incoming orders
+    UI->>HTTP: GET /api/kitchen/orders
+    HTTP->>Service: Resolve staff and retrieve assigned-hub queue
+    Service->>Repo: Read staff role, hub and Submitted orders
+    Repo->>DB: SELECT users, hubs, orders and item quantities
+    Repo-->>Service: Staff and queue records
+    Service->>Service: Enforce kitchen role and assigned hub
+    alt Unauthorized
+        Service-->>HTTP: Access denied
+        HTTP-->>UI: 403 without queue data
     else Authorized
-        HTTP->>Service: queue(username)
-        Service->>Repo: staff(username)
-        Repo->>DB: SELECT current user and hub
-        Repo-->>Service: Staff record
-        Service->>Service: Recheck kitchen role and hub
-        Service->>Repo: queue(staff.hubId)
-        Repo->>DB: SELECT Submitted orders and item quantities for hub
-        DB-->>Repo: Matching orders
-        Repo-->>Service: Order list
-        Service-->>HTTP: Staff and orders
-        HTTP-->>View: 200 with assigned-hub queue
-        alt Queue empty
-            View-->>Staff: Display no incoming orders
-        else Orders found
-            View-->>Staff: Display queue with Review actions
+        Service-->>HTTP: Assigned-hub queue
+        HTTP-->>UI: 200 queue or empty list
+        UI-->>Staff: Display orders or no incoming orders
+    end
+
+    opt Staff selects an order
+        Staff->>UI: Review order
+        UI->>HTTP: GET /api/kitchen/orders/id
+        HTTP->>Service: details(username, id)
+        Service->>Repo: Read staff and order/payment snapshot
+        Repo->>DB: SELECT user, order, hub and payment
+        Repo-->>Service: Current records
+        Service->>Service: Check role, ID, existence, hub and Submitted status
+        alt Review denied or order unavailable
+            Service-->>HTTP: Domain error
+            HTTP-->>UI: 400, 403, 404 or 409 without changes
+        else Review permitted
+            Service->>Repo: Read item snapshots
+            Repo->>DB: SELECT order_items
+            Repo-->>Service: Items, quantities and saved prices
+            Service-->>HTTP: Review details
+            HTTP-->>UI: 200 order details
         end
     end
 
-    opt Staff selects an order from the queue
-        Staff->>View: Review selected order
-        View->>HTTP: GET /api/kitchen/orders/id
-        HTTP->>Service: staff(username) access precheck
-        Service->>Repo: staff(username)
-        Repo->>DB: SELECT current user and hub
-        Repo-->>Service: Staff record
-        Service->>Service: Require kitchen role and assigned hub
-        alt Access precheck fails
-            Service-->>HTTP: ACCESS_DENIED
-            HTTP-->>View: 403 without order details
-        else Access precheck succeeds
-            HTTP->>Service: details(username, id)
-            Service->>Repo: staff(username) and order(id)
-            Repo->>DB: SELECT staff, order, hub and payment snapshot
-            Repo-->>Service: Current records
-            Service->>Service: Validate ID, existence, hub ownership and Submitted status
-            alt Missing, invalid, wrong hub or no longer Submitted
-                Service-->>HTTP: KitchenError with no changes
-                HTTP-->>View: 400, 403, 404 or 409
-            else Review permitted
-                Service->>Repo: items(id)
-                Repo->>DB: SELECT saved item names, quantities and unit prices
-                Repo-->>Service: Item snapshots
-                Service-->>HTTP: Order details and items
-                HTTP-->>View: 200 review details
-                View-->>Staff: Display Confirm and Reject actions
+    opt Staff submits a decision
+        Staff->>UI: Confirm or Reject with reason
+        UI->>HTTP: POST /api/kitchen/orders/id/decision
+        Note over HTTP,Service: Access and JSON checks precede decide. Invalid requests return without writes.
+        HTTP->>Service: decide(username, id, input)
+        Service->>Repo: Run decision transaction
+        Repo->>DB: BEGIN IMMEDIATE
+        Service->>Repo: Re-read staff, hub and order
+        Repo->>DB: SELECT current staff and order
+        Repo-->>Service: Current records
+        Service->>Service: Recheck authorization, ownership and Submitted status
+        Service->>Service: Validate decision and required rejection reason
+        alt Validation or database write fails
+            Note over Service,DB: Any failed check or write aborts the transaction
+            Repo->>DB: ROLLBACK
+            Service-->>HTTP: Domain error or storage failure
+            HTTP-->>UI: 400, 403, 404, 409, 422 or 500 without partial changes
+        else Checks and writes succeed
+            Service->>Repo: Record decision and read saved result
+            Repo->>DB: UPDATE orders only while Submitted
+            Repo->>DB: INSERT order_decisions with staff, time and reason
+            Repo->>DB: INSERT customer_notifications with failed flag
+            Repo->>DB: SELECT saved decision and notification
+            Repo-->>Service: Saved result inside transaction
+            Repo->>DB: COMMIT
+            Service->>Notify: Attempt simulated customer notification after commit
+            alt Simulator returns sent or failed
+                Notify-->>Service: Outcome
+                Service->>Repo: Record notification outcome
+                Repo->>DB: UPDATE notification status and attempted time
+            else Notification attempt or outcome update throws
+                Note over Service,DB: Keep committed decision and durable failed notification flag
             end
+            Service-->>HTTP: Saved decision and notification outcome
+            HTTP-->>UI: 200 confirmation or rejection result
+            UI-->>Staff: Display status, staff, timestamp and applicable reason
+            Note over UI,DB: Refreshing the queue excludes this order. Order and payment history remain.
         end
     end
-
-    opt Staff submits a decision after review
-        Staff->>View: Confirm or Reject with reason
-        View->>HTTP: POST /api/kitchen/orders/id/decision
-        HTTP->>Service: staff(username) access precheck
-        Service->>Repo: staff(username)
-        Repo->>DB: SELECT current user and hub
-        Repo-->>Service: Staff record
-        Service->>Service: Require kitchen role and assigned hub
-        HTTP->>HTTP: Validate JSON content type, size and body
-        alt Access or request boundary fails
-            HTTP-->>View: 403, 400, 413 or 415 without decision writes
-        else Valid request boundary
-            HTTP->>Service: decide(username, id, input)
-            Service->>Repo: transaction(work)
-            Repo->>DB: BEGIN IMMEDIATE
-            Repo->>Service: Execute transaction callback
-            Service->>Repo: staff(username) and order(id)
-            Repo->>DB: SELECT current staff, hub, order and payment
-            Repo-->>Service: Current records
-            Service->>Service: Recheck role, hub, ID, existence and Submitted status
-            Service->>Service: Validate decision and required trimmed rejection reason
-            alt Domain validation fails
-                Service-->>Repo: Throw KitchenError from callback
-                Repo->>DB: ROLLBACK
-                Repo-->>Service: Rethrow domain error
-                Service-->>HTTP: Domain error
-                HTTP-->>View: 400, 403, 404, 409 or 422 without saved decision
-            else Domain validation succeeds
-                Service->>Repo: record(id, staffId, status, reason)
-                Repo->>DB: UPDATE orders WHERE status is Submitted
-                Repo->>DB: INSERT order_decisions with staff, reason and default timestamp
-                Repo->>DB: INSERT customer_notifications with failed flag
-                Service->>Repo: decision(id)
-                Repo->>DB: SELECT saved decision and notification flag
-                Repo-->>Service: Saved decision
-                alt Storage or audit operation throws
-                    Repo->>DB: ROLLBACK
-                    Repo-->>Service: Rethrow storage error
-                    Service-->>HTTP: Unexpected failure
-                    HTTP-->>View: 500 SAVE_FAILED with no partial decision
-                else Callback and commit succeed
-                    Service-->>Repo: Return saved decision from callback
-                    Repo->>DB: COMMIT
-                    Repo-->>Service: Committed decision
-                    Service->>Notify: Await simulated notification outcome
-                    alt Simulator returns normally
-                        Notify-->>Service: sent or failed
-                        Service->>Repo: notification(id, status)
-                        Repo->>DB: UPDATE notification status and attempted timestamp
-                    else Simulator or notification update throws
-                        Service->>Service: Report failed notification
-                        Note over Service,DB: Keep committed decision and durable failed flag
-                    end
-                    Service-->>HTTP: Decision and notification outcome
-                    HTTP-->>View: 200 saved result
-                    View-->>Staff: Display decision, staff, time and applicable reason
-                    Staff->>View: Back to incoming orders
-                    View->>HTTP: GET refreshed queue
-                    Note over View,DB: Handled order is absent. Order and payment history remain.
-                end
-            end
-        end
-    end
-
-    opt Customer refreshes an existing UC1 receipt
-        Customer->>Receipt: Refresh status
-        Receipt->>Checkout: POST status with order ID, username and checkout reference
-        Checkout->>DB: Resolve allowed demo customer account
-        Checkout->>Checkout: Validate customer, order ID and checkout reference
-        alt Invalid customer or input
-            Checkout-->>Receipt: 403 or 422 without order details
-        else Valid lookup input
-            Checkout->>DB: SELECT order joined to payment matching owner and reference
-            alt Missing order or owner/reference mismatch
-                Checkout-->>Receipt: 404 without order details
-            else Matching owner and reference
-                Checkout->>DB: SELECT receipt and saved rejection reason
-                DB-->>Checkout: Current status and original total
-                Checkout-->>Receipt: 200 owned receipt with latest status
-                Receipt-->>Customer: Display Submitted, Confirmed or Rejected and applicable reason
-            end
-        end
-    end
+    Note over Service,DB: UC1 receipt refresh checks owner and checkout reference before reading the latest decision.
