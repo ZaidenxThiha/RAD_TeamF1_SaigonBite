@@ -3,54 +3,142 @@ sequenceDiagram
     actor Admin as Administrator
     participant View as Voucher Workspace
     participant HTTP as Voucher HTTP Controller
-    participant Service as Voucher Service
-    participant Repo as Voucher Repository
+    participant Service as VoucherService
+    participant Repo as VoucherRepository
     participant DB as SQLite
-    Admin->>View: Open voucher management or select voucher
-    View->>HTTP: GET vouchers or voucher details with actor context
-    HTTP->>Service: list or details with username
-    Service->>Repo: Resolve administrator permission
-    Repo->>DB: SELECT user with admin role
+    participant Checkout as UC1 Checkout
+
+    Admin->>View: Open list or select voucher details
+    View->>HTTP: GET /api/vouchers or /api/vouchers/id with demo username
+    HTTP->>Service: admin(username) access precheck
+    Service->>Repo: actor(username)
+    Repo->>DB: SELECT user WHERE role is admin
+    Repo-->>Service: Administrator or no match
     alt Access denied
-        Service-->>HTTP: Access denied
+        Service-->>HTTP: VoucherError ACCESS_DENIED
         HTTP-->>View: 403 without voucher data
-    else Administrator authorized
-        Service->>Repo: Read vouchers and optional change history
-        Repo->>DB: SELECT vouchers and voucher audit
-        Service-->>HTTP: Fields and current allowed actions
-        HTTP-->>View: List or details
+    else Access permitted
+        HTTP->>Service: list(username) or details(username, id)
+        Service->>Repo: actor(username)
+        Repo->>DB: SELECT current administrator
+        Repo-->>Service: Administrator
+        Service->>Service: Recheck administrator permission
+        alt List requested
+            Service->>Repo: hubs() and all()
+            Repo->>DB: SELECT hubs and vouchers
+            Repo-->>Service: Stored hubs and vouchers
+        else Details requested
+            Service->>Service: Validate voucher ID
+            Service->>Repo: find(id)
+            Repo->>DB: SELECT selected voucher
+            Repo-->>Service: Voucher or no match
+            alt Voucher exists
+                Service->>Repo: history(id)
+                Repo->>DB: SELECT voucher_audit joined to administrator usernames
+                Repo-->>Service: Change history
+            else Invalid ID or missing voucher
+                Service-->>HTTP: VoucherError
+                HTTP-->>View: 422 or 404 without details
+            end
+        end
+        Note over Service,HTTP: Only successful reads continue to presentation
+        Service->>Service: Calculate status from archive flag and inclusive Vietnam end date
+        Service->>Service: Derive canEdit and canArchive actions
+        Service-->>HTTP: List or details with current status
+        HTTP-->>View: 200 read result
     end
-    Admin->>View: Save create or edit, or confirm archive
-    View->>HTTP: POST create, PUT edit, or POST confirmed archive
-    HTTP->>Service: save or archive with actor and input
-    Service->>Repo: BEGIN IMMEDIATE
-    Repo->>DB: Begin write transaction
-    Service->>Repo: Recheck administrator and current voucher
-    Repo->>DB: SELECT current role and voucher state
-    Service->>Repo: Check code uniqueness and eligible hub
-    Repo->>DB: SELECT matching code and hubs
-    alt Permission, input or lifecycle check fails
-        Service->>Repo: ROLLBACK
-        Repo->>DB: Roll back transaction
-        Service-->>HTTP: Error and applicable field messages
-        HTTP-->>View: 403, 404, 409 or 422 without changes
-    else Valid change
-        Service->>Repo: Insert voucher, update fields or set archived timestamp
-        Repo->>DB: INSERT or UPDATE vouchers
-        Service->>Repo: Audit administrator, action and timestamp
-        Repo->>DB: INSERT voucher audit
-        alt Storage or audit write fails
-            Service->>Repo: ROLLBACK
-            Repo->>DB: Restore voucher and audit together
-            HTTP-->>View: 500 with retry message
-        else Writes succeed
-            Service->>Repo: COMMIT
-            Repo->>DB: Commit voucher and audit
-            HTTP-->>View: Saved details and current status
-            View-->>Admin: Display result
+
+    opt Administrator submits create, edit or confirmed archive
+        Admin->>View: Save form or confirm Archive modal
+        View->>HTTP: POST create, PUT edit or POST archive
+        HTTP->>Service: admin(username) access precheck
+        Service->>Repo: actor(username)
+        Repo->>DB: SELECT current administrator
+        Repo-->>Service: Administrator or no match
+        HTTP->>HTTP: Validate permission result, JSON type, size and body
+        alt Access or request boundary fails
+            HTTP-->>View: 403, 400, 413 or 415 without writes
+        else Valid request boundary
+            HTTP->>Service: save(username, id, input) or archive(username, id, input)
+            Service->>Repo: transaction(work)
+            Repo->>DB: BEGIN IMMEDIATE
+            Repo->>Service: Execute transaction callback
+            Service->>Repo: actor(username)
+            Repo->>DB: SELECT current administrator
+            Repo-->>Service: Current actor
+            Service->>Service: Recheck administrator permission
+            alt Create or edit
+                opt Edit existing voucher
+                    Service->>Service: Validate ID
+                    Service->>Repo: find(id)
+                    Repo->>DB: SELECT current voucher
+                    Repo-->>Service: Current voucher
+                    Service->>Service: Require existing non-archived voucher
+                end
+                Service->>Service: Normalize code and validate code format
+                Service->>Repo: duplicate(code, exceptId)
+                Repo->>DB: SELECT conflicting code excluding edited voucher
+                Repo-->>Service: Duplicate or no match
+                opt A hub restriction was supplied
+                    Service->>Repo: hubs()
+                    Repo->>DB: SELECT available hubs
+                    Repo-->>Service: Hub records
+                end
+                Service->>Service: Validate discount, calendar dates, date order and eligibility
+                Service->>Service: For create, reject an already expired end date
+            else Archive
+                Service->>Service: Validate ID
+                Service->>Repo: find(id)
+                Repo->>DB: SELECT current voucher
+                Repo-->>Service: Current voucher
+                Service->>Service: Require Active status and confirmed equals true
+                Note over Service,Repo: Archive does not validate code uniqueness or discount fields
+            end
+            alt Permission, existence, lifecycle or field validation fails
+                Service-->>Repo: Throw VoucherError from callback
+                Repo->>DB: ROLLBACK
+                Repo-->>Service: Rethrow domain error
+                Service-->>HTTP: Error with applicable field messages
+                HTTP-->>View: 403, 404, 409 or 422 without changes
+            else Valid change
+                alt Create
+                    Service->>Repo: create(value)
+                    Repo->>DB: INSERT voucher and return numeric ID
+                else Edit
+                    Service->>Repo: update(id, value)
+                    Repo->>DB: UPDATE voucher fields
+                else Archive
+                    Service->>Repo: archive(id, timestamp)
+                    Repo->>DB: UPDATE archived_at without deleting voucher
+                end
+                Service->>Repo: audit(id, administratorId, action, timestamp)
+                Repo->>DB: INSERT voucher_audit
+                Service->>Service: details(username, id) inside transaction
+                Service->>Repo: actor(username), find(id) and history(id)
+                Repo->>DB: SELECT administrator, saved voucher and audit history
+                Repo-->>Service: Read-back records
+                Service->>Service: Calculate current status and allowed actions in Vietnam time
+                alt Write, audit, read-back or transaction operation fails
+                    Repo->>DB: ROLLBACK
+                    Repo-->>Service: Rethrow error
+                    Service-->>HTTP: Domain or storage error
+                    HTTP-->>View: Appropriate domain response or 500 SAVE_FAILED
+                else Callback and commit succeed
+                    Service-->>Repo: Return saved details from callback
+                    Repo->>DB: COMMIT
+                    Repo-->>Service: Committed saved details
+                    Service-->>HTTP: Voucher, current status and history
+                    HTTP-->>View: 201 create or 200 edit/archive
+                    View-->>Admin: Display success and current voucher
+                end
+            end
         end
     end
-    participant Checkout as UC1 Checkout
-    Checkout->>DB: Read current voucher for quote and submission
-    DB-->>Checkout: Discount, dates, minimum, hub and archive flag
-    Checkout->>Checkout: Enforce current eligibility and calculate discount
+
+    opt Customer applies a voucher through UC1
+        Checkout->>DB: SELECT current voucher during quote and submission
+        DB-->>Checkout: Discount, dates, minimum subtotal, hub and archive flag
+        Checkout->>Checkout: Check current eligibility and calculate capped discount
+        Note over Checkout,DB: Archived or expired vouchers cannot be used on new orders
+        Note over Checkout,DB: Earlier orders retain their voucher reference and discount snapshot
+    end
