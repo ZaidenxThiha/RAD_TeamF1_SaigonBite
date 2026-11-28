@@ -1,7 +1,7 @@
 # RAD_TeamF1_SaigonBite
 RAD Final Project (SaigonBite Platform)
 
-SaigonBite has a shared SQLite foundation, customer checkout, kitchen order decisions, and voucher administration. Reporting builds on the same database.
+SaigonBite uses a shared SQLite database for customer checkout, kitchen order decisions, voucher administration, and management reports.
 
 ## Run locally
 
@@ -27,9 +27,11 @@ validation, audit history and eligibility rules shared with checkout. Active vou
 can be edited/archived, Expired vouchers can be edited, and Archived vouchers are view-only.
 The local demo account picker follows UC2's identity simulation.
 
+For [UC4 management reports](docs/uc4/README.md), set `SAIGONBITE_MANAGER_PASSWORD` before starting the server, then open `/reports` and sign in as `manager`.
+
 ## Sample records for the next issues
 
-- Users `customer` and `tourist`, kitchen staff at Bến Thành and Riverside, `administrator`, and `manager` are database fixtures. Authentication is a later implementation task.
+- Users `customer` and `tourist`, kitchen staff at Bến Thành and Riverside, `administrator`, and `manager` are database fixtures. The reports preview requires the configured manager password.
 - Riverside has capacity for one order and starts with one submitted order. Bến Thành is available and offers the same phở bò.
 - Central Saigon is 2 km from Bến Thành. Two bowls at 50,000 VND each, a 15,000 VND delivery fee, and a 10,000 VND discount using the seeded `DEMO10` code produce **105,000 VND**. Use `SPRINT10` when testing live voucher creation as part of the integrated demo.
 - `EXPIRED10` provides the failure case. Two older confirmed orders have completed and failed delivery records for reports.

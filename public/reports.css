@@ -1,0 +1,44 @@
+/* Hallmark · shape: app screen · theme: existing SaigonBite · genre: modern-minimal */
+/* Critique: Keep filters and report results in one view for fast comparison. */
+:root { --report-surface: #fff; --report-heading: #eaf1e9; }
+html, body { overflow-x: clip; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+h1 { text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
+.report-filters button.primary:active { background: var(--ink); }
+.report-filters {
+  grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)) auto;
+  align-items: end;
+}
+.report-filters label, .report-filters input { min-width: 0; }
+.report-note { margin: .6rem 0; color: var(--muted); }
+.report-results { margin-top: 2rem; }
+.sales-totals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  background: var(--report-surface);
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  margin: 1rem 0;
+}
+.sales-totals div { display: block; padding: 1rem; }
+.sales-totals div + div { border-inline-start: 1px solid var(--line); }
+.sales-totals dt { color: var(--muted); font-size: .9rem; }
+.sales-totals dd { text-align: start; font-size: 1.3rem; font-weight: 700; overflow-wrap: break-word; }
+table { width: 100%; border-collapse: collapse; background: var(--report-surface); }
+caption { text-align: start; padding: .75rem 0; font-weight: 650; }
+th, td { padding: .65rem; text-align: end; border-block-end: 1px solid var(--line); }
+tr > :first-child { text-align: start; }
+thead { background: var(--report-heading); }
+tbody td { font-variant-numeric: tabular-nums; }
+@media (max-width: 800px) {
+  .report-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 470px) {
+  .sales-totals { grid-template-columns: 1fr; }
+  .sales-totals div + div { border-inline-start: 0; border-block-start: 1px solid var(--line); }
+  th, td { padding: .35rem .15rem; font-size: .75rem; }
+}
+@media (max-width: 360px) {
+  .report-filters { grid-template-columns: 1fr; }
+}

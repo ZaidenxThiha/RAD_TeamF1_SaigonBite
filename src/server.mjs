@@ -2,15 +2,18 @@ import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { openDatabase } from './database.mjs';
 import { handleCheckout } from './checkout-http.mjs';
+import { handleReports } from './reports-page.mjs';
 import { createKitchenHandler } from './uc2/http.mjs';
 import { createVoucherHandler } from './uc3/http.mjs';
 
 const db = openDatabase();
+const managerPassword = process.env.SAIGONBITE_MANAGER_PASSWORD;
 const handleVouchers = createVoucherHandler(db);
 const handleKitchen = createKitchenHandler(db, {
   notify: () => process.env.SAIGONBITE_NOTIFICATION_FAIL === '1' ? 'failed' : 'sent',
 });
 const assets = new Map([
+  ['/reports.css', ['reports.css', 'text/css; charset=utf-8']],
   ['/vouchers', ['uc3/vouchers.html', 'text/html; charset=utf-8']],
   ['/vouchers/', ['uc3/vouchers.html', 'text/html; charset=utf-8']],
   ['/uc3/vouchers.css', ['uc3/vouchers.css', 'text/css; charset=utf-8']],
@@ -35,6 +38,10 @@ const server = createServer((request, response) => {
       response.writeHead(503, { 'Content-Type': 'application/json' }).end('{"status":"unavailable"}');
     }
     return;
+  }
+
+  if (request.method === 'GET' && request.url.split('?')[0] === '/reports') {
+    return handleReports(db, request, response, new URL(request.url, 'http://localhost'), managerPassword);
   }
 
   const asset = request.method === 'GET' && assets.get(request.url);
