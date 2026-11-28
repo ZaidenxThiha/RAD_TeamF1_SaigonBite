@@ -1,4 +1,4 @@
-import { compareReport, managerAccess, reportFilters, reportTypes, runReport } from './reports.mjs';
+import { compareReport, managerAccess, reportFilters, reportTypes, runReport } from './service.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -36,7 +36,7 @@ function layout(content) {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Management reports | SaigonBite</title><link rel="stylesheet" href="/shared/layout.css">
-<link rel="stylesheet" href="/reports.css"><script type="module" src="/reports.js"></script></head>
+<link rel="stylesheet" href="/uc4/reports.css"><script type="module" src="/uc4/reports.js"></script></head>
 <body><aside class="sidebar" data-sidebar></aside><div class="workspace"><header class="header" data-header></header>
 <main class="reports-main" aria-label="Management reports">${content}</main></div></body></html>`;
 }
@@ -120,10 +120,22 @@ function criteriaPage(filters, hubs, brands, error) {
     <p class="micro bottom-note">Reports are read-only. Generating a report does not modify operational records.</p>`;
 }
 
-function statePage(filters, hubs, failed = false, example = false) {
+function emptyPeriodComparison(type, previous) {
+  if (!previous) return '';
+  if (type === 'sales') {
+    return tiles([
+      ['Current period sales', money.format(0)], ['Previous period sales', money.format(previous.total)],
+      ['Current period orders', 0], ['Previous period orders', number.format(previous.count)],
+    ]);
+  }
+  return tiles([['Current period', 0], ['Previous period', number.format(previous.count)]]);
+}
+
+function statePage(filters, hubs, { failed = false, example = false, previous } = {}) {
   const title = failed ? "We couldn't generate this report" : 'No matching records';
   return intro(failed ? 'Report generation' : 'Report preview', (labels[filters.type] || 'Report') + ' · ' + period(filters, hubs),
     link('Back to reports', '/reports')) +
+    emptyPeriodComparison(filters.type, previous) +
     `<section class="panel state-panel"><div><img src="/prototype/${failed ? 'error' : 'empty'}.svg" alt="" width="88" height="88">
       <h2>${title}</h2><p class="muted">${failed ? 'Something went wrong while processing your request.' : 'No records match the selected dates and hub.'}</p>
       <p class="micro">${failed ? 'Your operational data has not changed. You can try again.' : 'Widen the date range or select a different hub or virtual brand.'}</p>
@@ -174,7 +186,7 @@ function salesReport(result, previous) {
     table('Hub performance', ['Hub', 'Orders', 'Sales', 'Avg. order', 'Share'], rows.map(([name, row]) =>
       [name, row.count, money.format(row.total), money.format(row.total / row.count), percent(row.total, result.total)])) +
     `<div class="bottom-note">${table('Confirmed orders', ['Order', 'Hub', 'Total'], result.orders.map(
-      ({ id, hub, total }) => [`#${id}`, hub, money.format(total)]))}</div>`;
+      ({ id, hub, total }) => [`SB-${String(id).padStart(6, '0')}`, hub, money.format(total)]))}</div>`;
 }
 
 function preview(filters, hubs, result, previous) {
@@ -219,10 +231,10 @@ export function handleReports(db, request, response, url, password) {
     const view = url.searchParams.get('view');
     if (view === 'criteria') return respond(200, criteriaPage(filters, hubs, brands));
     if (!url.search) return respond(200, dashboard(hubs, filters));
-    if (url.searchParams.get('example') === 'error') return respond(200, statePage(filters, hubs, true, true));
+    if (url.searchParams.get('example') === 'error') return respond(200, statePage(filters, hubs, { failed: true, example: true }));
     const result = runReport(db, criteria);
-    if (!result.count) return respond(200, statePage(filters, hubs));
     const previous = filters.compare ? compareReport(db, criteria) : undefined;
+    if (!result.count) return respond(200, statePage(filters, hubs, { previous }));
     const markup = preview(filters, hubs, result, previous);
     recent.unshift({ filters, period: period(filters, hubs), time: new Date() });
     recent.splice(5);
@@ -230,6 +242,6 @@ export function handleReports(db, request, response, url, password) {
     return respond(200, markup);
   } catch (error) {
     console.error('Unable to generate management report', error);
-    return respond(500, statePage(filters, hubs, true));
+    return respond(500, statePage(filters, hubs, { failed: true }));
   }
 }

@@ -10,6 +10,12 @@ Select a report from the dashboard to open its criteria. The initial range is th
 
 With fresh sample data and the default range, expect two confirmed Bến Thành orders totaling 130,000 VND, one submitted Riverside order, and one completed and one failed delivery at Bến Thành. Selecting Riverside for sales shows the empty state. `npm test` checks these metric rules using fixed timestamps at the date boundaries, plus hub filters, invalid input, and denied access.
 
+## Implementation files
+
+- Browser assets live in [public/uc4/](../../public/uc4/).
+- The [HTTP handler](../../src/uc4/http.mjs) renders the reports workspace at `/reports`.
+- The [report service](../../src/uc4/service.mjs) validates criteria and runs read-only SQLite queries.
+
 ## Design and prototype evidence
 
 - [Original sketch and wireframe](wireframes/sketch-wireframe.png)
