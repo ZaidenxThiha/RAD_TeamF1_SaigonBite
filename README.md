@@ -13,21 +13,20 @@ npm test
 npm start
 ```
 
-Open http://127.0.0.1:4173/ to try [UC1 checkout](docs/uc1/README.md). At http://127.0.0.1:4173/health expect `{"status":"ok"}`. Stop the server with Ctrl+C. The default database lives in `runtime/saigonbite.sqlite`. Set `SAIGONBITE_DB` to a new path to start with fresh sample data. Reopening the existing file preserves records.
+### Demo screens
 
-Open http://127.0.0.1:4173/kitchen for [UC2 kitchen decisions](docs/uc2/uc2-kitchen-decisions.md)
-(author: 523K0075). Expand **Local demo account** to switch between the two seeded kitchen
-staff. UC1-created Submitted orders appear in their assigned hub's queue. Kitchen API
-authorization rechecks the stored actor role and hub; account selection is a local demo,
-not production sign-in. Notifications are simulated and do not send external messages.
+- **UC1 · Customer checkout.** Choose a hub, build an order, review the total, and submit it. [Open checkout](http://127.0.0.1:4173/) · [UC1 guide](docs/uc1/README.md)
+- **UC2 · Kitchen decisions.** Use **Local demo account** to switch between the Bến Thành and Riverside staff. Submitted orders appear in the assigned hub’s queue. Staff can confirm or reject them, and the server checks the staff role and hub before saving. Notifications use a local simulator. [Open the kitchen queue](http://127.0.0.1:4173/kitchen) · [UC2 guide](docs/uc2/uc2-kitchen-decisions.md)
+- **UC3 · Voucher management.** Select the administrator demo account to create and manage vouchers. Active vouchers can be edited or archived, expired vouchers can be edited, and archived vouchers are view-only. Changes appear in the audit history, and checkout validates voucher eligibility. [Open voucher management](http://127.0.0.1:4173/vouchers) · [UC3 guide](docs/uc3/uc3-voucher-management.md)
+- **UC4 · Management reports.** Set `SAIGONBITE_MANAGER_PASSWORD` before starting the server, then sign in as `manager` to view sales, hub workload, and delivery performance. [Open reports](http://127.0.0.1:4173/reports) · [UC4 guide](docs/uc4/README.md)
 
-Open http://127.0.0.1:4173/vouchers for [UC3 voucher management](docs/uc3/uc3-voucher-management.md)
-(author: 523K0075). The administrator can create, view, edit and archive vouchers, with
-validation, audit history and eligibility rules shared with checkout. Active vouchers
-can be edited/archived, Expired vouchers can be edited, and Archived vouchers are view-only.
-The local demo account picker follows UC2's identity simulation.
+UC2 and UC3 were implemented by Thin Lei Sandi (523K0075). Their account pickers simulate sign-in for the local demo.
 
-For [UC4 management reports](docs/uc4/README.md), set `SAIGONBITE_MANAGER_PASSWORD` before starting the server, then open `/reports` and sign in as `manager`.
+### Server and sample data
+
+The [health endpoint](http://127.0.0.1:4173/health) returns `{"status":"ok"}` when the server can read the database. Press Ctrl+C in the terminal to stop the server.
+
+The default SQLite file is `runtime/saigonbite.sqlite`. Set `SAIGONBITE_DB` to a new file path to start with fresh sample data. Restarting with the same file preserves existing records.
 
 ## Run the UC1–UC4 integration test
 
