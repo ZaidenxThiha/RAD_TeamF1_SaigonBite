@@ -14,25 +14,25 @@ passed a test. Record actual test results separately using the demonstration sce
 
 ### Sketches and wireframe
 
-- [UC2-Wireframe](wireframes/UC2-Wireframe.png)
-- [UC2 sketch page1](wireframes/UC2_sketch_page1.png)
-- [UC2 sketch page2](wireframes/UC2_sketch_page2.png)
+- [UC2-Wireframe](wireframes/UC2_Wireframe.png)
+- [UC2 sketch page1](sketches/UC2_sketch_page1.png)
+- [UC2 sketch page2](sketches/UC2_sketch_page2.png)
 
 ### Prototype screens
 
-- [UC2 01 — Incoming Orders — Submitted](prototype/UC2%2001%20%E2%80%94%20Incoming%20Orders%20%E2%80%94%20Submitted.png)
-- [UC2 02 — SB-1042 — Review](prototype/UC2%2002%20%E2%80%94%20SB-1042%20%E2%80%94%20Review.png)
-- [UC2 03 — SB-1042 — Reject — Empty Reason](prototype/UC2%2003%20%E2%80%94%20SB-1042%20%E2%80%94%20Reject%20%E2%80%94%20Empty%20Reason.png)
-- [UC2 04 — SB-1042 — Reject — Required Reason Error](prototype/UC2%2004%20%E2%80%94%20SB-1042%20%E2%80%94%20Reject%20%E2%80%94%20Required%20Reason%20Error.png)
-- [UC2 05 — SB-1042 — Reject — Reason Entered](prototype/UC2%2005%20%E2%80%94%20SB-1042%20%E2%80%94%20Reject%20%E2%80%94%20Reason%20Entered.png)
-- [UC2 06 — SB-1042 — Confirmed](prototype/UC2%2006%20%E2%80%94%20SB-1042%20%E2%80%94%20Confirmed.png)
-- [UC2 07 — SB-1042 — Rejected](prototype/UC2%2007%20%E2%80%94%20SB-1042%20%E2%80%94%20Rejected.png)
-- [UC2 08 — Incoming Orders — Empty](prototype/UC2%2008%20%E2%80%94%20Incoming%20Orders%20%E2%80%94%20Empty.png)
-- [UC2 09 — Access Denied](prototype/UC2%2009%20%E2%80%94%20Access%20Denied.png)
-- [UC2 10 — SB-1043 — Order Unavailable — Before Decision](prototype/UC2%2010%20%E2%80%94%20SB-1043%20%E2%80%94%20Order%20Unavailable%20%E2%80%94%20Before%20Decision.png)
-- [UC2 11 — Incoming Orders — SB-1042 Only — Refreshed](prototype/UC2%2011%20%E2%80%94%20Incoming%20Orders%20%E2%80%94%20SB-1042%20Only%20%E2%80%94%20Refreshed.png)
-- [UC2 12 — Incoming Orders — SB-1043 Only — After Decision](prototype/UC2%2012%20%E2%80%94%20Incoming%20Orders%20%E2%80%94%20SB-1043%20Only%20%E2%80%94%20After%20Decision.png)
-- [UC2 13 — SB-1043 — Order Unavailable — After Decision](prototype/UC2%2013%20%E2%80%94%20SB-1043%20%E2%80%94%20Order%20Unavailable%20%E2%80%94%20After%20Decision.png)
+- [UC2 01 — Incoming Orders — Submitted](prototypes/UC2/UC2%2001%20%E2%80%94%20Incoming%20Orders%20%E2%80%94%20Submitted.png)
+- [UC2 02 — SB-1042 — Review](prototypes/UC2/UC2%2002%20%E2%80%94%20SB-1042%20%E2%80%94%20Review.png)
+- [UC2 03 — SB-1042 — Reject — Empty Reason](prototypes/UC2/UC2%2003%20%E2%80%94%20SB-1042%20%E2%80%94%20Reject%20%E2%80%94%20Empty%20Reason.png)
+- [UC2 04 — SB-1042 — Reject — Required Reason Error](prototypes/UC2/UC2%2004%20%E2%80%94%20SB-1042%20%E2%80%94%20Reject%20%E2%80%94%20Required%20Reason%20Error.png)
+- [UC2 05 — SB-1042 — Reject — Reason Entered](prototypes/UC2/UC2%2005%20%E2%80%94%20SB-1042%20%E2%80%94%20Reject%20%E2%80%94%20Reason%20Entered.png)
+- [UC2 06 — SB-1042 — Confirmed](prototypes/UC2/UC2%2006%20%E2%80%94%20SB-1042%20%E2%80%94%20Confirmed.png)
+- [UC2 07 — SB-1042 — Rejected](prototypes/UC2/UC2%2007%20%E2%80%94%20SB-1042%20%E2%80%94%20Rejected.png)
+- [UC2 08 — Incoming Orders — Empty](prototypes/UC2/UC2%2008%20%E2%80%94%20Incoming%20Orders%20%E2%80%94%20Empty.png)
+- [UC2 09 — Access Denied](prototypes/UC2/UC2%2009%20%E2%80%94%20Access%20Denied.png)
+- [UC2 10 — SB-1043 — Order Unavailable — Before Decision](prototypes/UC2/UC2%2010%20%E2%80%94%20SB-1043%20%E2%80%94%20Order%20Unavailable%20%E2%80%94%20Before%20Decision.png)
+- [UC2 11 — Incoming Orders — SB-1042 Only — Refreshed](prototypes/UC2/UC2%2011%20%E2%80%94%20Incoming%20Orders%20%E2%80%94%20SB-1042%20Only%20%E2%80%94%20Refreshed.png)
+- [UC2 12 — Incoming Orders — SB-1043 Only — After Decision](prototypes/UC2/UC2%2012%20%E2%80%94%20Incoming%20Orders%20%E2%80%94%20SB-1043%20Only%20%E2%80%94%20After%20Decision.png)
+- [UC2 13 — SB-1043 — Order Unavailable — After Decision](prototypes/UC2/UC2%2013%20%E2%80%94%20SB-1043%20%E2%80%94%20Order%20Unavailable%20%E2%80%94%20After%20Decision.png)
 
 The implemented kitchen now formats order references as `SB-000004`. The prototype
 exports retain the original sample references such as `SB-1042`.
@@ -72,7 +72,7 @@ never authorize a decision.
 
 No database migration is needed. Existing `orders`, `order_items`, `payments`,
 `order_decisions`, `users`, `hubs` and `customer_notifications` tables are reused.
-The [editable sequence diagram](diagrams/uc2-kitchen-sequence.mmd) shows the data-access flow.
+The [editable sequence diagram](<../diagrams/UC2 - Confirm or Reject an Incoming Order/UC2 - Modified Sequence Diagram with Data Access/UC2-Sequence Diagram with Data Access.mmd>) shows the data-access flow. The [editable draw.io version](<../diagrams/UC2 - Confirm or Reject an Incoming Order/UC2 - Modified Sequence Diagram with Data Access/UC2-Sequence Diagram with Data Access.drawio>) contains the same detailed sequence.
 
 The kitchen page mounts the shared shell with `renderWorkspaceLayout(...)`. The
 UC3 page also loads `/shared/layout.css` and imports `/shared/layout.js`, with its own
