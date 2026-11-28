@@ -66,8 +66,8 @@ test('management reports enforce manager access and use Vietnam date boundaries'
   assert.match(salesPage, /Confirmed orders<\/dt><dd>1/);
   assert.match(salesPage, /Sales trend/);
   assert.match(salesPage, /Previous:/);
-  assert.match(salesPage, />#2<\/th>/);
-  assert.doesNotMatch(salesPage, />#[13]<\/th>/);
+  assert.match(salesPage, />SB-000002<\/th>/);
+  assert.doesNotMatch(salesPage, />SB-00000[13]<\/th>/);
 
   const workload = await (await fetch(url + '&type=workload', { headers })).text();
   assert.match(workload, /Riverside<\/th><td>1<\/td><td>0<\/td><td>0<\/td><td>1<\/td>/);
@@ -76,6 +76,26 @@ test('management reports enforce manager access and use Vietnam date boundaries'
   assert.match(delivery, /Bến Thành<\/th><td>1<\/td><td>1<\/td><td>2<\/td>/);
   const empty = await (await fetch(url + '&hub=2', { headers })).text();
   assert.match(empty, /No records match/);
+  assert.doesNotMatch(empty, /Previous period/);
+
+  const emptySalesUrl = home + '?type=sales&from=2026-11-30&to=2026-11-30&hub=1&compare=1';
+  const emptySales = await fetch(emptySalesUrl, { headers });
+  assert.equal(emptySales.status, 200);
+  const emptySalesPage = await emptySales.text();
+  assert.match(emptySalesPage, /No records match/);
+  assert.match(emptySalesPage, /Current period sales<\/dt><dd>0/);
+  assert.match(emptySalesPage, /Previous period sales<\/dt><dd>65\.000/);
+  assert.match(emptySalesPage, /Current period orders<\/dt><dd>0<\/dd>/);
+  assert.match(emptySalesPage, /Previous period orders<\/dt><dd>1<\/dd>/);
+
+  const emptyDeliveryUrl = home + '?type=delivery&from=2026-11-29&to=2026-11-29&hub=1&compare=1';
+  const emptyDelivery = await fetch(emptyDeliveryUrl, { headers });
+  assert.equal(emptyDelivery.status, 200);
+  const emptyDeliveryPage = await emptyDelivery.text();
+  assert.match(emptyDeliveryPage, /No records match/);
+  assert.match(emptyDeliveryPage, /Current period<\/dt><dd>0<\/dd>/);
+  assert.match(emptyDeliveryPage, /Previous period<\/dt><dd>2<\/dd>/);
+
 
   assert.match(await (await fetch(home, { headers })).text(), /View report/);
   const example = await fetch(url + '&example=error', { headers });
