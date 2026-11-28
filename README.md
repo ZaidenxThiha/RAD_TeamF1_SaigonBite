@@ -13,7 +13,7 @@ npm test
 npm start
 ```
 
-Open http://127.0.0.1:4173/ to try [UC1 checkout](docs/uc1-checkout.md). At http://127.0.0.1:4173/health expect `{"status":"ok"}`. Stop the server with Ctrl+C. The default database lives in `runtime/saigonbite.sqlite`. Set `SAIGONBITE_DB` to a new path to start with fresh sample data. Reopening the existing file preserves records.
+Open http://127.0.0.1:4173/ to try [UC1 checkout](docs/uc1/README.md). At http://127.0.0.1:4173/health expect `{"status":"ok"}`. Stop the server with Ctrl+C. The default database lives in `runtime/saigonbite.sqlite`. Set `SAIGONBITE_DB` to a new path to start with fresh sample data. Reopening the existing file preserves records.
 
 Open http://127.0.0.1:4173/kitchen for [UC2 kitchen decisions](docs/uc2-kitchen-decisions.md)
 (author: 523K0075). Expand **Local demo account** to switch between the two seeded kitchen

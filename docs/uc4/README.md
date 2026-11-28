@@ -12,17 +12,17 @@ With fresh sample data and the default range, expect two confirmed Bến Thành 
 
 ## Design and prototype evidence
 
-- [Original sketch and wireframe](sketch-wireframe.png)
+- [Original sketch and wireframe](wireframes/sketch-wireframe.png)
 - [Open the UC4 desktop prototype in Figma](https://www.figma.com/design/iD7ki5jjLIyrZrvBg7Fbe0/SaigonBite-%E2%80%94-UC1---UC4?node-id=47-56)
-- [Reporting query sequence](report-sequence.mmd)
+- [Reporting query sequence](diagrams/sequence.mmd)
 
 ### Figma prototype screenshots
 
 These screenshots come from the Figma frames and show the prototype’s sample report figures.
 
-- [Reports Dashboard](prototype.png)
+- [Reports Dashboard](prototype/01-reports-dashboard.png)
 - [Report Criteria](prototype/02-report-criteria.png)
-- [Sales Report Preview](sales-mockup.png)
+- [Sales Report Preview](prototype/03-sales-report-preview.png)
 - [Invalid Criteria](prototype/04-invalid-criteria.png)
 - [No Matching Records](prototype/05-no-matching-records.png)
 - [Report Generation Error](prototype/06-report-generation-error.png)

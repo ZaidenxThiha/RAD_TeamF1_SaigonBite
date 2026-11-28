@@ -19,28 +19,28 @@ The customer picker represents local sample accounts. It is a demo input on the 
 
 ### Checkout screens
 
-- [Select Hub & Brand](uc1/prototype/01-select-hub-and-brand.png)
-- [Browse Menu & Cart](uc1/prototype/02-menu-and-cart.png)
-- [Delivery Address & Eligibility](uc1/prototype/03-delivery-eligibility.png)
-- [Voucher & Order Review](uc1/prototype/04-voucher-and-review.png)
-- [Payment Method](uc1/prototype/05-payment-method.png)
-- [Online Payment Processing](uc1/prototype/06-online-payment.png)
-- [Order Confirmation](uc1/prototype/07-order-confirmation.png)
-- [Payment Failed](uc1/prototype/08-payment-failed.png)
+- [Select Hub & Brand](prototype/01-select-hub-and-brand.png)
+- [Browse Menu & Cart](prototype/02-menu-and-cart.png)
+- [Delivery Address & Eligibility](prototype/03-delivery-eligibility.png)
+- [Voucher & Order Review](prototype/04-voucher-and-review.png)
+- [Payment Method](prototype/05-payment-method.png)
+- [Online Payment Processing](prototype/06-online-payment.png)
+- [Order Confirmation](prototype/07-order-confirmation.png)
+- [Payment Failed](prototype/08-payment-failed.png)
 
 ### Feedback overlays
 
-- [Added to Cart](uc1/prototype/overlay-added-to-cart.png)
-- [Eligibility Passed](uc1/prototype/overlay-eligibility-passed.png)
-- [Alternative Hub Suggested](uc1/prototype/overlay-alternative-hub.png)
-- [Voucher Feedback](uc1/prototype/overlay-voucher-feedback.png)
+- [Added to Cart](prototype/overlays/overlay-added-to-cart.png)
+- [Eligibility Passed](prototype/overlays/overlay-eligibility-passed.png)
+- [Alternative Hub Suggested](prototype/overlays/overlay-alternative-hub.png)
+- [Voucher Feedback](prototype/overlays/overlay-voucher-feedback.png)
 
 ## Report evidence
 
-- Section 4.3.2 uses the [editable checkout sequence](uc1-checkout-sequence.mmd).
+- Section 4.3.2 uses the [editable checkout sequence](diagrams/sequence.mmd).
 - Section 4.3.3 uses the Figma prototype screens and overlays linked above.
-- Section 4.3.5 references quoteOrder, submitCheckout and cancelCheckout in [checkout.mjs](../src/uc1/service.mjs).
-- Section 5.1 can use [checkout.test.mjs](../test/checkout.test.mjs) to reproduce the checks for a one-payment receipt, hub alternatives, invalid inputs, declined authorization, retry and cancellation.
+- Section 4.3.5 references quoteOrder, submitCheckout and cancelCheckout in [service.mjs](../../src/uc1/service.mjs).
+- Section 5.1 can use [checkout.test.mjs](../../test/checkout.test.mjs) to reproduce the checks for a one-payment receipt, hub alternatives, invalid inputs, declined authorization, retry and cancellation.
 
 For the UC2 handoff, a successful submission has status Submitted and the assigned hub in the orders table. It references the selected payment and its item snapshots. For the UC3 handoff, checkout reads the existing vouchers table. The seeded DEMO10 code lets UC1 work before the admin screens are merged.
 
