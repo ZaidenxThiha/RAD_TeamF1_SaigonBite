@@ -27,12 +27,12 @@ the 105,000 VND integrated demo and optional Chromium test.
 
 ## Verification to fill before publication
 
-- Verified full commit SHA: pending.
-- Verification environment and date: pending.
-- Clean checkout, dependency installation and initialization: pending.
-- `npm test` result: pending release-candidate run.
-- `npm run test:browser` result: pending, or explicitly state Not run and why.
-- Integrated demonstration and teammate reproduction: pending.
+- Tested application candidate: `33632eeeefb9228094aef2d5fbed21ad3a60c08d`. Confirm the exact tag target before publication; these notes do not create a tag.
+- Verification environment and date: Windows PowerShell; final test output supplied by Thin Lei Sandi on 29 November 2026. The earlier rehearsal recorded Node.js 24.21.0 and npm 11.19.0; versions were not reprinted in the final output.
+- Clean checkout, dependency installation and initialization: passed during the earlier fresh-clone rehearsal at `bfdd9ed5d093933e8cae683853571539dd5402c9`. Final tests ran in that existing test checkout after updating it. Application code, SQL, dependency manifests and test/scripts trees are unchanged between these revisions.
+- `npm test`: 41 passed, 0 failed, 0 skipped; duration 7469.552 ms at the tested candidate.
+- `npm run test:browser`: not recorded for the final candidate; optional Chromium verification was not part of the supplied rerun.
+- Integrated demonstration: user reported the earlier fresh-clone demo passed; the final automated UC1–UC4 integration test also passed. Separate teammate reproduction remains pending.
 
 ## Known limitations
 
