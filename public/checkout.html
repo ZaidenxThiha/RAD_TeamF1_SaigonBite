@@ -34,7 +34,10 @@
             <dl id="quote" aria-live="polite" hidden></dl>
             <p id="quote-error" class="notice error" role="alert" hidden></p>
             <div id="alternatives" class="actions"></div>
-            <button id="review" type="button" class="primary">Review total</button>
+            <div class="actions">
+              <button id="review" type="button" class="primary">Review total</button>
+              <button id="cancel" type="button" hidden>Cancel checkout</button>
+            </div>
           </section>
           <fieldset id="payment" class="panel" hidden>
             <legend>Payment</legend>
@@ -43,7 +46,6 @@
             <p id="payment-error" class="notice error" role="alert" hidden></p>
             <div class="actions">
               <button id="place" class="primary" type="submit">Place order</button>
-              <button id="cancel" type="button">Cancel checkout</button>
             </div>
           </fieldset>
         </div>

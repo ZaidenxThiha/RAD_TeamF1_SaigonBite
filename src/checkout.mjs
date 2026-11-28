@@ -215,7 +215,7 @@ export function submitCheckout(db, customer, input) {
 
     if (method === 'online') {
       const status = simulation === 'approve' ? 'authorized' : 'declined';
-      db.prepare('UPDATE payments SET status = ?, provider_ref = ? WHERE id = ?')
+      db.prepare('UPDATE payments SET status = ?, provider_ref = COALESCE(provider_ref, ?) WHERE id = ?')
         .run(status, `DEMO-${randomUUID()}`, paymentId);
       if (status === 'declined') return { status: 'PaymentDeclined' };
     }

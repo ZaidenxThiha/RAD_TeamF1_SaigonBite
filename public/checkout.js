@@ -107,10 +107,13 @@ function requestBody() {
 }
 
 function syncControls() {
-  orderFields.disabled = pending || paymentAttempted;
-  fields.voucherCode.disabled = pending || paymentAttempted;
-  review.disabled = pending || paymentAttempted;
+  orderFields.disabled = pending;
+  fields.username.disabled = paymentAttempted;
+  fields.voucherCode.disabled = pending;
+  review.disabled = pending;
   payment.disabled = pending;
+  cancel.disabled = pending;
+  cancel.hidden = !quote && !paymentAttempted;
 }
 
 function clearQuote() {
@@ -120,6 +123,7 @@ function clearQuote() {
   showError(quoteError);
   showError(paymentError);
   alternatives.replaceChildren();
+  syncControls();
 }
 
 function showAlternatives(options = []) {
@@ -193,7 +197,7 @@ form.onsubmit = async (event) => {
     const result = await api('submit', body);
     if (result.status === 'PaymentDeclined') {
       paymentAttempted = true;
-      showError(paymentError, 'Payment declined. Retry, switch to cash on delivery, or cancel checkout.');
+      showError(paymentError, 'Payment declined. Retry, switch to cash on delivery, or edit your order and review the total again.');
       return;
     }
     rows(receipt.querySelector('dl'), [
@@ -206,8 +210,6 @@ form.onsubmit = async (event) => {
     document.querySelector('#restart').focus();
   } catch (error) {
     showError(paymentError, error.message);
-    // Before a failed payment, the customer can refresh the quote and revise the order.
-    // After a failed payment, cancellation or retry keeps the original payment reference.
   } finally {
     pending = false;
     syncControls();
@@ -226,7 +228,7 @@ cancel.onclick = async () => {
     clearQuote();
     status.textContent = 'Checkout cancelled.';
   } catch (error) {
-    showError(paymentError, error.message);
+    showError(payment.hidden ? quoteError : paymentError, error.message);
   } finally {
     pending = false;
     syncControls();

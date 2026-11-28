@@ -83,3 +83,30 @@ test('cancelling archives a failed payment and abandoning a quote saves no new r
   assert.throws(() => submitCheckout(db, customer, order), /was cancelled/);
   assert.equal(db.prepare('SELECT count(*) AS count FROM orders').get().count, 3);
 });
+
+test('a stale checkout after decline can be edited and re-quoted against the same payment', t => {
+  const { db, customer } = setup(t);
+  const online = { ...order, method: 'online', simulation: 'decline' };
+  const find = db.prepare('SELECT id, status, provider_ref, amount_vnd FROM payments WHERE checkout_ref = ?');
+
+  assert.equal(submitCheckout(db, customer, online).status, 'PaymentDeclined');
+  const declined = find.get(order.checkoutRef);
+  db.exec('UPDATE hub_menu_items SET price_vnd = 55000 WHERE hub_id = 1 AND menu_item_id = 1');
+
+  const retry = { ...online, simulation: 'approve' };
+  assert.throws(() => submitCheckout(db, customer, retry), /quote has changed/);
+  assert.deepEqual(find.get(order.checkoutRef), declined);
+  assert.equal(db.prepare('SELECT count(*) AS count FROM orders WHERE payment_id = ?').get(declined.id).count, 0);
+
+  const revised = { ...retry, items: [{ itemId: 1, quantity: 3 }] };
+  const quote = quoteOrder(db, revised);
+  assert.equal(quote.total, 163500);
+  const receipt = submitCheckout(db, customer, { ...revised, expectedTotal: quote.total });
+  assert.equal(receipt.status, 'Submitted');
+  assert.equal(receipt.total, quote.total);
+  assert.deepEqual({ ...find.get(order.checkoutRef) }, {
+    ...declined, status: 'authorized', amount_vnd: quote.total,
+  });
+  assert.equal(db.prepare('SELECT count(*) AS count FROM payments').get().count, 4);
+  assert.equal(db.prepare('SELECT count(*) AS count FROM orders WHERE payment_id = ?').get(declined.id).count, 1);
+});
