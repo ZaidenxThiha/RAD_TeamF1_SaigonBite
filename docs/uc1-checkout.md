@@ -20,3 +20,8 @@ The customer picker represents local sample accounts. It is a demo input on the 
 - Section 5.1 can use [checkout.test.mjs](../test/checkout.test.mjs) to reproduce the checks for a one-payment receipt, hub alternatives, invalid inputs, declined authorization, retry and cancellation.
 
 For the UC2 handoff, a successful submission has status Submitted and the assigned hub in the orders table. It references the selected payment and its item snapshots. For the UC3 handoff, checkout reads the existing vouchers table. The seeded DEMO10 code lets UC1 work before the admin screens are merged.
+
+After a kitchen decision, select **Refresh status** on the open customer receipt to read
+the latest Confirmed or Rejected status (and rejection reason). The read-only lookup
+requires the submitted order's owner and original checkout reference; it does not create
+another order or payment. Account selection remains a local demo simulation.

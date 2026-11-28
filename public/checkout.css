@@ -42,5 +42,11 @@ dl div { display: flex; justify-content: space-between; align-items: baseline; g
 dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
 .total { border-top: 1px solid var(--line); padding-top: .65rem; font-size: 1.15rem; font-weight: 750; }
 #receipt { max-width: 540px; }
+#receipt .receipt-order-status { align-items: center; margin-top: 1.2rem; padding: .9rem 1rem; border: 1px solid var(--line); border-radius: .7rem; background: #f8faf7; }
+.receipt-order-status dt { font-size: .95rem; font-weight: 700; }
+.receipt-status-badge { padding: .45rem .8rem; border-radius: 2rem; font-size: 1.05rem; font-weight: 750; background: #edf0ec; }
+.receipt-status-badge.submitted { color: #80500b; background: #fff0cf; }
+.receipt-status-badge.confirmed { color: #216b49; background: #e5f3e9; }
+.receipt-status-badge.rejected { color: #a32c20; background: #fde9e4; }
 @media (max-width: 680px) { .layout { grid-template-columns: 1fr; } }
 @media (max-width: 360px) { .pair { grid-template-columns: 1fr; } }
