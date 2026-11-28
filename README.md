@@ -29,7 +29,17 @@ The local demo account picker follows UC2's identity simulation.
 
 For [UC4 management reports](docs/uc4/README.md), set `SAIGONBITE_MANAGER_PASSWORD` before starting the server, then open `/reports` and sign in as `manager`.
 
-## Sample records for the next issues
+## Run the UC1–UC4 integration test
+
+Run this command from the repository root to test voucher creation, checkout, kitchen confirmation, and sales reporting against one fresh SQLite database.
+
+```sh
+node --test test/use-case-integration.test.mjs
+```
+
+The test starts and stops its own local server. It verifies that the order reference and 105,000 VND total match across checkout, the kitchen queue, and the sales report. See the [integration test results](docs/integration-test-results.md) for the failure cases and Chrome retests.
+
+## Sample records
 
 - Users `customer` and `tourist`, kitchen staff at Bến Thành and Riverside, `administrator`, and `manager` are database fixtures. The reports preview requires the configured manager password.
 - Riverside has capacity for one order and starts with one submitted order. Bến Thành is available and offers the same phở bò.
