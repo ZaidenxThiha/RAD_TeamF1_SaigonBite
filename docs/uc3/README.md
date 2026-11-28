@@ -2,6 +2,61 @@
 
 Author: Thin Lei Sandi (523K0075). Issue #27.
 
+## Design evidence
+
+Author: Thin Lei Sandi (523K0075).
+
+The images below document the UI design and prototype scenarios. Prototype exports
+contain sample data and are not screenshots proving that the implemented application
+passed a test. Record actual test results separately using the demonstration scenarios below.
+
+[Open the shared UC2 and UC3 Figma prototype](https://www.figma.com/design/TuBvpDXqxV9uQK8TQkBaR4/UC-2---3-Protype).
+
+### Sketches and wireframe
+
+- [uc3 sketch page1](wireframes/uc3_sketch_page1.png)
+- [uc3 sketch page2](wireframes/uc3_sketch_page2.png)
+- [uc3 sketch page3](wireframes/uc3_sketch_page3.png)
+- [uc3 sketch page4](wireframes/uc3_sketch_page4.png)
+- [UC3 Wireframe](wireframes/UC3_Wireframe.png)
+
+### Prototype screens
+
+- [UC3 01 — Voucher List — Initial](prototype/UC3%2001%20%E2%80%94%20Voucher%20List%20%E2%80%94%20Initial.png)
+- [UC3 02 — Create Voucher — Empty](prototype/UC3%2002%20%E2%80%94%20Create%20Voucher%20%E2%80%94%20Empty.png)
+- [UC3 03 — Create Voucher — Validation Errors](prototype/UC3%2003%20%E2%80%94%20Create%20Voucher%20%E2%80%94%20Validation%20Errors.png)
+- [UC3 04 — SAVE10 — Active Details](prototype/UC3%2004%20%E2%80%94%20SAVE10%20%E2%80%94%20Active%20Details.png)
+- [UC3 05 — SAVE10 — Edit](prototype/UC3%2005%20%E2%80%94%20SAVE10%20%E2%80%94%20Edit.png)
+- [UC3 06 — SAVE10 — Archive Confirmation](prototype/UC3%2006%20%E2%80%94%20SAVE10%20%E2%80%94%20Archive%20Confirmation.png)
+- [UC3 07 — Access Denied](prototype/UC3%2007%20%E2%80%94%20Access%20Denied.png)
+- [UC3 08 — Voucher List — NEWYEAR Created](prototype/UC3%2008%20%E2%80%94%20Voucher%20List%20%E2%80%94%20NEWYEAR%20Created.png)
+- [UC3 09 — SAVE10 — Updated Details](prototype/UC3%2009%20%E2%80%94%20SAVE10%20%E2%80%94%20Updated%20Details.png)
+- [UC3 10 — Voucher List — SAVE10 Archived](prototype/UC3%2010%20%E2%80%94%20Voucher%20List%20%E2%80%94%20SAVE10%20Archived.png)
+- [UC3 11 — Voucher Not Found](prototype/UC3%2011%20%E2%80%94%20Voucher%20Not%20Found.png)
+- [UC3 12 — Archived Voucher — Edit Blocked](prototype/UC3%2012%20%E2%80%94%20Archived%20Voucher%20%E2%80%94%20Edit%20Blocked.png)
+- [UC3 13 — Create NEWYEAR — Save Failed](prototype/UC3%2013%20%E2%80%94%20Create%20NEWYEAR%20%E2%80%94%20Save%20Failed.png)
+- [UC3 14 — SAVE10 — Archived Details](prototype/UC3%2014%20%E2%80%94%20SAVE10%20%E2%80%94%20Archived%20Details.png)
+- [UC3 15 — Create NEWYEAR — Filled](prototype/UC3%2015%20%E2%80%94%20Create%20NEWYEAR%20%E2%80%94%20Filled.png)
+- [UC3 16 — Voucher List — SAVE10 Updated](prototype/UC3%2016%20%E2%80%94%20Voucher%20List%20%E2%80%94%20SAVE10%20Updated.png)
+- [UC3 17 — WELCOME5 — Archived Details](prototype/UC3%2017%20%E2%80%94%20WELCOME5%20%E2%80%94%20Archived%20Details.png)
+- [UC3 18 — NEWYEAR — Active Details](prototype/UC3%2018%20%E2%80%94%20NEWYEAR%20%E2%80%94%20Active%20Details.png)
+- [UC3 19 — FREESHIP — Expired Details](prototype/UC3%2019%20%E2%80%94%20FREESHIP%20%E2%80%94%20Expired%20Details.png)
+- [UC3 20 — NEWYEAR — Edit](prototype/UC3%2020%20%E2%80%94%20NEWYEAR%20%E2%80%94%20Edit.png)
+- [UC3 21 — FREESHIP — Edit Expiry](prototype/UC3%2021%20%E2%80%94%20FREESHIP%20%E2%80%94%20Edit%20Expiry.png)
+- [UC3 22 — FREESHIP — Reactivated Details](prototype/UC3%2022%20%E2%80%94%20FREESHIP%20%E2%80%94%20Reactivated%20Details.png)
+- [UC3 23 — NEWYEAR — Archive Confirmation](prototype/UC3%2023%20%E2%80%94%20NEWYEAR%20%E2%80%94%20Archive%20Confirmation.png)
+- [UC3 24 — NEWYEAR — Archived Details](prototype/UC3%2024%20%E2%80%94%20NEWYEAR%20%E2%80%94%20Archived%20Details.png)
+- [UC3 25 — Voucher List — NEWYEAR Archived](prototype/UC3%2025%20%E2%80%94%20Voucher%20List%20%E2%80%94%20NEWYEAR%20Archived.png)
+- [UC3 26 — Voucher List — FREESHIP Reactivated](prototype/UC3%2026%20%E2%80%94%20Voucher%20List%20%E2%80%94%20FREESHIP%20Reactivated.png)
+- [UC3 27 — FREESHIP — Archive Confirmation](prototype/UC3%2027%20%E2%80%94%20FREESHIP%20%E2%80%94%20Archive%20Confirmation.png)
+- [UC3 28 — FREESHIP — Archived Details](prototype/UC3%2028%20%E2%80%94%20FREESHIP%20%E2%80%94%20Archived%20Details.png)
+- [UC3 29 — Voucher List — FREESHIP Archived](prototype/UC3%2029%20%E2%80%94%20Voucher%20List%20%E2%80%94%20FREESHIP%20Archived.png)
+
+The implemented archive confirmation uses a modal, while the prototype exports show
+a separate confirmation screen. Implemented eligibility uses minimum subtotal and hub
+restrictions rather than the prototype example “New customers only”.
+
+
 ## Requirements reviewed
 
 The team's BRS/SRS report, section 2.2.3, and FR-13–FR-15 define administrator-only
@@ -62,9 +117,9 @@ Body `actorId` or `role` fields never grant access.
 | HTTP controller | `src/uc3/http.mjs` | JSON boundary, actor resolution and error responses |
 | Service | `src/uc3/service.mjs` | Access, validation, lifecycle rules and save-time checks |
 | Repository | `src/uc3/repository.mjs` | SQL queries, transactional changes and audit records |
-| Checkout integration | `src/checkout.mjs` | Existing live eligibility/pricing reads reused without modification |
+| Checkout integration | `src/uc1/service.mjs` | Existing live eligibility/pricing reads reused without modification |
 
-The [editable data-access sequence](uc3-voucher-sequence.mmd) shows reads, access checks,
+The [editable data-access sequence](diagrams/uc3-voucher-sequence.mmd) shows reads, access checks,
 validation, transaction rollback and voucher/audit writes. The [Figma prototype](https://www.figma.com/design/TuBvpDXqxV9uQK8TQkBaR4/UC-2---3-Protype)
 is the team's visual reference; automated tests do not verify its prototype connections.
 
