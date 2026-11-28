@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="tJCJDoQZAea6-gu1Civf">
+    <mxGraphModel dx="827" dy="1057" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;text;align=center;fontSize=24;fontStyle=1;fontColor=#153247;" value="State Machine Diagram - UC2 · Confirm or Reject an Incoming Order" vertex="1">
+          <mxGeometry height="42" width="1340" x="1514.7241379310349" y="619.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;rounded=1;fillColor=#f4f8fa;strokeColor=#a8bbc7;fontSize=15;align=center;fontColor=#36556b;" value="Scope: a previously created order enters UC2 in Submitted status. The kitchen decision changes the stored order status." vertex="1">
+          <mxGeometry height="48" width="1110" x="1629.7241379310349" y="712.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;ellipse;aspect=fixed;fillColor=#17232b;strokeColor=#17232b;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="1574.7241379310349" y="948.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;rounded=1;arcSize=18;fillColor=#e5eff4;strokeColor=#52788e;strokeWidth=2;align=center;verticalAlign=middle;fontSize=23;fontStyle=1;fontColor=#153247;" value="Submitted" vertex="1">
+          <mxGeometry height="112" width="280" x="1759.7241379310349" y="908.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;rounded=1;arcSize=18;fillColor=#e5eff4;strokeColor=#52788e;strokeWidth=2;align=center;verticalAlign=middle;fontSize=23;fontStyle=1;fontColor=#153247;" value="Confirmed" vertex="1">
+          <mxGeometry height="112" width="260" x="2479.724137931035" y="813.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;rounded=1;arcSize=18;fillColor=#e5eff4;strokeColor=#52788e;strokeWidth=2;align=center;verticalAlign=middle;fontSize=23;fontStyle=1;fontColor=#153247;" value="Rejected" vertex="1">
+          <mxGeometry height="112" width="260" x="2479.724137931035" y="1053.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="8" edge="1" parent="1" source="4" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#36556b;strokeWidth=2;fontSize=14;labelBackgroundColor=#ffffff;" target="5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9" edge="1" parent="1" source="5" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#36556b;strokeWidth=2;fontSize=14;labelBackgroundColor=#ffffff;exitX=1;exitY=0.26;entryX=0;entryY=0.5;exitPerimeter=1;entryPerimeter=1;" target="6" value="confirmOrder(orderId) [authorized for hub; still Submitted]">
+          <mxGeometry relative="1" x="0.1189" y="-20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2189.724137931035" y="851.6206896551726" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" source="5" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#36556b;strokeWidth=2;fontSize=14;labelBackgroundColor=#ffffff;exitX=1;exitY=0.74;entryX=0;entryY=0.5;exitPerimeter=1;entryPerimeter=1;" target="7" value="rejectOrder(orderId, reason) [authorized; still Submitted; reason nonempty]">
+          <mxGeometry relative="1" x="0.0693" y="-10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2189.7" y="991.5" />
+              <mxPoint x="2189.7" y="1109.6" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;rounded=1;fillColor=#edf6f2;strokeColor=#79a797;fontSize=14;align=center;fontColor=#234a3e;spacing=8;" value="On Confirmed: save staff ID and decision time; remove from incoming queue; retain order audit history." vertex="1">
+          <mxGeometry height="64" width="536" x="2234.724137931035" y="948.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;rounded=1;fillColor=#fff4e9;strokeColor=#ca9762;fontSize=14;align=center;fontColor=#513e29;spacing=8;" value="On Rejected: also save a nonempty reason; remove from active queue; retain order and audit history." vertex="1">
+          <mxGeometry height="64" width="536" x="2234.724137931035" y="1189.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;rounded=1;fillColor=#f4f8fa;strokeColor=#a8bbc7;fontSize=14;align=center;fontColor=#36556b;spacing=8;" value="Before either transition, recheck assigned-hub authorization and current Submitted status. Wrong hub, stale order, or blank rejection reason: no status change." vertex="1">
+          <mxGeometry height="71" width="1240" x="1564.7241379310349" y="1296.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Arial;rounded=1;fillColor=#f4f8fa;strokeColor=#a8bbc7;fontSize=14;align=center;fontColor=#36556b;spacing=8;" value="After a saved decision, attempt customer notification. If it fails, keep Confirmed/Rejected and retry or flag notification (policy pending client confirmation)." vertex="1">
+          <mxGeometry height="58" width="1240" x="1564.7241379310349" y="1378.6206896551726" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;" value="Author: 523K0075 (Thin Lei Sandi)" vertex="1">
+          <mxGeometry height="45" width="900" x="1690" y="650" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

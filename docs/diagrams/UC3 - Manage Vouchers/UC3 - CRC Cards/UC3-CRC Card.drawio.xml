@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="3bjG_UeOs_nX2w4wDXMT">
+    <mxGraphModel dx="1359" dy="2026" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;" value="UC3 – Manage Vouchers – CRC Cards&#xa;Author: 523K0075 (Thin Lei Sandi)" vertex="1">
+          <mxGeometry height="50" width="1200" x="120" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;collapsible=0;" value="VoucherController" vertex="1">
+          <mxGeometry height="220" width="400" x="120" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="3" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#6c8ebf;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="3" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#6c8ebf;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="3" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#6c8ebf;fillColor=none;" value="• Receive create, view, update and archive requests from the views&lt;br&gt;• Check that the user is an authorized administrator&lt;br&gt;• Retrieve the voucher list and voucher details&lt;br&gt;• Ask VoucherValidationController to validate submitted data&lt;br&gt;• Create, update or archive the Voucher&lt;br&gt;• Save the change and write the audit data&lt;br&gt;• Return results and errors to the views" vertex="1">
+          <mxGeometry height="170" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="3" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#6c8ebf;fillColor=none;" value="• VoucherManagementView&lt;br&gt;• VoucherFormView&lt;br&gt;• VoucherDetailsView&lt;br&gt;• VoucherValidationController&lt;br&gt;• Voucher&lt;br&gt;• VoucherRepository&lt;br&gt;• Administrator&lt;br&gt;• AdminRepository" vertex="1">
+          <mxGeometry height="170" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;collapsible=0;" value="VoucherValidationController" vertex="1">
+          <mxGeometry height="220" width="400" x="550" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="8" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#6c8ebf;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="8" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#6c8ebf;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="8" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#6c8ebf;fillColor=none;" value="• Check required fields and the discount value&lt;br&gt;• Check the validity period (valid from is before valid until)&lt;br&gt;• Check the eligibility rules and that the voucher code is unique&lt;br&gt;• Return the list of validation errors" vertex="1">
+          <mxGeometry height="170" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="8" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#6c8ebf;fillColor=none;" value="• VoucherController&lt;br&gt;• Voucher&lt;br&gt;• VoucherRepository" vertex="1">
+          <mxGeometry height="170" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;collapsible=0;" value="Voucher" vertex="1">
+          <mxGeometry height="220" width="400" x="980" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="13" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="13" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="13" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• Know voucherId, code, discount, validity period and status&lt;br&gt;• Validate its own data&lt;br&gt;• Update its details&lt;br&gt;• Archive itself and refuse changes when Archived&lt;br&gt;• Know whether it has expired" vertex="1">
+          <mxGeometry height="170" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="17" parent="13" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• VoucherController&lt;br&gt;• VoucherValidationController&lt;br&gt;• Administrator" vertex="1">
+          <mxGeometry height="170" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;collapsible=0;" value="Administrator" vertex="1">
+          <mxGeometry height="150" width="400" x="120" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="18" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="18" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="18" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• Know adminId, adminName and email&lt;br&gt;• Manage vouchers&lt;br&gt;• Be recorded as the person responsible for each voucher change" vertex="1">
+          <mxGeometry height="100" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="18" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• Voucher&lt;br&gt;• VoucherController&lt;br&gt;• AdminRepository" vertex="1">
+          <mxGeometry height="100" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;collapsible=0;" value="VoucherRepository" vertex="1">
+          <mxGeometry height="150" width="400" x="550" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="23" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#9673a6;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="25" parent="23" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#9673a6;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="26" parent="23" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#9673a6;fillColor=none;" value="• Save a new voucher&lt;br&gt;• Find all vouchers&lt;br&gt;• Find a voucher by ID&lt;br&gt;• Update a voucher&lt;br&gt;• Archive a voucher (set status Archived, keep the record)" vertex="1">
+          <mxGeometry height="100" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="27" parent="23" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#9673a6;fillColor=none;" value="• Voucher&lt;br&gt;• VoucherController&lt;br&gt;• VoucherValidationController" vertex="1">
+          <mxGeometry height="100" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

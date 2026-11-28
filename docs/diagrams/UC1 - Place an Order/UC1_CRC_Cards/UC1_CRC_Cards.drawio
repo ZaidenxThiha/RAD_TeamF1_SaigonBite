@@ -1,0 +1,517 @@
+<mxfile host="app.diagrams.net" agent="Claude" pages="4">
+  <diagram id="ui" name="User Interface Layer">
+    <mxGraphModel dx="1695" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ui_title" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#17324d;" value="UC1 CRC Cards – User Interface Layer" vertex="1">
+          <mxGeometry height="34" width="1200" x="40" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_sub" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=13;fontColor=#17324d;" value="&lt;&lt;boundary&gt;&gt; classes: class, responsibilities and collaborators" vertex="1">
+          <mxGeometry height="22" width="1400" x="40" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_1" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-01: PlaceOrderView&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="185" width="520" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_2" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=#e2f0d9;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_3" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=#e2f0d9;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_4" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Display available hubs and virtual brands" vertex="1">
+          <mxGeometry height="25" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_5" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PlaceOrderController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_6" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Allow customers to select menu items and quantities" vertex="1">
+          <mxGeometry height="40" width="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_7" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PlaceOrderController" vertex="1">
+          <mxGeometry height="40" width="208" x="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_8" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Collect delivery address" vertex="1">
+          <mxGeometry height="25" width="312" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_9" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PlaceOrderController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_10" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Display eligibility results and alternatives" vertex="1">
+          <mxGeometry height="25" width="312" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_11" parent="ui_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PlaceOrderController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_12" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-02: OrderReviewView&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="195" width="520" x="600" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_13" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=#e2f0d9;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_14" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=#e2f0d9;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_15" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Display itemized order total" vertex="1">
+          <mxGeometry height="25" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_16" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PlaceOrderController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_17" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Accept optional voucher code" vertex="1">
+          <mxGeometry height="25" width="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_18" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="VoucherValidationController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_19" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Allow voucher replacement or removal" vertex="1">
+          <mxGeometry height="25" width="312" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_20" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="VoucherValidationController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_21" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Capture payment method" vertex="1">
+          <mxGeometry height="25" width="312" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_22" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PaymentController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_23" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Confirm or abandon checkout" vertex="1">
+          <mxGeometry height="25" width="312" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_24" parent="ui_12" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PlaceOrderController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_25" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e2f0d9;strokeColor=#6a9f4f;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-03: PaymentResultView&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="185" width="520" x="1160" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_26" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=#e2f0d9;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_27" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=#e2f0d9;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_28" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Display online authorization results" vertex="1">
+          <mxGeometry height="25" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_29" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PaymentController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_30" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Display payment decline information" vertex="1">
+          <mxGeometry height="25" width="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_31" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PaymentController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_32" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Offer retry, payment-method change or cancellation" vertex="1">
+          <mxGeometry height="40" width="312" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_33" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PaymentController, OrderReviewView" vertex="1">
+          <mxGeometry height="40" width="208" x="312" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_34" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="Display successful order confirmation" vertex="1">
+          <mxGeometry height="25" width="312" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_35" parent="ui_25" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#6a9f4f;fillColor=none;" value="PlaceOrderController" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ct" name="Controller Layer">
+    <mxGraphModel dx="1695" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ct_title" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#17324d;" value="UC1 CRC Cards – Controller Layer" vertex="1">
+          <mxGeometry height="34" width="1200" x="40" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_sub" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=13;fontColor=#17324d;" value="&lt;&lt;control&gt;&gt; classes: class, responsibilities and collaborators" vertex="1">
+          <mxGeometry height="22" width="1400" x="40" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_1" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-04: PlaceOrderController&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;control&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="305" width="520" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_2" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=#fff2cc;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_3" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=#fff2cc;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_4" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Coordinate hub, brand and item selection" vertex="1">
+          <mxGeometry height="40" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_5" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="PlaceOrderView, HubRepository, MenuRepository" vertex="1">
+          <mxGeometry height="40" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_6" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Validate distance, hub capacity and item availability" vertex="1">
+          <mxGeometry height="40" width="312" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_7" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Hub, MenuItem, HubRepository" vertex="1">
+          <mxGeometry height="40" width="208" x="312" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_8" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Maintain the order draft and selected items" vertex="1">
+          <mxGeometry height="25" width="312" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_9" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Customer, Order, OrderItem" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_10" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Calculate order totals and applicable incentives" vertex="1">
+          <mxGeometry height="25" width="312" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_11" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Order" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_12" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Coordinate checkout and submission" vertex="1">
+          <mxGeometry height="40" width="312" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_13" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="OrderReviewView, PaymentController" vertex="1">
+          <mxGeometry height="40" width="208" x="312" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_14" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Save the order with Submitted status" vertex="1">
+          <mxGeometry height="25" width="312" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_15" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Order, OrderRepository" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_16" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Trigger kitchen notification after submission" vertex="1">
+          <mxGeometry height="40" width="312" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_17" parent="ct_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="OrderRepository" vertex="1">
+          <mxGeometry height="40" width="208" x="312" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_18" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-05: VoucherValidationController&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;control&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="195" width="520" x="600" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_19" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=#fff2cc;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_20" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=#fff2cc;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_21" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Receive voucher validation requests" vertex="1">
+          <mxGeometry height="25" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_22" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="OrderReviewView" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_23" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Retrieve voucher details" vertex="1">
+          <mxGeometry height="25" width="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_24" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="VoucherRepository" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_25" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Check validity and eligibility" vertex="1">
+          <mxGeometry height="25" width="312" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_26" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Voucher, Order" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_27" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Calculate applicable voucher discount" vertex="1">
+          <mxGeometry height="25" width="312" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_28" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Voucher, Order" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_29" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Return validation results" vertex="1">
+          <mxGeometry height="25" width="312" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_30" parent="ct_18" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="OrderReviewView" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_31" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#c9a227;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-06: PaymentController&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;control&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="235" width="520" x="1160" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_32" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=#fff2cc;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_33" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=#fff2cc;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_34" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Record selected payment method" vertex="1">
+          <mxGeometry height="25" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_35" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="OrderReviewView, Payment" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_36" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Handle COD selection" vertex="1">
+          <mxGeometry height="25" width="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_37" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Payment" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_38" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Request online payment authorization" vertex="1">
+          <mxGeometry height="25" width="312" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_39" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="PaymentGateway" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_40" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Process authorization success or decline" vertex="1">
+          <mxGeometry height="25" width="312" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_41" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Payment, PaymentResultView" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_42" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Store payment status and reference" vertex="1">
+          <mxGeometry height="25" width="312" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_43" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="PaymentRepository" vertex="1">
+          <mxGeometry height="25" width="208" x="312" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_44" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="Return successful authorization status for submission" vertex="1">
+          <mxGeometry height="40" width="312" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_45" parent="ct_31" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#c9a227;fillColor=none;" value="PlaceOrderController" vertex="1">
+          <mxGeometry height="40" width="208" x="312" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_46" parent="1" style="shape=note;size=14;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#17324d;" value="PaymentGateway is an external collaborator of PaymentController, not an internal domain entity or repository." vertex="1">
+          <mxGeometry height="70" width="520" x="620" y="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="dm" name="Domain Layer">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dm_title" parent="1" value="UC1 CRC Cards – Domain Layer" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#17324d;" vertex="1">
+          <mxGeometry x="40" y="8" width="1200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_sub" parent="1" value="&lt;&lt;entity&gt;&gt; classes: business objects used by UC1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=13;fontColor=#17324d;" vertex="1">
+          <mxGeometry x="40" y="42" width="1400" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_1" parent="1" value="&lt;b&gt;CRC-07: Customer&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="40" y="100" width="440" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_2" parent="dm_1" value="Responsibilities" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="0" y="44" width="264" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_3" parent="dm_1" value="Collaborators" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="264" y="44" width="176" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_4" parent="dm_1" value="Provide customer identity and ordering information" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="70" width="264" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_5" parent="dm_1" value="Order" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="264" y="70" width="176" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_6" parent="1" value="&lt;b&gt;CRC-08: Hub&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="520" y="100" width="440" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_7" parent="dm_6" value="Responsibilities" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="0" y="44" width="264" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_8" parent="dm_6" value="Collaborators" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="264" y="44" width="176" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_9" parent="dm_6" value="Maintain hub capacity and workload" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="70" width="264" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_10" parent="dm_6" value="support eligibility checking" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="95" width="264" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_11" parent="dm_6" value="PlaceOrderController&lt;br&gt;Order" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="264" y="70" width="176" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_12" parent="1" value="&lt;b&gt;CRC-09: VirtualBrand&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="1000" y="100" width="440" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_13" parent="dm_12" value="Responsibilities" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="0" y="44" width="264" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_14" parent="dm_12" value="Collaborators" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="264" y="44" width="176" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_15" parent="dm_12" value="Identify the virtual brand and its menu" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="70" width="264" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_16" parent="dm_12" value="Hub&lt;br&gt;MenuItem" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="264" y="70" width="176" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_17" parent="1" value="&lt;b&gt;CRC-10: MenuItem&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="1480" y="100" width="440" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_18" parent="dm_17" value="Responsibilities" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="0" y="44" width="264" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_19" parent="dm_17" value="Collaborators" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="264" y="44" width="176" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_20" parent="dm_17" value="Provide price and availability information" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="70" width="264" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_21" parent="dm_17" value="VirtualBrand&lt;br&gt;OrderItem" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="264" y="70" width="176" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_22" parent="1" value="&lt;b&gt;CRC-11: Order&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="40" y="250" width="440" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_23" parent="dm_22" value="Responsibilities" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="0" y="44" width="264" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_24" parent="dm_22" value="Collaborators" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="264" y="44" width="176" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_25" parent="dm_22" value="Maintain order draft, items, delivery address, totals and status" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="70" width="264" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_26" parent="dm_22" value="calculate final total" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="110" width="264" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_27" parent="dm_22" value="transition to Submitted" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="135" width="264" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_28" parent="dm_22" value="Customer&lt;br&gt;Hub&lt;br&gt;OrderItem&lt;br&gt;Voucher&lt;br&gt;Payment" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="264" y="70" width="176" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_29" parent="1" value="&lt;b&gt;CRC-12: OrderItem&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="1000" y="254" width="440" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_30" parent="dm_29" value="Responsibilities" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="0" y="44" width="264" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_31" parent="dm_29" value="Collaborators" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="264" y="44" width="176" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_32" parent="dm_29" value="Store quantity and unit price" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="70" width="264" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_33" parent="dm_29" value="calculate line subtotal" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="95" width="264" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_34" parent="dm_29" value="Order&lt;br&gt;MenuItem" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="264" y="70" width="176" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_35" parent="1" value="&lt;b&gt;CRC-13: Voucher&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="1480" y="254" width="440" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_36" parent="dm_35" value="Responsibilities" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="0" y="44" width="264" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_37" parent="dm_35" value="Collaborators" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="264" y="44" width="176" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_38" parent="dm_35" value="Evaluate validity and eligibility" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="70" width="264" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_39" parent="dm_35" value="calculate applicable discount" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="95" width="264" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_40" parent="dm_35" value="VoucherValidationController&lt;br&gt;Order" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="264" y="70" width="176" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_41" parent="1" value="&lt;b&gt;CRC-14: Payment&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#dce9f1;strokeColor=#5b8eae;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" vertex="1">
+          <mxGeometry x="520" y="260" width="440" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_42" parent="dm_41" value="Responsibilities" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="0" y="44" width="264" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_43" parent="dm_41" value="Collaborators" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=#dce9f1;fontStyle=1;" vertex="1">
+          <mxGeometry x="264" y="44" width="176" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_44" parent="dm_41" value="Maintain method, amount, authorization status and transaction reference" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="0" y="70" width="264" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_45" parent="dm_41" value="PaymentController&lt;br&gt;Order" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#5b8eae;fillColor=none;" vertex="1">
+          <mxGeometry x="264" y="70" width="176" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dm_46" parent="1" value="Design rules: an order can use at most one voucher. Eligibility considers delivery distance, kitchen capacity and item availability. Pricing considers subtotal, delivery fee, applicable quiet-hub incentive and voucher discount. COD does not require online authorization. Online payment authorization must succeed before submission under provisional assumption A-06." style="shape=note;size=14;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#17324d;" vertex="1">
+          <mxGeometry x="40" y="460" width="1760" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="da" name="Data Access Layer">
+    <mxGraphModel dx="1695" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="da_title" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#17324d;" value="UC1 CRC Cards – Data Access Layer" vertex="1">
+          <mxGeometry height="34" width="1200" x="40" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="da_sub" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=13;fontColor=#17324d;" value="&lt;&lt;repository&gt;&gt; classes: class, responsibilities and collaborators" vertex="1">
+          <mxGeometry height="22" width="1400" x="40" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="da_1" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-15: HubRepository&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="114" width="520" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="da_2" parent="da_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_3" parent="da_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_4" parent="da_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="Retrieve hubs and their capacity/workload information" vertex="1">
+          <mxGeometry height="44" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_5" parent="da_1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="PlaceOrderController&lt;br&gt;Hub" vertex="1">
+          <mxGeometry height="44" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_6" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-16: MenuRepository&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="129" width="520" x="600" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="da_7" parent="da_6" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_8" parent="da_6" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_9" parent="da_6" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="Retrieve virtual brands and available menu items" vertex="1">
+          <mxGeometry height="59" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_10" parent="da_6" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="PlaceOrderController&lt;br&gt;VirtualBrand&lt;br&gt;MenuItem" vertex="1">
+          <mxGeometry height="59" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_11" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-17: VoucherRepository&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="114" width="520" x="1160" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="da_12" parent="da_11" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_13" parent="da_11" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_14" parent="da_11" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="Retrieve voucher by code" vertex="1">
+          <mxGeometry height="44" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_15" parent="da_11" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="VoucherValidationController&lt;br&gt;Voucher" vertex="1">
+          <mxGeometry height="44" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_16" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-18: OrderRepository&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="114" width="520" x="40" y="254" as="geometry" />
+        </mxCell>
+        <mxCell id="da_17" parent="da_16" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_18" parent="da_16" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_19" parent="da_16" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="Persist submitted orders and retrieve order records" vertex="1">
+          <mxGeometry height="44" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_20" parent="da_16" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="PlaceOrderController&lt;br&gt;Order" vertex="1">
+          <mxGeometry height="44" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_21" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;startSize=44;collapsible=0;html=1;fillColor=#e8e0f3;strokeColor=#8564b0;strokeWidth=2;fontColor=#17324d;fontSize=13;swimlaneFillColor=#ffffff;" value="&lt;b&gt;CRC-19: PaymentRepository&lt;/b&gt;&lt;br&gt;&amp;lt;&amp;lt;repository&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="114" width="520" x="1160" y="254" as="geometry" />
+        </mxCell>
+        <mxCell id="da_22" parent="da_21" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Responsibilities" vertex="1">
+          <mxGeometry height="26" width="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_23" parent="da_21" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=#e8e0f3;fontStyle=1;" value="Collaborators" vertex="1">
+          <mxGeometry height="26" width="208" x="312" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="da_24" parent="da_21" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="Store payment records and authorization results" vertex="1">
+          <mxGeometry height="44" width="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_25" parent="da_21" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#17324d;strokeColor=#8564b0;fillColor=none;" value="PaymentController&lt;br&gt;Payment" vertex="1">
+          <mxGeometry height="44" width="208" x="312" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="da_26" parent="1" style="shape=note;size=14;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#17324d;" value="PaymentGateway is an external collaborator of PaymentController, not an internal domain entity or repository." vertex="1">
+          <mxGeometry height="70" width="520" x="780" y="410" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="nuIbYE9qxHbiB6rGJEgs">
+    <mxGraphModel dx="1515" dy="2125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;" value="UC2 – Confirm or Reject an Incoming Order – CRC Cards&#xa;Author: 523K0075 (Thin Lei Sandi)" vertex="1">
+          <mxGeometry height="50" width="1200" x="80" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;collapsible=0;" value="IncomingOrderController" vertex="1">
+          <mxGeometry height="206" width="400" x="80" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="3" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#6c8ebf;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="3" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#6c8ebf;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="3" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#6c8ebf;fillColor=none;" value="• Receive the incoming-order request from the view&lt;br&gt;• Verify the staff member&#39;s hub assignment&lt;br&gt;• Retrieve the Submitted orders for that hub&lt;br&gt;• Retrieve the details of a selected order and check it is still Submitted&lt;br&gt;• Pass the result to the views" vertex="1">
+          <mxGeometry height="156" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="3" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#6c8ebf;fillColor=none;" value="• IncomingOrderView&lt;br&gt;• OrderReviewView&lt;br&gt;• StaffRepository&lt;br&gt;• OrderRepository&lt;br&gt;• Order" vertex="1">
+          <mxGeometry height="156" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;collapsible=0;" value="OrderDecisionController" vertex="1">
+          <mxGeometry height="206" width="400" x="510" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="8" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#6c8ebf;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="8" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#6c8ebf;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="8" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#6c8ebf;fillColor=none;" value="• Receive confirm and reject requests from the views&lt;br&gt;• Validate the decision and the rejection reason&lt;br&gt;• Ask Order to confirm or reject itself&lt;br&gt;• Create the OrderDecision with staff ID and timestamp&lt;br&gt;• Save the new status and the decision&lt;br&gt;• Notify the customer&lt;br&gt;• Return the result to the view" vertex="1">
+          <mxGeometry height="156" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="8" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#6c8ebf;fillColor=none;" value="• OrderReviewView&lt;br&gt;• RejectionReasonView&lt;br&gt;• Order&lt;br&gt;• OrderDecision&lt;br&gt;• OrderRepository&lt;br&gt;• OrderDecisionRepository" vertex="1">
+          <mxGeometry height="156" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;collapsible=0;" value="Order" vertex="1">
+          <mxGeometry height="206" width="400" x="940" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="13" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="13" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="13" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• Know orderId, status and submittedAt&lt;br&gt;• Confirm itself (Submitted to Confirmed)&lt;br&gt;• Reject itself (Submitted to Rejected)&lt;br&gt;• Refuse a decision when the status is not Submitted" vertex="1">
+          <mxGeometry height="156" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="17" parent="13" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• OrderDecisionController&lt;br&gt;• OrderDecision" vertex="1">
+          <mxGeometry height="156" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;collapsible=0;" value="KitchenStaff" vertex="1">
+          <mxGeometry height="136" width="400" x="80" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="18" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="18" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="18" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• Know staffId, staffName and assignedHubId&lt;br&gt;• Review an order of its own hub&lt;br&gt;• Make a decision on an order&lt;br&gt;• Identify the staff member recorded in a decision" vertex="1">
+          <mxGeometry height="86" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="18" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• Order&lt;br&gt;• OrderDecision&lt;br&gt;• StaffRepository" vertex="1">
+          <mxGeometry height="86" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="swimlane;fontStyle=1;fontSize=13;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;collapsible=0;" value="OrderDecision" vertex="1">
+          <mxGeometry height="136" width="400" x="510" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="23" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Responsibilities" vertex="1">
+          <mxGeometry height="22" width="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="25" parent="23" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;strokeColor=#d6b656;fillColor=#f5f5f5;" value="Collaborators" vertex="1">
+          <mxGeometry height="22" width="160" x="240" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="26" parent="23" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• Know decisionType, rejectionReason and decisionTime&lt;br&gt;• Check that a rejection reason is provided&lt;br&gt;• Record the decision with staff ID and timestamp" vertex="1">
+          <mxGeometry height="86" width="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="27" parent="23" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;spacingLeft=6;spacingRight=4;spacingTop=4;strokeColor=#d6b656;fillColor=none;" value="• KitchenStaff&lt;br&gt;• Order&lt;br&gt;• OrderDecisionController&lt;br&gt;• OrderDecisionRepository" vertex="1">
+          <mxGeometry height="86" width="160" x="240" y="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
