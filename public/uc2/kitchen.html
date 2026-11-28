@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- UC2 UI. Author: Thin Lei Sandi (523K0075). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Incoming orders · SaigonBite</title>
+  <link rel="stylesheet" href="/uc2/kitchen.css">
+  <script type="module" src="/uc2/kitchen.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/kitchen"><span class="logo" aria-hidden="true">S</span><span>SaigonBite<small>KITCHEN WORKSPACE</small></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav aria-label="Kitchen workspace"><a href="/kitchen" aria-current="page">Incoming orders</a></nav>
+    <div class="profile"><span class="avatar" aria-hidden="true">KS</span><span>Kitchen staff<small id="sidebar-account">Demo workspace</small></span></div>
+  </aside>
+  <div class="workspace">
+    <header class="header"><div>Kitchen / Incoming orders<small>SaigonBite kitchen workspace</small></div><div class="identity"><span class="avatar" aria-hidden="true">KS</span><span>Kitchen staff<small id="assigned-hub">Loading assigned hub…</small></span></div></header>
+    <main>
+      <details class="demo"><summary>Local demo account</summary><label>Kitchen account <select id="account"><option value="kitchen-ben-thanh">Bến Thành kitchen</option><option value="kitchen-riverside">Riverside kitchen</option></select></label><p>This picker simulates a signed-in kitchen account for the local demo.</p></details>
+      <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+      <section id="view" aria-busy="true"><h1 tabindex="-1">Incoming orders</h1><p>Loading your queue…</p></section>
+    </main>
+    <footer>SaigonBite · UC2 <span>Author: 523K0075</span></footer>
+  </div>
+</body>
+</html>

@@ -2,12 +2,20 @@ import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { openDatabase } from './database.mjs';
 import { handleCheckout } from './checkout-http.mjs';
+import { createKitchenHandler } from './uc2/http.mjs';
 
 const db = openDatabase();
+const handleKitchen = createKitchenHandler(db, {
+  notify: () => process.env.SAIGONBITE_NOTIFICATION_FAIL === '1' ? 'failed' : 'sent',
+});
 const assets = new Map([
   ['/', ['checkout.html', 'text/html; charset=utf-8']],
   ['/checkout.css', ['checkout.css', 'text/css; charset=utf-8']],
   ['/checkout.js', ['checkout.js', 'text/javascript; charset=utf-8']],
+  ['/kitchen', ['uc2/kitchen.html', 'text/html; charset=utf-8']],
+  ['/kitchen/', ['uc2/kitchen.html', 'text/html; charset=utf-8']],
+  ['/uc2/kitchen.css', ['uc2/kitchen.css', 'text/css; charset=utf-8']],
+  ['/uc2/kitchen.js', ['uc2/kitchen.js', 'text/javascript; charset=utf-8']],
 ]);
 const server = createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/health') {
@@ -32,6 +40,10 @@ const server = createServer((request, response) => {
     return;
   }
 
+  if (request.url.startsWith('/api/kitchen/')) {
+    void handleKitchen(request, response);
+    return;
+  }
   if (request.url.startsWith('/api/checkout/')) {
     void handleCheckout(db, request, response);
     return;
