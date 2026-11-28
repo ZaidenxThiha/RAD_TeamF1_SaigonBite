@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="Vgmu7-bLBFI7wM3WcJeK">
+    <mxGraphModel dx="1292" dy="1984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;" value="UC3 Manage Vouchers – Design Class Diagram (initial) (iv) Data access classes&#xa;Author: 523K0075 (Thin Lei Sandi)" vertex="1">
+          <mxGeometry height="50" width="1200" x="380" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=28;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;collapsible=0;" value="VoucherRepository" vertex="1">
+          <mxGeometry height="142" width="260" x="390" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="3" style="line;strokeWidth=1;fillColor=none;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="+ save()&lt;br&gt;+ findAll()&lt;br&gt;+ findById()&lt;br&gt;+ update()&lt;br&gt;+ archive()" vertex="1">
+          <mxGeometry height="98" width="260" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=28;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;collapsible=0;" value="AdminRepository" vertex="1">
+          <mxGeometry height="88" width="260" x="740" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="7" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="7" style="line;strokeWidth=1;fillColor=none;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="7" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;whiteSpace=wrap;" value="+ findAdminById()&lt;br&gt;+ verifyAdminRole()" vertex="1">
+          <mxGeometry height="44" width="260" y="44" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
