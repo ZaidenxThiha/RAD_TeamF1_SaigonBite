@@ -1,0 +1,50 @@
+%% UC2 data-access sequence. Author: Thin Lei Sandi (523K0075).
+sequenceDiagram
+    actor Staff as Kitchen Staff
+    participant View as Kitchen View
+    participant HTTP as Kitchen HTTP Controller
+    participant Service as Kitchen Service
+    participant Repo as Kitchen Repository
+    participant DB as SQLite
+    participant Notify as Local Notification Simulator
+    Staff->>View: Open incoming orders
+    View->>HTTP: GET orders with demo actor context
+    HTTP->>Service: queue(username)
+    Service->>Repo: Resolve staff role and assigned hub
+    Repo->>DB: SELECT users and hubs
+    Service->>Repo: Read assigned-hub Submitted queue
+    Repo->>DB: SELECT orders and item quantities
+    HTTP-->>View: Queue and assigned hub
+    Staff->>View: Review order
+    View->>HTTP: GET order details
+    HTTP->>Service: details(username, orderId)
+    Service->>Repo: Check role, hub, status; read item/payment snapshots
+    Repo->>DB: SELECT orders, items, payments
+    HTTP-->>View: Order details or 403/404/409
+    Staff->>View: Confirm or Reject with reason
+    View->>HTTP: POST decision
+    HTTP->>Service: decide(username, orderId, input)
+    Service->>Repo: BEGIN IMMEDIATE
+    Repo->>DB: Begin write transaction
+    Service->>Repo: Resolve role/hub and re-read status
+    Repo->>DB: SELECT current staff and order
+    alt Unauthorized, no longer Submitted, or invalid reason
+        Service->>Repo: ROLLBACK
+        HTTP-->>View: Error; no decision saved
+    else Valid decision
+        Service->>Repo: Record status, decision and notification flag
+        Repo->>DB: UPDATE Submitted order; INSERT staff/time/reason
+        Repo->>DB: INSERT notification with failed flag
+        Service->>Repo: COMMIT
+        Service->>Notify: Attempt simulated customer notification
+        alt Simulation reports success
+            Service->>Repo: Mark notification sent
+            Repo->>DB: UPDATE customer_notifications
+        else Failure or exception
+            Note over Service,DB: Preserve saved decision and failed notification flag
+        end
+        HTTP-->>View: Saved decision, staff/time and notification outcome
+        Staff->>View: Back to incoming orders
+        View->>HTTP: GET refreshed queue
+        Note over View,DB: Handled order is absent; order/items/payment history remains
+    end
