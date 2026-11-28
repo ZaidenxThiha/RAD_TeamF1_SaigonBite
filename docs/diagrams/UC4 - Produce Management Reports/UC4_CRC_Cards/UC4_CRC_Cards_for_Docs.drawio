@@ -1,0 +1,300 @@
+<mxfile host="app.diagrams.net" agent="Claude" pages="5">
+  <diagram id="p1" name="1. User Interface / Boundary Layer">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="344.0" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p1_ban" value="&lt;b&gt;User Interface / Boundary Layer&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;UC4 – Produce Management Reports · CRC Cards&lt;/font&gt;" style="rounded=0;html=1;whiteSpace=wrap;align=left;spacingLeft=10;fillColor=#1F5F99;fontColor=#FFFFFF;strokeColor=#1F5F99;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="920" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ReportSelectionView" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#1F5F99;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="480" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportSelectionView_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«boundary»&lt;/font&gt;&lt;br&gt;ReportSelectionView" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#1F5F99;fontColor=#FFFFFF;strokeColor=#1F5F99;fontSize=16;fontStyle=1;" vertex="1" parent="c_ReportSelectionView">
+          <mxGeometry x="0" y="0" width="480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportSelectionView_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#E3EEF9;fontColor=#1F5F99;strokeColor=#1F5F99;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportSelectionView">
+          <mxGeometry x="0" y="46" width="290" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportSelectionView_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#E3EEF9;fontColor=#1F5F99;strokeColor=#1F5F99;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportSelectionView">
+          <mxGeometry x="290" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportSelectionView_b1" value="• Display available report types.&lt;br&gt;• Allow the Manager to select a report type.&lt;br&gt;• Accept the start date and end date.&lt;br&gt;• Allow an optional hub filter for SALES reports only.&lt;br&gt;• Submit the report request.&lt;br&gt;• Display validation errors.&lt;br&gt;• Display a no-matching-records message." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#1F5F99;fillColor=#FFFFFF;" vertex="1" parent="c_ReportSelectionView">
+          <mxGeometry x="0" y="68" width="290" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportSelectionView_b2" value="• ReportController" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#1F5F99;fillColor=#FFFFFF;" vertex="1" parent="c_ReportSelectionView">
+          <mxGeometry x="290" y="68" width="190" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ReportResultView" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#1F5F99;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="560.0" y="90" width="480" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResultView_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«boundary»&lt;/font&gt;&lt;br&gt;ReportResultView" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#1F5F99;fontColor=#FFFFFF;strokeColor=#1F5F99;fontSize=16;fontStyle=1;" vertex="1" parent="c_ReportResultView">
+          <mxGeometry x="0" y="0" width="480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResultView_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#E3EEF9;fontColor=#1F5F99;strokeColor=#1F5F99;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportResultView">
+          <mxGeometry x="0" y="46" width="290" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResultView_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#E3EEF9;fontColor=#1F5F99;strokeColor=#1F5F99;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportResultView">
+          <mxGeometry x="290" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResultView_b1" value="• Display the generated report title.&lt;br&gt;• Display report metrics and summary information.&lt;br&gt;• Display the report generation timestamp.&lt;br&gt;• Display the total number of matching records.&lt;br&gt;• Present the report results for Manager review." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#1F5F99;fillColor=#FFFFFF;" vertex="1" parent="c_ReportResultView">
+          <mxGeometry x="0" y="68" width="290" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResultView_b2" value="• ReportController&lt;br&gt;• ReportResult&lt;br&gt;• ReportMetric" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#1F5F99;fillColor=#FFFFFF;" vertex="1" parent="c_ReportResultView">
+          <mxGeometry x="290" y="68" width="190" height="136" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p2" name="2. Controller Layer">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="578" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p2_ban" value="&lt;b&gt;Controller Layer&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;UC4 – Produce Management Reports · CRC Cards&lt;/font&gt;" style="rounded=0;html=1;whiteSpace=wrap;align=left;spacingLeft=10;fillColor=#2E7D4F;fontColor=#FFFFFF;strokeColor=#2E7D4F;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="920" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ReportController" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#2E7D4F;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="920" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportController_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«controller»&lt;/font&gt;&lt;br&gt;ReportController" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#2E7D4F;fontColor=#FFFFFF;strokeColor=#2E7D4F;fontSize=16;fontStyle=1;" vertex="1" parent="c_ReportController">
+          <mxGeometry x="0" y="0" width="920" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportController_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#E6F3EA;fontColor=#2E7D4F;strokeColor=#2E7D4F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportController">
+          <mxGeometry x="0" y="46" width="588" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportController_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#E6F3EA;fontColor=#2E7D4F;strokeColor=#2E7D4F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportController">
+          <mxGeometry x="588" y="46" width="332" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportController_b1" value="• Receive report requests from ReportSelectionView.&lt;br&gt;• Validate the selected report criteria.&lt;br&gt;• Coordinate report data retrieval.&lt;br&gt;• Invoke the appropriate report calculation operation.&lt;br&gt;• Handle invalid criteria.&lt;br&gt;• Handle empty search results.&lt;br&gt;• Coordinate report generation.&lt;br&gt;• Pass the generated result to ReportResultView." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#2E7D4F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportController">
+          <mxGeometry x="0" y="68" width="588" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportController_b2" value="• ReportSelectionView&lt;br&gt;• ReportResultView&lt;br&gt;• ReportRequest&lt;br&gt;• ReportCalculationController&lt;br&gt;• OrderRepository&lt;br&gt;• HubRepository&lt;br&gt;• DeliveryRepository&lt;br&gt;• ReportResult" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#2E7D4F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportController">
+          <mxGeometry x="588" y="68" width="332" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ReportCalculationController" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#2E7D4F;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="324" width="920" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportCalculationController_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«controller»&lt;/font&gt;&lt;br&gt;ReportCalculationController" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#2E7D4F;fontColor=#FFFFFF;strokeColor=#2E7D4F;fontSize=16;fontStyle=1;" vertex="1" parent="c_ReportCalculationController">
+          <mxGeometry x="0" y="0" width="920" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportCalculationController_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#E6F3EA;fontColor=#2E7D4F;strokeColor=#2E7D4F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportCalculationController">
+          <mxGeometry x="0" y="46" width="588" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportCalculationController_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#E6F3EA;fontColor=#2E7D4F;strokeColor=#2E7D4F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportCalculationController">
+          <mxGeometry x="588" y="46" width="332" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportCalculationController_b1" value="• Calculate sales report metrics from retrieved order records.&lt;br&gt;• Calculate hub workload metrics from retrieved hub and order records.&lt;br&gt;• Calculate delivery-performance metrics from retrieved delivery records.&lt;br&gt;• Organize calculated metrics into ReportMetric objects.&lt;br&gt;• Produce the ReportResult for presentation." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#2E7D4F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportCalculationController">
+          <mxGeometry x="0" y="68" width="588" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportCalculationController_b2" value="• ReportController&lt;br&gt;• ReportRequest&lt;br&gt;• Order&lt;br&gt;• Hub&lt;br&gt;• Delivery&lt;br&gt;• ReportResult&lt;br&gt;• ReportMetric" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#2E7D4F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportCalculationController">
+          <mxGeometry x="588" y="68" width="332" height="136" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p3" name="3. Domain Layer">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="947.0" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p3_ban" value="&lt;b&gt;Domain Layer&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;UC4 – Produce Management Reports · CRC Cards&lt;/font&gt;" style="rounded=0;html=1;whiteSpace=wrap;align=left;spacingLeft=10;fillColor=#B7791F;fontColor=#FFFFFF;strokeColor=#B7791F;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="920" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ReportRequest" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#B7791F;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportRequest_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«domain»&lt;/font&gt;&lt;br&gt;ReportRequest" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#B7791F;fontColor=#FFFFFF;strokeColor=#B7791F;fontSize=16;fontStyle=1;" vertex="1" parent="c_ReportRequest">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportRequest_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportRequest">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportRequest_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportRequest">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportRequest_b1" value="• Store the selected report type.&lt;br&gt;• Store the reporting start date and end date.&lt;br&gt;• Store the optional hub identifier.&lt;br&gt;• Validate the reporting criteria.&lt;br&gt;• Track the report request lifecycle status." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportRequest">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportRequest_b2" value="• ReportType&lt;br&gt;• ReportRequestStatus&lt;br&gt;• ReportController&lt;br&gt;• ReportResult&lt;br&gt;• Hub" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportRequest">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ReportResult" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#B7791F;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="480.0" y="90" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResult_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«domain»&lt;/font&gt;&lt;br&gt;ReportResult" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#B7791F;fontColor=#FFFFFF;strokeColor=#B7791F;fontSize=16;fontStyle=1;" vertex="1" parent="c_ReportResult">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResult_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportResult">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResult_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportResult">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResult_b1" value="• Store the generated report identifier.&lt;br&gt;• Store the report type.&lt;br&gt;• Store the generation timestamp.&lt;br&gt;• Store the total number of matching records.&lt;br&gt;• Maintain the collection of calculated ReportMetric objects.&lt;br&gt;• Provide the report summary and metric data for presentation." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportResult">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportResult_b2" value="• ReportRequest&lt;br&gt;• ReportMetric&lt;br&gt;• ReportController&lt;br&gt;• ReportCalculationController&lt;br&gt;• ReportResultView" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportResult">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ReportMetric" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#B7791F;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="369.0" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportMetric_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«domain»&lt;/font&gt;&lt;br&gt;ReportMetric" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#B7791F;fontColor=#FFFFFF;strokeColor=#B7791F;fontSize=16;fontStyle=1;" vertex="1" parent="c_ReportMetric">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportMetric_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportMetric">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportMetric_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_ReportMetric">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportMetric_b1" value="• Store a metric name.&lt;br&gt;• Store the calculated metric value.&lt;br&gt;• Store the measurement unit.&lt;br&gt;• Store a metric description.&lt;br&gt;• Provide the metric value for report presentation." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportMetric">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportMetric_b2" value="• ReportResult&lt;br&gt;• ReportCalculationController" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_ReportMetric">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Order" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#B7791F;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="480.0" y="369.0" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="Order_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«domain»&lt;/font&gt;&lt;br&gt;Order" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#B7791F;fontColor=#FFFFFF;strokeColor=#B7791F;fontSize=16;fontStyle=1;" vertex="1" parent="c_Order">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="Order_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_Order">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Order_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_Order">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Order_b1" value="• Provide order information required for sales reporting.&lt;br&gt;• Provide order information required for hub workload reporting.&lt;br&gt;• Supply relevant order dates, statuses and monetary values." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_Order">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="Order_b2" value="• OrderRepository&lt;br&gt;• ReportCalculationController" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_Order">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Hub" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#B7791F;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="648.0" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="Hub_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«domain»&lt;/font&gt;&lt;br&gt;Hub" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#B7791F;fontColor=#FFFFFF;strokeColor=#B7791F;fontSize=16;fontStyle=1;" vertex="1" parent="c_Hub">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="Hub_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_Hub">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Hub_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_Hub">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Hub_b1" value="• Provide hub identification and reference information.&lt;br&gt;• Provide capacity and current workload information.&lt;br&gt;• Support hub workload reporting.&lt;br&gt;• Support the optional hub filter where applicable." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_Hub">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="Hub_b2" value="• HubRepository&lt;br&gt;• ReportRequest&lt;br&gt;• ReportCalculationController" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_Hub">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Delivery" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#B7791F;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="480.0" y="648.0" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="Delivery_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«domain»&lt;/font&gt;&lt;br&gt;Delivery" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#B7791F;fontColor=#FFFFFF;strokeColor=#B7791F;fontSize=16;fontStyle=1;" vertex="1" parent="c_Delivery">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="Delivery_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_Delivery">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Delivery_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#FFF3DC;fontColor=#B7791F;strokeColor=#B7791F;fontSize=11;fontStyle=1;" vertex="1" parent="c_Delivery">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Delivery_b1" value="• Provide delivery information for performance reporting.&lt;br&gt;• Supply delivery status and relevant delivery timestamps.&lt;br&gt;• Support delivery-performance calculations." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_Delivery">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="Delivery_b2" value="• DeliveryRepository&lt;br&gt;• ReportCalculationController" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#B7791F;fillColor=#FFFFFF;" vertex="1" parent="c_Delivery">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p4" name="4. Data Access Layer">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="668.0" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p4_ban" value="&lt;b&gt;Data Access Layer&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;UC4 – Produce Management Reports · CRC Cards&lt;/font&gt;" style="rounded=0;html=1;whiteSpace=wrap;align=left;spacingLeft=10;fillColor=#6B4C9A;fontColor=#FFFFFF;strokeColor=#6B4C9A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="920" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OrderRepository" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#6B4C9A;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderRepository_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«data access»&lt;/font&gt;&lt;br&gt;OrderRepository" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#6B4C9A;fontColor=#FFFFFF;strokeColor=#6B4C9A;fontSize=16;fontStyle=1;" vertex="1" parent="c_OrderRepository">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderRepository_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#EEE8F6;fontColor=#6B4C9A;strokeColor=#6B4C9A;fontSize=11;fontStyle=1;" vertex="1" parent="c_OrderRepository">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderRepository_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#EEE8F6;fontColor=#6B4C9A;strokeColor=#6B4C9A;fontSize=11;fontStyle=1;" vertex="1" parent="c_OrderRepository">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderRepository_b1" value="• Retrieve orders within the selected date range.&lt;br&gt;• Retrieve matching orders for an optional hub filter where supported by the existing domain association.&lt;br&gt;• Supply the order records required for sales reporting and as the order input to hub workload reporting (orders only; Hub records are not retrieved here)." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#6B4C9A;fillColor=#FFFFFF;" vertex="1" parent="c_OrderRepository">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderRepository_b2" value="• Order&lt;br&gt;• Hub&lt;br&gt;• ReportController" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#6B4C9A;fillColor=#FFFFFF;" vertex="1" parent="c_OrderRepository">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="c_HubRepository" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#6B4C9A;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="480.0" y="90" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="HubRepository_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«data access»&lt;/font&gt;&lt;br&gt;HubRepository" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#6B4C9A;fontColor=#FFFFFF;strokeColor=#6B4C9A;fontSize=16;fontStyle=1;" vertex="1" parent="c_HubRepository">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="HubRepository_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#EEE8F6;fontColor=#6B4C9A;strokeColor=#6B4C9A;fontSize=11;fontStyle=1;" vertex="1" parent="c_HubRepository">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="HubRepository_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#EEE8F6;fontColor=#6B4C9A;strokeColor=#6B4C9A;fontSize=11;fontStyle=1;" vertex="1" parent="c_HubRepository">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="HubRepository_b1" value="• Retrieve a hub by its identifier.&lt;br&gt;• Retrieve available hub reference information.&lt;br&gt;• Retrieve the hub capacity and current workload attributes required for hub workload reporting (Hub records only; no order retrieval)." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#6B4C9A;fillColor=#FFFFFF;" vertex="1" parent="c_HubRepository">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="HubRepository_b2" value="• Hub&lt;br&gt;• ReportController" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#6B4C9A;fillColor=#FFFFFF;" vertex="1" parent="c_HubRepository">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="c_DeliveryRepository" value="" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=#6B4C9A;strokeWidth=2;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="369.0" width="400" height="249" as="geometry" />
+        </mxCell>
+        <mxCell id="DeliveryRepository_h" value="&lt;font style='font-size:10px;font-weight:normal'&gt;«data access»&lt;/font&gt;&lt;br&gt;DeliveryRepository" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#6B4C9A;fontColor=#FFFFFF;strokeColor=#6B4C9A;fontSize=16;fontStyle=1;" vertex="1" parent="c_DeliveryRepository">
+          <mxGeometry x="0" y="0" width="400" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="DeliveryRepository_s1" value="Responsibilities" style="rounded=0;html=1;fillColor=#EEE8F6;fontColor=#6B4C9A;strokeColor=#6B4C9A;fontSize=11;fontStyle=1;" vertex="1" parent="c_DeliveryRepository">
+          <mxGeometry x="0" y="46" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="DeliveryRepository_s2" value="Collaborators" style="rounded=0;html=1;fillColor=#EEE8F6;fontColor=#6B4C9A;strokeColor=#6B4C9A;fontSize=11;fontStyle=1;" vertex="1" parent="c_DeliveryRepository">
+          <mxGeometry x="210" y="46" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="DeliveryRepository_b1" value="• Retrieve deliveries within the selected date range.&lt;br&gt;• Retrieve delivery records required for delivery-performance reporting." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#6B4C9A;fillColor=#FFFFFF;" vertex="1" parent="c_DeliveryRepository">
+          <mxGeometry x="0" y="68" width="210" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="DeliveryRepository_b2" value="• Delivery&lt;br&gt;• ReportController" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=4;fontSize=11;fontColor=#1A1A1A;strokeColor=#6B4C9A;fillColor=#FFFFFF;" vertex="1" parent="c_DeliveryRepository">
+          <mxGeometry x="210" y="68" width="190" height="181" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p5" name="5. Flow and Notes">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p5_ban" value="&lt;b&gt;Collaboration Flow, Report Paths and Notes&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;UC4 – Produce Management Reports · CRC Cards&lt;/font&gt;" style="rounded=0;html=1;whiteSpace=wrap;align=left;spacingLeft=10;fillColor=#37474F;fontColor=#FFFFFF;strokeColor=#37474F;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="920" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f_steps" value="&lt;b&gt;Collaboration flow&lt;/b&gt;&lt;br&gt;1  Manager selects report type, date range (hub filter for SALES only) in ReportSelectionView.&lt;br&gt;2  ReportSelectionView sends the selected criteria to ReportController.&lt;br&gt;3  ReportController validates the ReportRequest.&lt;br&gt;4  ReportController selects repositories according to ReportType.&lt;br&gt;5  Repositories retrieve the matching Order, Hub or Delivery records (read-only).&lt;br&gt;6  ReportController invokes ReportCalculationController with the retrieved records.&lt;br&gt;7  ReportCalculationController organizes ReportMetric objects into a ReportResult.&lt;br&gt;8  ReportController receives the generated ReportResult.&lt;br&gt;9  ReportController passes the ReportResult to ReportResultView.&lt;br&gt;10 ReportResultView displays the generated report to the Manager." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fontSize=11;strokeColor=#9E9E9E;fillColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="920" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="f_paths" value="&lt;b&gt;Report paths (all converge into ReportResult → ReportResultView)&lt;/b&gt;&lt;br&gt;&lt;font color='#C62828'&gt;&lt;b&gt;SALES&lt;/b&gt;&lt;/font&gt; → OrderRepository → Order → ReportCalculationController&lt;br&gt;&lt;font color='#00838F'&gt;&lt;b&gt;HUB_WORKLOAD&lt;/b&gt;&lt;/font&gt; → HubRepository + OrderRepository → Hub + Order → ReportCalculationController&lt;br&gt;&lt;font color='#AD1457'&gt;&lt;b&gt;DELIVERY_PERFORMANCE&lt;/b&gt;&lt;/font&gt; → DeliveryRepository → Delivery → ReportCalculationController&lt;br&gt;&lt;br&gt;Optional hub filter applies to &lt;b&gt;SALES&lt;/b&gt; reports only." style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fontSize=11;strokeColor=#9E9E9E;fillColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="920" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="f_notes" value="&lt;b&gt;A-05 – Reporting Assumption&lt;/b&gt;&lt;br&gt;Reports use a selected date range and an optional hub filter. The optional hub filter is explicitly applicable to SALES reports (FR-16). Exact KPI definitions and calculation methods remain subject to client confirmation.&lt;br&gt;&lt;br&gt;&lt;b&gt;Additional notes&lt;/b&gt;&lt;br&gt;• Invalid criteria result in validation feedback.&lt;br&gt;• No matching records result in an empty-result message.&lt;br&gt;• Report generation is read-only; no operational records are created, modified or deleted by UC4.&lt;br&gt;• No unconfirmed KPI calculation formulas are shown.&lt;br&gt;&lt;br&gt;&lt;b&gt;Enumerations:&lt;/b&gt; ReportType {SALES, HUB_WORKLOAD, DELIVERY_PERFORMANCE}&lt;br&gt;ReportRequestStatus {REQUESTED, VALIDATING, PROCESSING, COMPLETED, EMPTY_RESULT, FAILED}" style="rounded=0;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fontSize=11;strokeColor=#9E9E9E;fillColor=#FFFFF0;fontColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="920" height="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
