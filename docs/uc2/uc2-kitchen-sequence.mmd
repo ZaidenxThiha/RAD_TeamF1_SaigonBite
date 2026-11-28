@@ -21,7 +21,7 @@ sequenceDiagram
     Staff->>View: Review order
     View->>HTTP: GET order details
     HTTP->>Service: details(username, orderId)
-    Service->>Repo: Check role, hub, status; read item/payment snapshots
+    Service->>Repo: Check role, hub and status, then read item/payment snapshots
     Repo->>DB: SELECT orders, items, payments
     HTTP-->>View: Order details or 403/404/409
     Staff->>View: Confirm or Reject with reason
@@ -33,10 +33,10 @@ sequenceDiagram
     Repo->>DB: SELECT current staff and order
     alt Unauthorized, no longer Submitted, or invalid reason
         Service->>Repo: ROLLBACK
-        HTTP-->>View: Error; no decision saved
+        HTTP-->>View: Error - no decision saved
     else Valid decision
         Service->>Repo: Record status, decision and notification flag
-        Repo->>DB: UPDATE Submitted order; INSERT staff/time/reason
+        Repo->>DB: UPDATE Submitted order and INSERT staff/time/reason
         Repo->>DB: INSERT notification with failed flag
         Service->>Repo: COMMIT
         Service->>Notify: Attempt simulated customer notification
@@ -49,7 +49,7 @@ sequenceDiagram
         HTTP-->>View: Saved decision, staff/time and notification outcome
         Staff->>View: Back to incoming orders
         View->>HTTP: GET refreshed queue
-        Note over View,DB: Handled order is absent; order/items/payment history remains
+        Note over View,DB: Handled order is absent from queue. Order/items/payment history remains
     end
     Customer->>Receipt: Refresh status
     Receipt->>Checkout: POST status with order ID, demo owner and checkout reference
