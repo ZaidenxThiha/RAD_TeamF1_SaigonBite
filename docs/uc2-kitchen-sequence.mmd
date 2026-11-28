@@ -7,6 +7,9 @@ sequenceDiagram
     participant Repo as Kitchen Repository
     participant DB as SQLite
     participant Notify as Local Notification Simulator
+    actor Customer
+    participant Receipt as Customer Receipt
+    participant Checkout as Checkout HTTP and Service
     Staff->>View: Open incoming orders
     View->>HTTP: GET orders with demo actor context
     HTTP->>Service: queue(username)
@@ -47,4 +50,14 @@ sequenceDiagram
         Staff->>View: Back to incoming orders
         View->>HTTP: GET refreshed queue
         Note over View,DB: Handled order is absent; order/items/payment history remains
+    end
+    Customer->>Receipt: Refresh status
+    Receipt->>Checkout: POST status with order ID, demo owner and checkout reference
+    Checkout->>DB: SELECT order WHERE customer and payment reference match
+    alt Owner and checkout reference match
+        Checkout->>DB: Read latest status and rejection reason
+        Checkout-->>Receipt: Same order with Submitted, Confirmed or Rejected status
+        Receipt-->>Customer: Display latest status and rejection reason
+    else Order absent or ownership/reference mismatch
+        Checkout-->>Receipt: 404 without order details
     end

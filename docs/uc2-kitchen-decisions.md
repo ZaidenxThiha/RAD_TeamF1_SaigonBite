@@ -53,6 +53,14 @@ All routes require `X-Demo-User: kitchen-ben-thanh` or `kitchen-riverside`.
 | GET | `/api/kitchen/orders/:id` | Same-hub Submitted order and item/payment snapshots |
 | POST | `/api/kitchen/orders/:id/decision` | `{ "decision": "Confirmed" }` or `{ "decision": "Rejected", "reason": "Out of ingredients" }` |
 
+Customer status integration: `POST /api/checkout/status` accepts the original checkout's
+`username`, `checkoutRef`, and `orderId`. The lookup requires both the stored order owner
+and matching payment checkout reference. A different owner, reference or missing order
+returns the same 404 response. This uses UC1's existing demo identity convention; the
+customer username must come from an authenticated session in a production deployment.
+The customer receipt's **Refresh status** button reads the latest saved status and displays
+the rejection reason when present. It does not resubmit checkout or create another payment.
+
 Errors: 400 malformed input/invalid ID; 403 unauthorized role or wrong hub; 404 missing
 order/route; 409 order no longer Submitted; 422 invalid decision or blank/oversized reason;
 413 body too large; 415 unsupported content type; 500 unexpected storage failure.
@@ -77,6 +85,10 @@ Automatic retry policy is not implemented because the report leaves it unconfirm
 5. At `/`, submit a new UC1 order to Bến Thành. At `/kitchen`, select Bến Thành and
    refresh. The same ID, total, quantity and payment choice appear. Confirm it and verify
    the result and queue removal. The item/payment records remain intact.
+   Keep the customer receipt open in a second tab and click **Refresh status**: the same
+   order must now show Confirmed. Repeat using a new order and a rejection; its receipt
+   must show Rejected and the saved reason. A failed refresh preserves the prior receipt
+   and allows retry. **Start another order** clears the previous receipt lookup context.
 6. **Order unavailable:** create another order in UC1. Open its review in two browser
    tabs using the same hub. Confirm in tab A, then Confirm or submit a rejection in tab B.
    Tab B must show Order unavailable; Refresh queue removes the handled order. This is a
@@ -96,7 +108,8 @@ the orders required for a demonstration. Reading details and cancelling never sa
 ## Test evidence
 
 `npm test` includes the existing eight database/UC1 checks plus 12 UC2 checks in
-`test/kitchen.test.mjs` and `test/kitchen-http.test.mjs` (20 total at implementation).
+`test/kitchen.test.mjs` and `test/kitchen-http.test.mjs`, and three customer-status
+integration checks in `test/customer-order-status.test.mjs` (23 total).
 They cover hub-scoped queues, role/hub denial, confirmation/history, rejection validation,
 save-time reassignment, stale views, audit rollback, notification failure, missing IDs,
 UC1 integration and malformed/oversized HTTP requests. HTTP checks require loopback access.

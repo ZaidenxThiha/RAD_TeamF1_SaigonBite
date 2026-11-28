@@ -13,6 +13,10 @@ const receipt = document.querySelector('#receipt');
 const review = document.querySelector('#review');
 const place = document.querySelector('#place');
 const cancel = document.querySelector('#cancel');
+const refreshStatus = document.querySelector('#refresh-status');
+const receiptError = document.querySelector('#receipt-error');
+const receiptStatus = document.querySelector('#receipt-status');
+const restart = document.querySelector('#restart');
 const money = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' });
 
 let catalog;
@@ -21,6 +25,8 @@ let checkoutRef = crypto.randomUUID();
 let alternativeFromHubId;
 let pending = false;
 let paymentAttempted = false;
+let activeReceipt;
+let refreshingStatus = false;
 
 async function api(action, body) {
   const response = await fetch('/api/checkout/' + action, body && {
@@ -46,6 +52,7 @@ function rows(element, details) {
     term.textContent = label;
     data.textContent = value;
     if (label === 'Total') row.className = 'total';
+    if (label === 'Order status') row.className = 'receipt-order-status';
     row.append(term, data);
     return row;
   }));
@@ -83,6 +90,43 @@ function renderMenu(preserve = new Map()) {
   }));
   if (!menu.childElementCount) menu.textContent = 'There are no available items for this hub.';
 }
+
+function renderReceipt(result) {
+  const details = [
+    ['Order', '#' + result.orderId], ['Kitchen hub', result.hubName],
+    ['Payment', result.method === 'cod' ? 'Cash on delivery' : 'Online payment'],
+    ['Total', money.format(result.total)],
+    ['Order status', result.status],
+  ];
+  if (result.status === 'Rejected' && result.rejectionReason) details.push(['Rejection reason', result.rejectionReason]);
+  rows(receipt.querySelector('dl'), details);
+  const statusBadge = receipt.querySelector('.receipt-order-status dd');
+  statusBadge.className = 'receipt-status-badge';
+  if (['Submitted', 'Confirmed', 'Rejected'].includes(result.status)) {
+    statusBadge.classList.add(result.status.toLowerCase());
+  }
+}
+
+refreshStatus.onclick = async () => {
+  if (!activeReceipt || refreshingStatus) return;
+  refreshingStatus = true;
+  refreshStatus.disabled = restart.disabled = true;
+  receipt.setAttribute('aria-busy', 'true');
+  showError(receiptError);
+  receiptStatus.textContent = 'Checking latest order status…';
+  try {
+    const latest = await api('status', activeReceipt);
+    renderReceipt(latest);
+    receiptStatus.textContent = 'Order status updated.';
+  } catch (error) {
+    receiptStatus.textContent = '';
+    showError(receiptError, error.message);
+  } finally {
+    refreshingStatus = false;
+    refreshStatus.disabled = restart.disabled = false;
+    receipt.setAttribute('aria-busy', 'false');
+  }
+};
 
 function currentItems() {
   return [...menu.querySelectorAll('input')].map(input => ({
@@ -200,11 +244,10 @@ form.onsubmit = async (event) => {
       showError(paymentError, 'Payment declined. Retry, switch to cash on delivery, or edit your order and review the total again.');
       return;
     }
-    rows(receipt.querySelector('dl'), [
-      ['Order', '#' + result.orderId], ['Status', result.status], ['Kitchen hub', result.hubName],
-      ['Payment', result.method === 'cod' ? 'Cash on delivery' : 'Online payment'],
-      ['Total', money.format(result.total)],
-    ]);
+    activeReceipt = { orderId: result.orderId, username: body.username, checkoutRef: body.checkoutRef };
+    renderReceipt(result);
+    showError(receiptError);
+    receiptStatus.textContent = '';
     form.hidden = true;
     receipt.hidden = false;
     document.querySelector('#restart').focus();
@@ -235,7 +278,11 @@ cancel.onclick = async () => {
   }
 };
 
-document.querySelector('#restart').onclick = () => {
+restart.onclick = () => {
+  if (refreshingStatus) return;
+  activeReceipt = undefined;
+  showError(receiptError);
+  receiptStatus.textContent = '';
   checkoutRef = crypto.randomUUID();
   paymentAttempted = false;
   alternativeFromHubId = undefined;
