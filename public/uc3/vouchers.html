@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- UC3 voucher workspace. Author: Thin Lei Sandi (523K0075). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vouchers · SaigonBite</title>
+  <link rel="stylesheet" href="/uc3/vouchers.css">
+  <link rel="stylesheet" href="/shared/layout.css">
+  <script type="module" src="/uc3/vouchers.js"></script>
+</head>
+<body>
+  <aside class="sidebar" data-sidebar></aside>
+  <div class="workspace">
+    <header class="header" data-header></header>
+    <main>
+      <details class="demo">
+        <summary>Local demo account</summary>
+        <label for="demo-account">Workspace account</label>
+        <select id="demo-account">
+          <option value="administrator">Administrator</option>
+          <option value="kitchen-ben-thanh">Kitchen staff (access check)</option>
+          <option value="manager">Manager (access check)</option>
+          <option value="customer">Customer (access check)</option>
+        </select>
+        <p>This picker simulates the signed-in account for the local demo.</p>
+      </details>
+      <div id="message" role="status" aria-live="polite"></div>
+      <section id="content" aria-label="Voucher management" aria-busy="true"><p>Loading vouchers…</p></section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # RAD_TeamF1_SaigonBite
 RAD Final Project (SaigonBite Platform)
 
-SaigonBite has a shared SQLite database for customer checkout, kitchen order decisions, and management reports. Voucher administration builds on the same database.
+SaigonBite uses a shared SQLite database for customer checkout, kitchen order decisions, voucher administration, and management reports.
 
 ## Run locally
 
@@ -15,11 +15,17 @@ npm start
 
 Open http://127.0.0.1:4173/ to try [UC1 checkout](docs/uc1-checkout.md). At http://127.0.0.1:4173/health expect `{"status":"ok"}`. Stop the server with Ctrl+C. The default database lives in `runtime/saigonbite.sqlite`. Set `SAIGONBITE_DB` to a new path to start with fresh sample data. Reopening the existing file preserves records.
 
-Open http://127.0.0.1:4173/kitchen for [UC2 kitchen decisions](docs/uc2-kitchen-decisions.md)
+Open http://127.0.0.1:4173/kitchen for [UC2 kitchen decisions](docs/uc2/uc2-kitchen-decisions.md)
 (author: 523K0075). Expand **Local demo account** to switch between the two seeded kitchen
 staff. UC1-created Submitted orders appear in their assigned hub's queue. Kitchen API
 authorization rechecks the stored actor role and hub; account selection is a local demo,
 not production sign-in. Notifications are simulated and do not send external messages.
+
+Open http://127.0.0.1:4173/vouchers for [UC3 voucher management](docs/uc3/uc3-voucher-management.md)
+(author: 523K0075). The administrator can create, view, edit and archive vouchers, with
+validation, audit history and eligibility rules shared with checkout. Active vouchers
+can be edited/archived, Expired vouchers can be edited, and Archived vouchers are view-only.
+The local demo account picker follows UC2's identity simulation.
 
 For [UC4 management reports](docs/uc4/README.md), set `SAIGONBITE_MANAGER_PASSWORD` before starting the server, then open `/reports` and sign in as `manager`.
 
