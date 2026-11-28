@@ -1,7 +1,7 @@
 # RAD_TeamF1_SaigonBite
 RAD Final Project (SaigonBite Platform)
 
-SaigonBite has a shared SQLite foundation and a working customer checkout preview. The kitchen, voucher administration, and reporting workflows build on the same database.
+SaigonBite has a shared SQLite foundation and working customer checkout and management report previews. The kitchen and voucher administration workflows build on the same database.
 
 ## Run locally
 
@@ -15,9 +15,11 @@ npm start
 
 Open http://127.0.0.1:4173/ to try [UC1 checkout](docs/uc1-checkout.md). At http://127.0.0.1:4173/health expect `{"status":"ok"}`. Stop the server with Ctrl+C. The default database lives in `runtime/saigonbite.sqlite`. Set `SAIGONBITE_DB` to a new path to start with fresh sample data. Reopening the existing file preserves records.
 
+For [UC4 management reports](docs/uc4/README.md), set `SAIGONBITE_MANAGER_PASSWORD` before starting the server, then open `/reports` and sign in as `manager`.
+
 ## Sample records for the next issues
 
-- Users `customer` and `tourist`, kitchen staff at Bến Thành and Riverside, `administrator`, and `manager` are database fixtures. Authentication is a later implementation task.
+- Users `customer` and `tourist`, kitchen staff at Bến Thành and Riverside, `administrator`, and `manager` are database fixtures. The reports preview requires the configured manager password.
 - Riverside has capacity for one order and starts with one submitted order. Bến Thành is available and offers the same phở bò.
 - Central Saigon is 2 km from Bến Thành. Two bowls at 50,000 VND each, a 15,000 VND delivery fee, and a 10,000 VND discount using the seeded `DEMO10` code produce **105,000 VND**. Use `SPRINT10` when testing live voucher creation as part of the integrated demo.
 - `EXPIRED10` provides the failure case. Two older confirmed orders have completed and failed delivery records for reports.

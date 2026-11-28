@@ -2,9 +2,12 @@ import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { openDatabase } from './database.mjs';
 import { handleCheckout } from './checkout-http.mjs';
+import { handleReports } from './reports-page.mjs';
 
 const db = openDatabase();
+const managerPassword = process.env.SAIGONBITE_MANAGER_PASSWORD;
 const assets = new Map([
+  ['/reports.css', ['reports.css', 'text/css; charset=utf-8']],
   ['/', ['checkout.html', 'text/html; charset=utf-8']],
   ['/checkout.css', ['checkout.css', 'text/css; charset=utf-8']],
   ['/checkout.js', ['checkout.js', 'text/javascript; charset=utf-8']],
@@ -18,6 +21,10 @@ const server = createServer((request, response) => {
       response.writeHead(503, { 'Content-Type': 'application/json' }).end('{"status":"unavailable"}');
     }
     return;
+  }
+
+  if (request.method === 'GET' && request.url.split('?')[0] === '/reports') {
+    return handleReports(db, request, response, new URL(request.url, 'http://localhost'), managerPassword);
   }
 
   const asset = request.method === 'GET' && assets.get(request.url);
