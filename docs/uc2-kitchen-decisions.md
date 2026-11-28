@@ -29,6 +29,7 @@ never authorize a decision.
 |---|---|---|
 | View | `public/uc2/kitchen.html`, `kitchen.css` | Shared-theme shell, responsive queue, review, rejection and result layouts |
 | Browser controller | `public/uc2/kitchen.js` | Requests, real reason input, loading states, refreshed queue and errors |
+| Shared UI shell | `public/shared/layout.js`, `layout.css` | Reusable sidebar/header with configurable navigation and actor details |
 | HTTP controller | `src/uc2/http.mjs` | JSON boundary, demo actor context and HTTP error mapping |
 | Service | `src/uc2/service.mjs` | Assigned-hub authorization, save-time status checks, decision validation and notification attempt |
 | Repository | `src/uc2/repository.mjs` | SQL reads and transactional status/decision/notification persistence |
@@ -36,6 +37,11 @@ never authorize a decision.
 No database migration is needed. Existing `orders`, `order_items`, `payments`,
 `order_decisions`, `users`, `hubs` and `customer_notifications` tables are reused.
 The [editable sequence diagram](uc2-kitchen-sequence.mmd) shows the data-access flow.
+
+The kitchen page mounts the shared shell with `renderWorkspaceLayout(...)`. A future
+UC3 page can load `/shared/layout.css` and import `/shared/layout.js`, passing its own
+workspace label, breadcrumbs, navigation and actor context. Only implemented destinations
+are shown in navigation; the shell does not add placeholder Overview or Settings pages.
 
 ## API
 
