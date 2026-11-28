@@ -1,7 +1,7 @@
 # RAD_TeamF1_SaigonBite
 RAD Final Project (SaigonBite Platform)
 
-SaigonBite has a shared SQLite foundation, customer checkout, and kitchen order decisions. Voucher administration and reporting build on the same database.
+SaigonBite has a shared SQLite foundation, customer checkout, kitchen order decisions, and voucher administration. Reporting builds on the same database.
 
 ## Run locally
 
@@ -20,6 +20,12 @@ Open http://127.0.0.1:4173/kitchen for [UC2 kitchen decisions](docs/uc2/uc2-kitc
 staff. UC1-created Submitted orders appear in their assigned hub's queue. Kitchen API
 authorization rechecks the stored actor role and hub; account selection is a local demo,
 not production sign-in. Notifications are simulated and do not send external messages.
+
+Open http://127.0.0.1:4173/vouchers for [UC3 voucher management](docs/uc3/uc3-voucher-management.md)
+(author: 523K0075). The administrator can create, view, edit and archive vouchers, with
+validation, audit history and eligibility rules shared with checkout. Active vouchers
+can be edited/archived, Expired vouchers can be edited, and Archived vouchers are view-only.
+The local demo account picker follows UC2's identity simulation.
 
 ## Sample records for the next issues
 
