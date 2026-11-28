@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { openDatabase } from './database.mjs';
-import { handleCheckout } from './checkout-http.mjs';
+import { handleCheckout } from './uc1/http.mjs';
 import { handleReports } from './reports-page.mjs';
 import { createKitchenHandler } from './uc2/http.mjs';
 
@@ -11,10 +11,11 @@ const handleKitchen = createKitchenHandler(db, {
   notify: () => process.env.SAIGONBITE_NOTIFICATION_FAIL === '1' ? 'failed' : 'sent',
 });
 const assets = new Map([
+  ['/reports.js', ['reports.js', 'text/javascript; charset=utf-8']],
   ['/reports.css', ['reports.css', 'text/css; charset=utf-8']],
-  ['/', ['checkout.html', 'text/html; charset=utf-8']],
-  ['/checkout.css', ['checkout.css', 'text/css; charset=utf-8']],
-  ['/checkout.js', ['checkout.js', 'text/javascript; charset=utf-8']],
+  ['/', ['uc1/checkout.html', 'text/html; charset=utf-8']],
+  ['/checkout.css', ['uc1/checkout.css', 'text/css; charset=utf-8']],
+  ['/checkout.js', ['uc1/checkout.js', 'text/javascript; charset=utf-8']],
   ['/kitchen', ['uc2/kitchen.html', 'text/html; charset=utf-8']],
   ['/kitchen/', ['uc2/kitchen.html', 'text/html; charset=utf-8']],
   ['/uc2/kitchen.css', ['uc2/kitchen.css', 'text/css; charset=utf-8']],
@@ -35,6 +36,15 @@ const server = createServer((request, response) => {
 
   if (request.method === 'GET' && request.url.split('?')[0] === '/reports') {
     return handleReports(db, request, response, new URL(request.url, 'http://localhost'), managerPassword);
+  }
+
+  if (request.method === 'GET' && /^\/prototype\/[a-z-]+\.svg$/.test(request.url)) {
+    const file = new URL('../public/shared' + request.url, import.meta.url);
+    if (!existsSync(file)) return response.writeHead(404).end();
+    return response.writeHead(200, {
+      'Content-Type': 'image/svg+xml', 'X-Content-Type-Options': 'nosniff',
+      'Content-Security-Policy': "default-src 'none'; sandbox",
+    }).end(readFileSync(file));
   }
 
   const asset = request.method === 'GET' && assets.get(request.url);

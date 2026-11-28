@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { openDatabase } from '../src/database.mjs';
-import { cancelCheckout, demoCustomer, quoteOrder, submitCheckout } from '../src/checkout.mjs';
+import { cancelCheckout, demoCustomer, quoteOrder, submitCheckout } from '../src/uc1/service.mjs';
 
 const order = {
   checkoutRef: 'checkout-test-1', hubId: 1, brandId: 1, areaId: 1,

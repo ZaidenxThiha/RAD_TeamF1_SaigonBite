@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Beef Pho Illustration" clip-path="url(#clip0_0_55)">
+<path id="Vector" d="M46.5789 0H13.4211C6.00881 0 0 6.00881 0 13.4211V46.5789C0 53.9912 6.00881 60 13.4211 60H46.5789C53.9912 60 60 53.9912 60 46.5789V13.4211C60 6.00881 53.9912 0 46.5789 0Z" fill="#FDE9E3"/>
+<path id="Vector_2" d="M15 28.4211C17.3684 22.1053 22.8947 18.9474 30 18.9474C37.1053 18.9474 42.6316 22.1053 45 28.4211L41.0526 44.2105C40.2632 47.3684 37.8947 48.9474 34.7368 48.9474H25.2632C22.1053 48.9474 19.7368 47.3684 18.9474 44.2105L15 28.4211Z" fill="white" stroke-width="1.8" stroke="#2E1B17"/>
+<path id="Vector_3" d="M15 28.4211H45" stroke-width="4" stroke-linecap="round" stroke="#B2321E"/>
+<path id="Vector_4" d="M22.1053 26.0526C23.6842 22.1053 26.0526 21.3158 28.4211 24.4737M30 26.0526C31.5789 22.1053 33.9474 21.3158 36.3158 24.4737M23.6842 33.1579C25.2632 35.5263 26.8421 35.5263 28.4211 33.1579M32.3684 33.1579C33.9474 35.5263 35.5263 35.5263 37.1053 33.1579" stroke-width="2" stroke-linecap="round" stroke="#B2321E"/>
+<path id="Vector_5" d="M22.1053 13.4211C21.3158 11.0526 23.6842 10.2632 22.8947 7.89474M30.7895 13.4211C30 11.0526 32.3684 10.2632 31.5789 7.89474M38.6842 13.4211C37.8947 11.0526 40.2632 10.2632 39.4737 7.89474" stroke-width="1.7" stroke-linecap="round" stroke="#5C4B46"/>
+</g>
+<defs>
+<clipPath id="clip0_0_55">
+<rect width="60" height="60" fill="white"/>
+</clipPath>
+</defs>
+</svg>
